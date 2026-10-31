@@ -1,0 +1,4 @@
+bin/
+obj/
+build-output/
+GamePaths.user.props
