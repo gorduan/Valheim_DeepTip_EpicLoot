@@ -51,8 +51,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- concept glossary (DeepTip format) and the code-checked effect explanations, one file per locale -->
-    <EmbeddedResource Include="glossary\*.json" LogicalName="DeepTipEpicLoot.%(Filename).json" />
-    <EmbeddedResource Include="data\*.json" LogicalName="DeepTipEpicLoot.%(Filename).json" />
+    <!-- concept glossary (DeepTip format) and the code-checked effect explanations, one file per locale. WithCulture=false:
+         MSBuild reads ".de"/".en" in a file name as a culture and moved these files into satellite assemblies
+         (de\DeepTip_EpicLoot.resources.dll), so the plugin DLL had none of them (test server log 31.10.2026). -->
+    <EmbeddedResource Include="glossary\*.json" LogicalName="DeepTipEpicLoot.%(Filename).json" WithCulture="false" />
+    <EmbeddedResource Include="data\*.json" LogicalName="DeepTipEpicLoot.%(Filename).json" WithCulture="false" />
   </ItemGroup>
 </Project>
