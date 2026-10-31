@@ -565,7 +565,7 @@
  },
  "SpellSword": {
   "text": "Melee weapons only: every attack costs half the stamina, but additionally costs eitr equal to half of the attack's base stamina cost (before skill and gear discounts). **Without enough eitr, e.g. without eitr food, you cannot attack with the weapon.** Damage also rises by X% (added to flat bonuses such as 'All Damage'); X is shown without a % sign. While Eitr Infusion is active, the extra eitr cost is dropped.",
-  "abweichung": "“Converts 50% of the cost to eitr” is only roughly right: stamina is halved, eitr costs half of the unreduced base stamina cost, and without eitr no attack is possible. Shown as “+X” without a % sign."
+  "abweichung": "“Converts 50% of the attack's cost to eitr” is only roughly right: stamina is halved, eitr costs half of the unreduced base stamina cost, and without eitr no attack is possible. Shown as “+X” without a % sign."
  },
  "BulkUp": {
   "text": "Max health rises by X% (calculated on base value plus food, before percentage bonuses from other effects). At the same time the food health regeneration multiplier drops by X percentage points (e.g. 1.0 → 0.7 at X = 30), never below 0, so with regen bonuses the relative loss is smaller. X from all equipped items is added up, capped at 100%.",
@@ -584,11 +584,11 @@
   "abweichung": "Not a higher drop chance but a separate chance of an extra trophy; only the highest value of the players within 100 m counts."
  },
  "Bulwark": {
-  "text": "Heimdall set bonus, used with an ability key (default G, H or J), cooldown 60 s from activation. For 5 s you are immune to blunt, slash, pierce, fire, frost, lightning, poison and spirit damage. Damage without a damage type, such as fall damage, still hurts you.",
+  "text": "Heimdall set bonus, used with an ability key (default G, H or J), cooldown 60 s from activation. For 5 s you are immune to blunt, slash, pierce, fire, frost, lightning, poison and spirit damage. Damage without a damage type, such as fall damage, still hurts you. Since EpicLoot 0.15.5 the cooldown keeps running through logout and death.",
   "abweichung": "Not all damage: fall damage and other damage without a damage type is not prevented."
  },
  "Undying": {
-  "text": "Heimdall set bonus, works on its own. If any damage, fall damage included, would drop your health to 0, you are fully healed instead and are then immune to blunt, slash, pierce, fire, frost, lightning, poison and spirit damage for 3 s. Cooldown 20 minutes.",
+  "text": "Heimdall set bonus, works on its own. If any damage, fall damage included, would drop your health to 0, you are fully healed instead and are then immune to blunt, slash, pierce, fire, frost, lightning, poison and spirit damage for 3 s. Cooldown 20 minutes. Since EpicLoot 0.15.5 the cooldown keeps running through logout and death.",
   "abweichung": ""
  },
  "FrostDamageAOE": {
@@ -596,7 +596,7 @@
   "abweichung": "Hits every creature in the area without an enemy check (tamed animals too); only swing and thrust attacks, not area attacks."
  },
  "Berserker": {
-  "text": "Ragnar set bonus, used with an ability key (default G, H or J), cooldown 180 s. For 10 s your health regeneration is ×0, and magic weapons deal +(200% − 150% × health/max) damage: +200% near zero health, +50% at full health. Non-magic weapons get no bonus. EpicLoot regeneration bonuses (e.g. Ragnar's own +50%) are added afterwards, so with them you still regenerate.",
+  "text": "Ragnar set bonus, used with an ability key (default G, H or J), cooldown 180 s. For 10 s your health regeneration is ×0, and magic weapons deal +(200% − 150% × health/max) damage: +200% near zero health, +50% at full health. Non-magic weapons get no bonus. EpicLoot regeneration bonuses (e.g. Ragnar's own +50%) are added afterwards, so with them you still regenerate. Since EpicLoot 0.15.5 the cooldown keeps running through logout and death.",
   "abweichung": "The damage bonus only applies to magic weapons; regeneration bonuses (e.g. Ragnar's 2-piece bonus +50%) partly lift the regeneration ban."
  },
  "OverwhelmingLaunch": {

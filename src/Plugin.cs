@@ -1,6 +1,7 @@
 using BepInEx;
 using BepInEx.Logging;
 using EpicLoot;
+using HarmonyLib;
 
 namespace DeepTipEpicLoot;
 
@@ -13,7 +14,8 @@ namespace DeepTipEpicLoot;
 ///    its config): what the value on the item means and what it does (data\effekte.*.json, checked against EpicLoot's
 ///    code), the value range per rarity, where it can appear, which effects exclude it, and where EpicLoot's own
 ///    description does not match the code.
-/// DeepTip then highlights effect names and these terms in every EpicLoot tooltip; resting the mouse opens the explanation.
+/// Every effect line of an EpicLoot tooltip links to its explanation (TooltipLinks, also the starred rare lines), and
+/// DeepTip highlights effect names and these terms elsewhere; resting the mouse opens the explanation.
 /// </summary>
 [BepInPlugin(Guid, Name, Version)]
 [BepInDependency(DeepTip.Api.Guid)]
@@ -30,6 +32,7 @@ public sealed class Plugin : BaseUnityPlugin
 	private void Awake()
 	{
 		Log = Logger;
+		TooltipLinks.Patch(new Harmony(Guid));
 		Concepts.Register();
 		MagicItemEffectDefinitions.OnSetupMagicItemEffectDefinitions += EffectGlossary.Rebuild;
 		if (MagicItemEffectDefinitions.AllDefinitions.Count > 0)

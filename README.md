@@ -6,7 +6,7 @@ window open further windows, a click pins them.
 
 ## What is explained
 
-- **Every magic effect** (all 181 of EpicLoot 0.15.4), e.g. *Duelist +8%*: what the value on the item means and what the
+- **Every magic effect** (all 181 of EpicLoot 0.15.5), e.g. *Duelist +8%*: what the value on the item means and what the
   effect really does, checked against EpicLoot's code (formula, conditions, how values from several items add up), plus
   where EpicLoot's own description does not match the code.
 - **Values per rarity** (Magic to Ancient), **where an effect can appear** (item types, weapon skills, conditions) and
@@ -22,7 +22,7 @@ Languages: English and German. Other languages fall back to English.
 ## Requirements
 
 - [DeepTip](https://thunderstore.io/c/valheim/p/Gorduan/DeepTip/) 1.0.0 or newer
-- [EpicLoot](https://thunderstore.io/c/valheim/p/RandyKnapp/EpicLoot/) 0.15.4
+- [EpicLoot](https://thunderstore.io/c/valheim/p/RandyKnapp/EpicLoot/) 0.15.5
 
 Client side only; the server does not need it.
 

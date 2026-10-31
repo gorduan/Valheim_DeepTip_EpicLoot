@@ -28,7 +28,7 @@
   "abweichung": "Bei Bögen und Armbrüsten wird der Pfeil- bzw. Bolzenschaden nicht erhöht, obwohl die Beschreibung den gesamten Schaden der Waffe nennt."
  },
  "ModifyPhysicalDamage": {
-  "text": "Multipliziert Hauen-, Schlitzen-, Stechen-, Hacken- und Spitzhackenschaden dieser Waffe mit (1 + X %), einschließlich Zusatzschäden wie „Füge stumpfe Schäden hinzu“. Äxte fällen damit auch Bäume schneller, Spitzhacken bauen schneller ab. Bei Bögen und Armbrüsten steigt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. „Alle Schäden“ wirkt danach zusätzlich (multiplikativ).",
+  "text": "Multipliziert Hauen-, Schlitzen-, Stechen-, Hacken- und Spitzhackenschaden dieser Waffe mit (1 + X %), einschließlich Zusatzschäden wie „Stumpfer Schaden“. Äxte fällen damit auch Bäume schneller, Spitzhacken bauen schneller ab. Bei Bögen und Armbrüsten steigt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. „Alle Schäden“ wirkt danach zusätzlich (multiplikativ).",
   "abweichung": "Bei Bögen und Armbrüsten wird der Pfeil- bzw. Bolzenschaden nicht erhöht, obwohl die Beschreibung den Schaden der Waffe nennt."
  },
  "ModifyElementalDamage": {
@@ -45,7 +45,7 @@
  },
  "RemoveSpeedPenalty": {
   "text": "Hebt den negativen Bewegungstempo-Wert dieses Items auf, solange es angelegt ist; Mali anderer Items bleiben. Damit entfallen auch die höheren Ausdauerkosten fürs Sprinten, Springen und Ausweichen, die dieser Malus sonst verursacht, ebenso der Schutz vor Rückstoß bei Treffern, den er sonst gibt. Das Gewicht des Items ändert sich nicht.",
-  "abweichung": "Der deutsche Name „Gewichtsloser Gegenstand“ ist irreführend: Das Gewicht bleibt, nur der Tempo-Malus entfällt."
+  "abweichung": ""
  },
  "ModifyBlockPower": {
   "text": "Erhöht die Blockrüstung des Items, mit dem du gerade blockst (Schild, sonst die Waffe), um X % ihres Grundwerts (Qualitätsstufe eingerechnet). Fertigkeit Blocken und Parierbonus wirken danach wie gewohnt obendrauf. Gleiche Effekte auf anderer Ausrüstung und aus Set-Boni werden addiert, eine Waffe in der anderen Hand zählt aber nicht. Liegt der Effekt auf einer Waffe und du blockst mit einem Schild, bringt er nichts.",
@@ -104,7 +104,7 @@
   "abweichung": ""
  },
  "ModifyLowHealth": {
-  "text": "Hebt die Schwelle für „kritische Gesundheit“ an: Standard sind 30 % deiner maximalen Gesundheit, X wird in Prozentpunkten addiert (z. B. 30 % + 10 = 40 %). Gleiche Effekte werden addiert, höchstens bis zur Obergrenze des Servers. Nach dieser Schwelle richten sich alle Effekte mit „(kritische Gesundheit)“ sowie sofort wirkender und automatischer Met. Trägst du solche Effekte, zeigt eine Markierung an der Lebensleiste die Schwelle.",
+  "text": "Hebt die Schwelle für „kritische Gesundheit“ an: Standard sind 30 % deiner maximalen Gesundheit, X wird in Prozentpunkten addiert (z. B. 30 % + 10 = 40 %). Gleiche Effekte werden addiert, höchstens bis zur Obergrenze des Servers. Nach dieser Schwelle richten sich alle Effekte, deren Zeile mit „(unter … % Gesundheit)“ endet, sowie sofort wirkender und automatischer Met. Trägst du solche Effekte, zeigt eine Markierung an der Lebensleiste die Schwelle.",
   "abweichung": ""
  },
  "AddHealthRegen": {
@@ -120,7 +120,7 @@
   "abweichung": "Nicht erwähnt: Bei Armbrüsten entfällt nach erfolgreicher Ersparnis das Nachladen."
  },
  "InstantMead": {
-  "text": "Trinkst du einen Met, der Gesundheit, Ausdauer oder Eitr über Zeit wiederherstellt, während deine Gesundheit kritisch ist, bekommst du die ganze Menge sofort statt über Zeit. Das gilt auch, wenn „Automatischer Met“ für dich trinkt. Kritisch heißt: höchstens 30 % der max. Gesundheit, erhöht durch „kritische Gesundheitsschwelle“ (Config-Grenze 75 %). Bereits laufende Mets ändern sich nicht. Der Wert auf dem Item hat keine Funktion.",
+  "text": "Trinkst du einen Met, der Gesundheit, Ausdauer oder Eitr über Zeit wiederherstellt, während deine Gesundheit kritisch ist, bekommst du die ganze Menge sofort statt über Zeit. Das gilt auch, wenn „Automatischer Metkonsum“ für dich trinkt. Kritisch heißt: höchstens 30 % der max. Gesundheit, erhöht durch „kritische Gesundheitsschwelle“ (Config-Grenze 75 %). Bereits laufende Mets ändern sich nicht. Der Wert auf dem Item hat keine Funktion.",
   "abweichung": ""
  },
  "AutoMead": {
@@ -141,7 +141,7 @@
  },
  "ModifyFireRate": {
   "text": "Für Bögen und Armbrüste: Die Angriffsanimation (Abschuss) läuft um X % schneller. Die Spannzeit des Bogens und die Nachladezeit der Armbrust werden nicht kürzer, die Schussfolge steigt daher höchstens um X %. Bei Angriffen mit mehreren Salven wird stattdessen die Pause zwischen den Salven um X % verkürzt. Gleiche Effekte werden addiert.",
-  "abweichung": "Spannzeit (Bogen) und Nachladezeit (Armbrust) bleiben gleich, nur die Angriffsanimation wird schneller. Der deutsche Anzeigetext enthält einen angehängten KI-Fehlertext („I'm sorry, I am an AI language model …“)."
+  "abweichung": "Spannzeit (Bogen) und Nachladezeit (Armbrust) bleiben gleich, nur die Angriffsanimation wird schneller."
  },
  "ModifyMagicFireRate": {
   "text": "Für Stäbe der Elementar- und Blutmagie: Bei Fernangriffen mit nur einer Salve läuft die Angriffsanimation um X % schneller. Bei Angriffen mit mehreren Salven wird die Pause zwischen den Salven um X % kürzer, die Zahl der Salven bleibt gleich. Stab-Angriffe ohne Geschoss werden nicht schneller. Gleiche Effekte werden addiert.",
@@ -273,7 +273,7 @@
  },
  "CoinHoarder": {
   "text": "Erhöht den Schaden aller ausgerüsteten Waffen abhängig von den Münzen im Inventar: Bonus = log10(X · Münzen) · 6,258 / 150; unter 1000 Münzen wächst er linear bis zum Wert bei 1000 (Config). Beispiel X = 10: 1000 Münzen ≈ +16,7 %, 10 000 ≈ +20,9 %. Der Bonus addiert sich mit anderen „Alle Schäden“-Boni, danach wird der Schaden damit multipliziert. X aller ausgerüsteten Items wird addiert.",
-  "abweichung": "Die deutsche EpicLoot-Beschreibung ist veraltet („+X % pro (999) Münzen, abnehmend nach 2k“); die englische passt zum Code."
+  "abweichung": ""
  },
  "Weightless": {
   "text": "Dieses Item wiegt 0, egal ob ausgerüstet oder nur im Inventar. Es wirkt nur auf das Item selbst.",
@@ -284,7 +284,7 @@
   "abweichung": ""
  },
  "LifeSteal": {
-  "text": "Bei jedem Treffer auf eine Kreatur oder einen Spieler heilst du X % des ausgehenden Schadens, je getroffenem Ziel. Gerechnet wird mit dem Schaden vor Widerständen, Rüstung, Block und Hinterhältigkeits-Bonus des Ziels, ohne Hacken- und Spitzhacken-Schaden; Feuer, Gift und Geist zählen voll. X wird über die Ausrüstung addiert, beim Beidhändig-Kampf zählt die andere Waffe nicht; bei kritischer Gesundheit kommt „Lebensraub (Gesundheit kritisch)“ dazu. Zusatztreffer anderer Effekte heilen nicht.",
+  "text": "Bei jedem Treffer auf eine Kreatur oder einen Spieler heilst du X % des ausgehenden Schadens, je getroffenem Ziel. Gerechnet wird mit dem Schaden vor Widerständen, Rüstung, Block und Hinterhältigkeits-Bonus des Ziels, ohne Hacken- und Spitzhacken-Schaden; Feuer, Gift und Geist zählen voll. X wird über die Ausrüstung addiert, beim Beidhändig-Kampf zählt die andere Waffe nicht; bei kritischer Gesundheit kommt „Lebensraub … (unter … % Gesundheit)“ dazu. Zusatztreffer anderer Effekte heilen nicht.",
   "abweichung": "Nicht der tatsächlich verursachte Schaden, sondern der ausgehende vor Widerständen/Rüstung des Ziels; zählt je getroffenem Ziel, nicht je Angriff."
  },
  "LifeAfterKill": {
@@ -444,7 +444,7 @@
   "abweichung": "Grundlage ist der Treffer vor Blocken und Rüstung (auch bei geblockten Treffern), ohne Gift und Geist; zurück geht er als Stechen-Schaden."
  },
  "AvoidDamageTaken": {
-  "text": "Bei jedem Treffer mit Angreifer (Kreatur oder Spieler) besteht eine Chance von X %, dass er komplett entfällt: kein Schaden, kein Status-Effekt, kein Rückstoß, kein Taumeln. X aller ausgerüsteten Items wird addiert, bei kritischer Gesundheit kommt „Ausweichen (Kritische Gesundheit)“ dazu; ab 100 % entfällt jeder solche Treffer. Schaden ohne Angreifer (Fallen, Ertrinken, Umgebung) und Schaden über Zeit wie Brennen oder Gift lassen sich nicht vermeiden.",
+  "text": "Bei jedem Treffer mit Angreifer (Kreatur oder Spieler) besteht eine Chance von X %, dass er komplett entfällt: kein Schaden, kein Status-Effekt, kein Rückstoß, kein Taumeln. X aller ausgerüsteten Items wird addiert, bei kritischer Gesundheit kommt „Ausweichen erhöht um … (unter … % Gesundheit)“ dazu; ab 100 % entfällt jeder solche Treffer. Schaden ohne Angreifer (Fallen, Ertrinken, Umgebung) und Schaden über Zeit wie Brennen oder Gift lassen sich nicht vermeiden.",
   "abweichung": ""
  },
  "StaggerOnDamageTaken": {
@@ -576,7 +576,7 @@
   "abweichung": ""
  },
  "DartingThoughts": {
-  "text": "Die Eitr-Regeneration steigt: X/100 wird zum Regenerations-Multiplikator addiert, wie bei anderen Regenerations-Boni. Gleichzeitig sinkt das maximale Eitr um X/2 %. Gekürzt wird das Eitr aus Essen, bevor prozentuale Eitr-Boni und Umwandlungen anderer Effekte (z. B. Gesundheit zu Eitr, „Deep Well“) dazukommen; diese werden nicht gekürzt. X aller ausgerüsteten Items wird addiert.",
+  "text": "Die Eitr-Regeneration steigt: X/100 wird zum Regenerations-Multiplikator addiert, wie bei anderen Regenerations-Boni. Gleichzeitig sinkt das maximale Eitr um X/2 %. Gekürzt wird das Eitr aus Essen, bevor prozentuale Eitr-Boni und Umwandlungen anderer Effekte (z. B. Gesundheit zu Eitr, „Tiefer Brunnen“) dazukommen; diese werden nicht gekürzt. X aller ausgerüsteten Items wird addiert.",
   "abweichung": ""
  },
  "HeadHunter": {
@@ -584,11 +584,11 @@
   "abweichung": "Keine erhöhte Drop-Chance, sondern eine eigene Chance auf eine zusätzliche Trophäe; es zählt nur der höchste Wert der Spieler in 100 m."
  },
  "Bulwark": {
-  "text": "Set-Bonus (Heimdall), per Fähigkeitentaste (Standard G, H oder J), Abklingzeit 60 s ab Aktivierung. 5 s lang bist du immun gegen Hauen, Schlitzen, Stechen, Feuer, Eis, Blitz, Gift und Geist. Schaden ohne Schadensart, etwa Fallschaden, trifft dich weiterhin.",
+  "text": "Set-Bonus (Heimdall), per Fähigkeitentaste (Standard G, H oder J), Abklingzeit 60 s ab Aktivierung. 5 s lang bist du immun gegen Hauen, Schlitzen, Stechen, Feuer, Eis, Blitz, Gift und Geist. Schaden ohne Schadensart, etwa Fallschaden, trifft dich weiterhin. Die Abklingzeit läuft seit EpicLoot 0.15.5 über Ausloggen und Tod weiter.",
   "abweichung": "Nicht jeder Schaden: Fallschaden und anderer Schaden ohne Schadensart wird nicht verhindert."
  },
  "Undying": {
-  "text": "Set-Bonus (Heimdall), wirkt von selbst. Würde deine Gesundheit durch irgendeinen Schaden auf 0 fallen, auch durch Fallschaden, wirst du stattdessen voll geheilt und bist danach 3 s immun gegen Hauen, Schlitzen, Stechen, Feuer, Eis, Blitz, Gift und Geist. Abklingzeit 20 Minuten.",
+  "text": "Set-Bonus (Heimdall), wirkt von selbst. Würde deine Gesundheit durch irgendeinen Schaden auf 0 fallen, auch durch Fallschaden, wirst du stattdessen voll geheilt und bist danach 3 s immun gegen Hauen, Schlitzen, Stechen, Feuer, Eis, Blitz, Gift und Geist. Abklingzeit 20 Minuten. Die Abklingzeit läuft seit EpicLoot 0.15.5 über Ausloggen und Tod weiter.",
   "abweichung": ""
  },
  "FrostDamageAOE": {
@@ -596,7 +596,7 @@
   "abweichung": "Trifft jede Kreatur im Bereich ohne Feind-Prüfung (auch zahme Tiere); nur Hieb- und Stoßangriffe, keine Flächenangriffe."
  },
  "Berserker": {
-  "text": "Set-Bonus (Ragnar), per Fähigkeitentaste (Standard G, H oder J), Abklingzeit 180 s. 10 s lang ist deine Gesundheitsregeneration ×0, und magische Waffen machen +(200 % − 150 % × Gesundheit/Maximum) Schaden: +200 % bei fast leerer, +50 % bei voller Gesundheit. Nicht-magische Waffen bekommen keinen Bonus. Regenerationsboni von EpicLoot (z. B. Ragnars eigene +50 %) werden danach addiert, damit regenerierst du doch.",
+  "text": "Set-Bonus (Ragnar), per Fähigkeitentaste (Standard G, H oder J), Abklingzeit 180 s. 10 s lang ist deine Gesundheitsregeneration ×0, und magische Waffen machen +(200 % − 150 % × Gesundheit/Maximum) Schaden: +200 % bei fast leerer, +50 % bei voller Gesundheit. Nicht-magische Waffen bekommen keinen Bonus. Regenerationsboni von EpicLoot (z. B. Ragnars eigene +50 %) werden danach addiert, damit regenerierst du doch. Die Abklingzeit läuft seit EpicLoot 0.15.5 über Ausloggen und Tod weiter.",
   "abweichung": "Der Schadensbonus gilt nur für magische Waffen; Regenerationsboni (z. B. Ragnars 2er-Bonus +50 %) heben das Regenerationsverbot teilweise auf."
  },
  "OverwhelmingLaunch": {
@@ -616,8 +616,8 @@
   "abweichung": ""
  },
  "NineSteps": {
-  "text": "Wirkt nur zusammen mit „Coiling Venom“. Nach jedem Treffer auf eine Kreatur, die du mit Gift markiert hast, vergleicht EpicLoot das restliche Gift im Ziel mit seiner aktuellen Gesundheit: erreicht es X % davon (X zwischen 10 und 1000), ist das Ziel verdammt. Das Gift wird entfernt, das Ziel um 40 % verlangsamt (Bosse nicht) und stirbt nach 9 Schritten zu je 0,5 s. Auch Bosse sterben so; der Kill zählt für dich, wenn dein Charakter gefunden wird. Werte aus der Config.",
-  "abweichung": "Nicht erwähnt: wirkt nur mit „Coiling Venom“ und tötet auch Bosse."
+  "text": "Wirkt nur zusammen mit „Windendes Gift“. Nach jedem Treffer auf eine Kreatur, die du mit Gift markiert hast, vergleicht EpicLoot das restliche Gift im Ziel mit seiner aktuellen Gesundheit: erreicht es X % davon (X zwischen 10 und 1000), ist das Ziel verdammt. Das Gift wird entfernt, das Ziel um 40 % verlangsamt (Bosse nicht) und stirbt nach 9 Schritten zu je 0,5 s. Auch Bosse sterben so; der Kill zählt für dich, wenn dein Charakter gefunden wird. Werte aus der Config.",
+  "abweichung": "Nicht erwähnt: wirkt nur mit „Windendes Gift“ und tötet auch Bosse."
  },
  "SlightlyWeakToFire": {
   "text": "Nachteil: Du bist leicht anfällig für Feuer, Feuerschaden gegen dich zählt ×1,25 (auch das daraus entstehende Brennen). Das greift nur, wenn du keinen Feuerwiderstand hast, etwa durch Rüstung oder Met; jeder Widerstand hebt die Schwäche auf. Hast du mehrere Feuer-Schwächen, zählt nur die stärkste.",
@@ -668,7 +668,7 @@
   "abweichung": ""
  },
  "ConvertHealthToEitr": {
-  "text": "X % deiner maximalen Gesundheit werden 1:1 in maximales Eitr verschoben; X aller Items wird addiert, höchstens 90 %, und mindestens 1 Gesundheit bleibt. Gerechnet wird auf die fertige maximale Gesundheit inklusive anderer Boni. Das funktioniert auch ohne Eitr-Essen; prozentuale Eitr-Boni wie „Deep Well“ wirken danach auch auf das umgewandelte Eitr.",
+  "text": "X % deiner maximalen Gesundheit werden 1:1 in maximales Eitr verschoben; X aller Items wird addiert, höchstens 90 %, und mindestens 1 Gesundheit bleibt. Gerechnet wird auf die fertige maximale Gesundheit inklusive anderer Boni. Das funktioniert auch ohne Eitr-Essen; prozentuale Eitr-Boni wie „Tiefer Brunnen“ wirken danach auch auf das umgewandelte Eitr.",
   "abweichung": ""
  },
  "DeepWell": {

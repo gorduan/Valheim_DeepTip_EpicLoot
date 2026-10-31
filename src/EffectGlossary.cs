@@ -23,6 +23,8 @@ internal static class EffectGlossary
 	private static readonly Regex Placeholder = new(@"\{[^}]*\}");
 	private static readonly Regex Tags = new("<[^>]+>");
 	private static readonly Regex Spaces = new(@"\s+");
+	private static readonly Regex Brackets = new(@"\([^)]*\)");
+	private static readonly char[] NameTrim = { ' ', '+', '-', '%', ':', '(', ')', '[', ']', '/', ',', '.', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 	private static readonly Regex Markup = new(@"\*\*|\[\[(?:[^\]|]+\|)?([^\]]+)\]\]");
 
 	private static Dictionary<string, object?>? epicLootDe;
@@ -69,6 +71,8 @@ internal static class EffectGlossary
 	private static string Build(Lang lang, List<MagicItemEffectDefinition> defs, Dictionary<string, object?> epicLoot, Dictionary<string, object?> texts)
 	{
 		Dictionary<string, string> titles = defs.GroupBy(d => d.Type).ToDictionary(g => g.Key, g => Title(Display(g.First(), epicLoot)));
+		Dictionary<string, List<string>> candidates = defs.GroupBy(d => d.Type).ToDictionary(g => g.Key, g => Aliases(g.First(), Display(g.First(), epicLoot), epicLoot));
+		Dictionary<string, string> owners = Owners(candidates);
 		StringBuilder json = new("{\n\"$locale\": ");
 		json.Append(Json.Quote(lang.Code));
 		List<string> see = new[] { "epicloot.rarity", "epicloot.rollrange", "epicloot.stars" }.Where(DeepTip.Api.Has).ToList();
@@ -100,7 +104,7 @@ internal static class EffectGlossary
 			json.Append(",\n").Append(Json.Quote(Key(def.Type))).Append(": {\"title\": ").Append(Json.Quote(titles[def.Type]));
 			json.Append(", \"short\": ").Append(Json.Quote(Short(main, titles[def.Type])));
 			json.Append(", \"body\": ").Append(Json.Quote(string.Join("\n\n", body)));
-			List<string> aliases = Aliases(def, display, epicLoot);
+			List<string> aliases = candidates[def.Type].Where(a => owners.TryGetValue(a, out string? owner) && owner == def.Type).ToList();
 			if (aliases.Count > 0)
 			{
 				json.Append(", \"aliases\": [").Append(string.Join(", ", aliases.Select(Json.Quote))).Append(']');
@@ -145,20 +149,19 @@ internal static class EffectGlossary
 	}
 
 	/// <summary>Rich text and line breaks out, single spaces.</summary>
-	private static string Plain(string text) => Spaces.Replace(Tags.Replace(text, ""), " ").Trim();
+	internal static string Plain(string text) => Spaces.Replace(Tags.Replace(text, ""), " ").Trim();
 
 	/// <summary>„Duellist +X%“: the value placeholder becomes X.</summary>
 	private static string Title(string display) => Spaces.Replace(Placeholder.Replace(Plain(display), "X"), " ").Trim();
 
 	/// <summary>
-	/// Words that DeepTip links in tooltips: the longest part of the effect line without its value (e.g. „Duellist“), and
-	/// the name parts EpicLoot builds item names from (e.g. „Duellanten …“, „… des Duellierens“).
+	/// Words that DeepTip links outside the effect lines (those link directly, see TooltipLinks): the effect's name in its
+	/// line (e.g. „Duellist“), and the name parts EpicLoot builds item names from (e.g. „Duellanten …“, „… des Duellierens“).
 	/// </summary>
 	private static List<string> Aliases(MagicItemEffectDefinition def, string display, Dictionary<string, object?> table)
 	{
 		List<string> aliases = new();
-		string longest = Placeholder.Split(Plain(display)).Select(p => p.Trim(' ', '+', '-', '%', ':', '(', ')', '[', ']', '/', ',', '.', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9')).OrderByDescending(p => p.Length).FirstOrDefault() ?? "";
-		Add(aliases, longest);
+		Add(aliases, Name(display));
 		string display0 = DisplayKey(def);
 		string stem = display0.EndsWith("_display") ? display0.Substring(0, display0.Length - "_display".Length) : display0;
 		for (int i = 1; i <= 9; i++)
@@ -167,6 +170,41 @@ internal static class EffectGlossary
 			Add(aliases, Lookup(table, $"{stem}_suffix{i}"));
 		}
 		return aliases;
+	}
+
+	/// <summary>
+	/// The effect's name in its line: the text before the value or a colon, without parts in brackets („Rüstung +X%
+	/// (unter Y% Gesundheit)“ → „Rüstung“, „Frostkegel: +X% Waffenschaden“ → „Frostkegel“). A line that starts with its
+	/// value („+X% Feuerschaden“) gives its longest part without the value. EpicLoot 0.15.5's German lines made the old
+	/// rule (always the longest part) pick words like „Sekunden“ or „Gesundheit“.
+	/// </summary>
+	private static string Name(string display)
+	{
+		string plain = Brackets.Replace(Plain(display), " ");
+		int value = plain.IndexOf('{');
+		string name = value >= 0 ? plain.Substring(0, value) : plain;
+		int colon = name.IndexOf(':');
+		name = (colon > 0 ? name.Substring(0, colon) : name).Trim(NameTrim);
+		return name.Length > 0 ? name : Placeholder.Split(plain).Select(p => p.Trim(NameTrim)).OrderByDescending(p => p.Length).FirstOrDefault() ?? "";
+	}
+
+	/// <summary>
+	/// Which effect each link word belongs to. A word several effects share links nowhere („Geschwindigkeit“), except a word
+	/// only an effect and its low-health variant share, which goes to the plain effect („Lebensraub“ → LifeSteal).
+	/// </summary>
+	private static Dictionary<string, string> Owners(Dictionary<string, List<string>> candidates)
+	{
+		Dictionary<string, string> owners = new(StringComparer.OrdinalIgnoreCase);
+		foreach (IGrouping<string, string> word in candidates.SelectMany(c => c.Value.Select(alias => (alias, type: c.Key))).GroupBy(x => x.alias, x => x.type, StringComparer.OrdinalIgnoreCase))
+		{
+			List<string> types = word.Distinct().ToList();
+			string? plain = types.Count == 2 ? types.FirstOrDefault(t => types.Contains(t + "LowHealth")) : null;
+			if (types.Count == 1 || plain != null)
+			{
+				owners[word.Key] = plain ?? types[0];
+			}
+		}
+		return owners;
 	}
 
 	private static void Add(List<string> aliases, string? alias)
