@@ -22,7 +22,8 @@ Languages: English and German. Other languages fall back to English.
 ## Requirements
 
 - [DeepTip](https://thunderstore.io/c/valheim/p/Gorduan/DeepTip/) 1.0.0 or newer
-- [EpicLoot](https://thunderstore.io/c/valheim/p/RandyKnapp/EpicLoot/) 0.15.5
+- [EpicLoot](https://thunderstore.io/c/valheim/p/RandyKnapp/EpicLoot/) 0.15.4 or newer (the explanations follow 0.15.5, which
+  changed no effect, only names and texts)
 
 Client side only; the server does not need it.
 

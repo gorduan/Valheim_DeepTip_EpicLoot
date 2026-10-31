@@ -63,7 +63,7 @@ $manifest = [ordered]@{
     version_number = $version
     website_url = 'https://github.com/gorduan/Valheim_DeepTip_EpicLoot'
     description = $description
-    dependencies = @('denikson-BepInExPack_Valheim-5.4.2350', 'Gorduan-DeepTip-1.0.0', 'RandyKnapp-EpicLoot-0.15.5')
+    dependencies = @('denikson-BepInExPack_Valheim-5.4.2350', 'Gorduan-DeepTip-1.0.0', 'RandyKnapp-EpicLoot-0.15.4')
 }
 [IO.File]::WriteAllText((Join-Path $folder 'manifest.json'), ($manifest | ConvertTo-Json -Depth 4), $utf8)
 
