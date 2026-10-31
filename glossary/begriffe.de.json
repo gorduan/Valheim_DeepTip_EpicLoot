@@ -30,7 +30,7 @@
     "aliases": []
   },
   "epicloot.stars": {
-    "title": "Seltenheits-Sterne ★",
+    "title": "Seltenheits-Sterne ★",
     "short": "★ bis ★★★ hinter einem Effekt: Dieser Effekt wird selten ausgewürfelt. Mit der Höhe seines Werts hat das nichts zu tun.",
     "body": "Die Sterne bewerten nicht den gewürfelten Wert, sondern wie oft der Effekt überhaupt gewählt wird. Epic Loot vergleicht dazu das Auswahlgewicht des Effekts mit dem mittleren Gewicht (Median) aller würfelbaren Effekte: Das kleinste Gewicht kann 3 Sterne bekommen, das zweitkleinste 2, das drittkleinste 1, aber nur, wenn es unter 6,25 %, 12,5 % bzw. 35 % des Medians liegt, sonst entsprechend weniger. Ein Stern ist hellblau, zwei sind violett, drei golden; dieselben Sterne stehen auch in den Effektlisten am [[epicloot.table|Verzauberungstisch]]. Mit den Effekten dieses Servers tragen z. B. Duellist und Schnellziehen einen Stern, Unzerstörbar, Wasserdicht, Luftsprung, Federfall und Henker zwei und nur Freies Bauen drei. Ob und wie die Sterne erscheinen, stellt jeder Spieler in seiner Epic-Loot-Konfiguration unter „Effect Rarity Flare“ ein (Off, Static, Animated).",
     "aliases": []

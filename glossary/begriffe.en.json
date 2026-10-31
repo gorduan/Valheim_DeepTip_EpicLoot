@@ -29,7 +29,7 @@
     "aliases": []
   },
   "epicloot.stars": {
-    "title": "Rarity stars ★",
+    "title": "Rarity stars ★",
     "short": "★ to ★★★ after an effect: this effect rarely rolls. It says nothing about how high its value is.",
     "body": "The stars do not rate the rolled value but how often the effect is picked at all. Epic Loot compares the effect's selection weight with the median weight of all rollable effects: the lowest weight can get 3 stars, the second lowest 2, the third lowest 1, but only if it is below 6.25 %, 12.5 % or 35 % of the median, otherwise fewer. One star is light blue, two are purple, three are gold; the same stars appear in the effect lists at the [[epicloot.table|enchanting table]]. With this server's effects, for example Duelist and Quick Draw carry one star, Indestructible, Waterproof, Air Jump, Feather Fall and Executioner two, and only Free Build three. Each player chooses in their own Epic Loot config under “Effect Rarity Flare” whether and how the stars show (Off, Static, Animated).",
     "aliases": []
