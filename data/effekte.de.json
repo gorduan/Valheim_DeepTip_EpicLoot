@@ -1,0 +1,726 @@
+{
+ "DvergerCirclet": {
+  "text": "Reine Kennzeichnung: EpicLoot führt den Dverger-Reif als magisches Item mit diesem Effekt, hat dafür aber keinen eigenen Code. Das Licht stammt allein vom Valheim-Gegenstand selbst.",
+  "abweichung": ""
+ },
+ "Megingjord": {
+  "text": "Reine Kennzeichnung: EpicLoot führt Megingiard als magisches Item mit diesem Effekt, hat dafür aber keinen eigenen Code. Das zusätzliche Tragegewicht (laut Anzeige +150) kommt allein vom Valheim-Gürtel.",
+  "abweichung": ""
+ },
+ "Wishbone": {
+  "text": "Kennzeichnet die Wünschelrute als magisches Item; der Effekt selbst hat keinen eigenen Code, das Aufspüren ist die normale Valheim-Funktion. Einzige Änderung durch EpicLoot: Die Wünschelrute reagiert nicht auf Schatztruhen aus Haldors Karten und Kopfgeld-Ziele; die findet Andvaranaut.",
+  "abweichung": ""
+ },
+ "Andvaranaut": {
+  "text": "Kennzeichnet den Ring Andvaranaut; der Effekt selbst hat keinen eigenen Code. Beim Tragen gibt der Ring wie die Wünschelrute Signale, je näher desto schneller, aber nur für Schatztruhen aus Haldors Karten und für Kopfgeld-Ziele, und erst innerhalb von 20 m (Config „Andvaranaut Range“).",
+  "abweichung": "Der Item-Tooltip nennt nur Haldors Schatztruhen; laut Code findet der Ring auch Kopfgeld-Ziele."
+ },
+ "ChainLightning": {
+  "text": "Bei jedem Treffer mit dieser Waffe (Nah-, Fern- und Magiewaffen, nicht Spitzhacken) erzeugt EpicLoot mit fester Chance von 15 % am Ziel das Kettenblitz-Objekt des Spiels, das auf weitere Ziele überspringen kann. X ist kein Bonus auf den Waffenschaden: der Blitzschaden des ersten Einschlags wird mit X/100 multipliziert (X aller ausgerüsteten Items addiert). Grundschaden und Sprünge stammen aus dem Spiel-Prefab und sind im Code nicht sichtbar. Kettenblitz-Treffer lösen keine weiteren Effekte aus.",
+  "abweichung": "„+X % Schaden“: X multipliziert nur den Blitzschaden des Kettenblitz-Objekts (×X/100) und ist kein Bonus auf den Waffenschaden; Werte unter 100 senken den Grundblitz sogar."
+ },
+ "DodgeBuff": {
+  "text": "Weichst du einem Nahkampf- oder Flächenangriff eines Gegners perfekt aus (der Treffer landet in der unverwundbaren Phase deiner Ausweichrolle), erhältst du 10 s lang den Buff „Adrenalinschub“. Solange er läuft, steigt der Schaden aller angelegten Waffen um X % (alle Schadensarten, auch bei nicht magischen Waffen); X wird zu anderen prozentualen Gesamtschaden-Boni addiert. Die Werte mehrerer Items mit dem Effekt werden summiert. Erneut auslösen lässt sich der Buff erst nach Ablauf; Projektile lösen ihn nie aus.",
+  "abweichung": ""
+ },
+ "ModifyDamage": {
+  "text": "Multipliziert den gesamten Schaden dieser Waffe (alle Schadensarten, auch Hacken und Spitzhacke) mit (1 + X %), nachdem Zusatzschäden wie „Feuerschaden verleihen“ eingerechnet sind. Andere pauschale Schadensboni wie Zauberklinge oder „Alle Schäden“ bei kritischer Gesundheit werden zu X addiert, nicht multipliziert. Bei Bögen und Armbrüsten steigt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. Set-Boni zählen mit, eine Waffe in der anderen Hand nicht.",
+  "abweichung": "Bei Bögen und Armbrüsten wird der Pfeil- bzw. Bolzenschaden nicht erhöht, obwohl die Beschreibung den gesamten Schaden der Waffe nennt."
+ },
+ "ModifyPhysicalDamage": {
+  "text": "Multipliziert Hauen-, Schlitzen-, Stechen-, Hacken- und Spitzhackenschaden dieser Waffe mit (1 + X %), einschließlich Zusatzschäden wie „Füge stumpfe Schäden hinzu“. Äxte fällen damit auch Bäume schneller, Spitzhacken bauen schneller ab. Bei Bögen und Armbrüsten steigt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. „Alle Schäden“ wirkt danach zusätzlich (multiplikativ).",
+  "abweichung": "Bei Bögen und Armbrüsten wird der Pfeil- bzw. Bolzenschaden nicht erhöht, obwohl die Beschreibung den Schaden der Waffe nennt."
+ },
+ "ModifyElementalDamage": {
+  "text": "Multipliziert Feuer-, Frost-, Blitz-, Gift- und Geistschaden dieser Waffe mit (1 + X %), einschließlich Zusatzschäden wie „Feuerschaden verleihen“. Ohne Elementarschaden an der Waffe bringt der Effekt nichts. Bei Bögen und Armbrüsten steigt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. „Alle Schäden“ wirkt danach zusätzlich (multiplikativ).",
+  "abweichung": "Bei Bögen und Armbrüsten wird der Elementarschaden von Pfeilen bzw. Bolzen nicht erhöht."
+ },
+ "ModifyDurability": {
+  "text": "Die maximale Haltbarkeit dieses Items wird mit (1 + X %) multipliziert (Qualitätsstufe eingerechnet). Es zählt nur der Wert auf dem Item selbst, und er gilt immer, auch wenn das Item nicht angelegt ist. Beim Reparieren wird bis zum erhöhten Maximum aufgefüllt.",
+  "abweichung": ""
+ },
+ "ReduceWeight": {
+  "text": "Das Gewicht genau dieses Items sinkt um X % (Gewicht × (1 − X/100)), auch wenn es nur im Inventar liegt. Werte anderer Items wirken nicht darauf. Hat dasselbe Item auch Gewichtslos, gilt nur das (Gewicht 0).",
+  "abweichung": ""
+ },
+ "RemoveSpeedPenalty": {
+  "text": "Hebt den negativen Bewegungstempo-Wert dieses Items auf, solange es angelegt ist; Mali anderer Items bleiben. Damit entfallen auch die höheren Ausdauerkosten fürs Sprinten, Springen und Ausweichen, die dieser Malus sonst verursacht, ebenso der Schutz vor Rückstoß bei Treffern, den er sonst gibt. Das Gewicht des Items ändert sich nicht.",
+  "abweichung": "Der deutsche Name „Gewichtsloser Gegenstand“ ist irreführend: Das Gewicht bleibt, nur der Tempo-Malus entfällt."
+ },
+ "ModifyBlockPower": {
+  "text": "Erhöht die Blockrüstung des Items, mit dem du gerade blockst (Schild, sonst die Waffe), um X % ihres Grundwerts (Qualitätsstufe eingerechnet). Fertigkeit Blocken und Parierbonus wirken danach wie gewohnt obendrauf. Gleiche Effekte auf anderer Ausrüstung und aus Set-Boni werden addiert, eine Waffe in der anderen Hand zählt aber nicht. Liegt der Effekt auf einer Waffe und du blockst mit einem Schild, bringt er nichts.",
+  "abweichung": ""
+ },
+ "ModifyBlockForce": {
+  "text": "Erhöht die Blockmacht (EpicLoot: „Blockkraft“) des Schildes, mit dem du blockst, um X %; das ist der Rückstoß, den ein Nahkampf-Angreifer bei deinem erfolgreichen Block erhält, nicht die Blockrüstung. Gezählt wird die Summe auf dem Schild und der übrigen Ausrüstung, nicht auf der Waffe in der anderen Hand.",
+  "abweichung": ""
+ },
+ "ModifyParry": {
+  "text": "Nur wenn du parierst (Block im Parierfenster), steigen Blockrüstung und Blockmacht (wie weit der Angreifer zurückgestoßen wird) des blockenden Items um X % ihres Grundwerts. Das wird zu anderen Boni auf diese Werte addiert; Fertigkeit Blocken und Parierbonus wirken danach wie gewohnt. Der Parierbonus selbst bleibt gleich, der Tooltip rechnet die Erhöhung nur in einen Parierbonus um. Set-Boni zählen mit, eine Waffe in der anderen Hand nicht.",
+  "abweichung": "Beschreibung nennt Blockrüstung, Blockmacht und Parierbonus als drei Erhöhungen; der Code erhöht beim Parieren nur Blockrüstung und Blockmacht, der Parierbonus-Multiplikator bleibt gleich (Tooltip rechnet nur um, keine doppelte Wirkung)."
+ },
+ "ModifyArmor": {
+  "text": "Der Rüstungswert genau dieses Rüstungsteils (inklusive Qualitätsstufe) wird mit 1 + X/100 multipliziert. Andere Teile profitieren nicht; nur Set-Boni mit diesem Effekt erhöhen alle angelegten Teile.",
+  "abweichung": ""
+ },
+ "ModifyBackstab": {
+  "text": "Der Hinterhältigkeits-Multiplikator der Waffe (z. B. ×3 bei Bögen) wird bei deinen Angriffen mit 1 + X/100 multipliziert. Hinterhältigkeit wirkt nur gegen Gegner, die noch nicht alarmiert sind, und pro Gegner höchstens alle 300 s. Gezählt wird die Summe auf der Waffe und der übrigen Ausrüstung, nicht auf einer zweiten Waffe in der anderen Hand.",
+  "abweichung": ""
+ },
+ "IncreaseMiningDrop": {
+  "text": "Zerstörst du mit der Spitzhacke ein Stück eines Erzvorkommens oder Felsens (oder einen Stein, den nur Spitzhacken beschädigen), würfelt dessen Beutetabelle X-mal zusätzlich; jeder Wurf bringt wie ein normaler Drop z. B. einen Stapel Erz oder Stein. Gezählt wird die ganze Zahl der Summe aus Waffe und übriger Ausrüstung. Der Bonus gilt nur, wenn dein Schlag das Stück zerstört.",
+  "abweichung": "X ist kein Gesamtbonus, sondern X zusätzliche Beutewürfe pro zerstörtem Stück; Vorkommen mit vielen Stücken liefern daher weit mehr als X Extra-Items."
+ },
+ "IncreaseTreeDrop": {
+  "text": "Fällst du mit der Axt einen Baum oder zerstörst einen Stammabschnitt oder ein anderes als Baum geltendes Objekt, würfelt dessen Beutetabelle X-mal zusätzlich; jeder Wurf bringt wie ein normaler Drop z. B. einen Stapel Holz. Gezählt wird die ganze Zahl der Summe aus Waffe und übriger Ausrüstung. Der Bonus gilt nur, wenn dein Schlag das Teil zerstört.",
+  "abweichung": "X ist kein Gesamtbonus, sondern X zusätzliche Beutewürfe pro zerstörtem Teil (Baum, jeder Stammabschnitt usw.)."
+ },
+ "IncreaseHealth": {
+  "text": "Erhöht deine maximale Gesundheit um X als festen Wert, zusätzlich zu Grundwert (25) und Nahrung. Werte aller angelegten Items addieren sich; prozentuale Gesundheits-Boni anderer Effekte werden danach berechnet und schließen X mit ein.",
+  "abweichung": ""
+ },
+ "IncreaseHeatResistance": {
+  "text": "Erhöht deinen Hitzewiderstand um X Prozentpunkte; er wird zum Hitzewiderstand deiner Ausrüstung addiert. Hitzewiderstand bremst den Hitzeaufbau an Lava und im Ozean der Aschenlande und senkt den Lava-Hitzeschaden im selben Verhältnis; bei 100 % baut sich keine Hitze mehr auf. Werte aller angelegten Items addieren sich.",
+  "abweichung": ""
+ },
+ "IncreaseStamina": {
+  "text": "Erhöht deine maximale Ausdauer um X als festen Wert, zusätzlich zu Grundwert (50) und Nahrung. Werte aller angelegten Items addieren sich; prozentuale Ausdauer-Boni anderer Effekte werden danach berechnet und schließen X mit ein.",
+  "abweichung": ""
+ },
+ "IncreaseEitr": {
+  "text": "Erhöht dein maximales Eitr um X als festen Wert, zusätzlich zur Nahrung. Werte aller angelegten Items addieren sich; prozentuale Eitr-Boni anderer Effekte werden danach berechnet und schließen X mit ein.",
+  "abweichung": ""
+ },
+ "DecreaseForsakenCooldown": {
+  "text": "Beim Aktivieren deiner Verlassenen-Kraft (Forsaken Power) wird ihre Abklingzeit mit (1 − X/100) multipliziert. X aller ausgerüsteten Items wird addiert; eine Obergrenze gibt es im Code nicht. Die Wirkungsdauer der Kraft bleibt unverändert.",
+  "abweichung": ""
+ },
+ "DecreaseMeadCooldown": {
+  "text": "Gilt nur für Met, der Gesundheit, Ausdauer oder Eitr über Zeit wiederherstellt. Beim Trinken wird die Dauer seines Status-Effekts mit (1 − X/100) multipliziert. Solange dieser Effekt läuft, sperrt Valheim Met derselben Kategorie – das ist die Abklingzeit, sie wird also um X % kürzer. X aller ausgerüsteten Items wird addiert, höchstens 100 %. Widerstands-Met und andere Sorten ohne Wiederherstellung über Zeit bleiben unverändert.",
+  "abweichung": "Wirkt nicht auf alle Mets, nur auf solche mit Wiederherstellung über Zeit (Gesundheit/Ausdauer/Eitr)."
+ },
+ "ModifyHealthRegen": {
+  "text": "Deine Heilung durch Nahrung (alle 10 s) steigt um X %: Der Wert wird zum Regenerationsfaktor addiert (1 + X/100) und erst nach den Spiel-Effekten verrechnet, wird also durch Mali wie „Nass“ nicht verringert. Werte aller angelegten Items addieren sich. Ohne Nahrung mit Heilkraft gibt es nichts zu verstärken.",
+  "abweichung": ""
+ },
+ "ModifyLowHealth": {
+  "text": "Hebt die Schwelle für „kritische Gesundheit“ an: Standard sind 30 % deiner maximalen Gesundheit, X wird in Prozentpunkten addiert (z. B. 30 % + 10 = 40 %). Gleiche Effekte werden addiert, höchstens bis zur Obergrenze des Servers. Nach dieser Schwelle richten sich alle Effekte mit „(kritische Gesundheit)“ sowie sofort wirkender und automatischer Met. Trägst du solche Effekte, zeigt eine Markierung an der Lebensleiste die Schwelle.",
+  "abweichung": ""
+ },
+ "AddHealthRegen": {
+  "text": "Essen heilt dich in Valheim alle 10 Sekunden um seine Regenerationswerte; dieser Effekt addiert pro solchem Tick X Gesundheit. Der Zusatz wird danach mit allen Boni auf die Gesundheitsregeneration multipliziert. Er wirkt nur, solange mindestens ein Essen mit Regeneration aktiv ist. Gleiche Effekte (auch aus Set-Boni) werden addiert.",
+  "abweichung": "Wirkt nur, solange Essen mit Regeneration aktiv ist (ohne Essen keine Heilung); ein Tick sind 10 Sekunden."
+ },
+ "ModifyStaminaRegen": {
+  "text": "Deine Ausdauerregeneration wird um X % schneller; der Wert wird zum Regenerations-Multiplikator addiert, nicht mit anderen Boni multipliziert. Die Wartezeit nach dem Verbrauch bleibt gleich. Gleiche Effekte auf mehreren angelegten Items werden addiert.",
+  "abweichung": ""
+ },
+ "AmmoConservation": {
+  "text": "Bei jedem Schuss, der Munition verbraucht (z. B. Pfeile, Bolzen), besteht eine Chance von X %, dass ein Stück dieser Munition sofort wieder ins Inventar gelegt wird. X aller ausgerüsteten Items wird addiert. Pro Schuss kommt höchstens 1 Stück zurück, auch wenn ein Mehrfachschuss mehr verbraucht hat. Bei Armbrüsten entfällt bei Erfolg zusätzlich das Nachladen: die Waffe ist sofort wieder geladen.",
+  "abweichung": "Nicht erwähnt: Bei Armbrüsten entfällt nach erfolgreicher Ersparnis das Nachladen."
+ },
+ "InstantMead": {
+  "text": "Trinkst du einen Met, der Gesundheit, Ausdauer oder Eitr über Zeit wiederherstellt, während deine Gesundheit kritisch ist, bekommst du die ganze Menge sofort statt über Zeit. Das gilt auch, wenn „Automatischer Met“ für dich trinkt. Kritisch heißt: höchstens 30 % der max. Gesundheit, erhöht durch „kritische Gesundheitsschwelle“ (Config-Grenze 75 %). Bereits laufende Mets ändern sich nicht. Der Wert auf dem Item hat keine Funktion.",
+  "abweichung": ""
+ },
+ "AutoMead": {
+  "text": "Würde ein eingehender Treffer (nach Block, Widerständen und Rüstung) oder ein Brand-, Gift- oder Rauch-Tick deine Gesundheit unter die kritische Schwelle drücken – oder liegt sie schon darunter –, trinkt EpicLoot automatisch einen heilenden Met aus dem Inventar, der nicht in Abklingzeit ist; höchstens einen pro Auslösung. Schwelle: 30 % der max. Gesundheit, erhöht durch „kritische Gesundheitsschwelle“ (Config-Grenze 75 %). Ohne erlittenen Schaden wird nichts getrunken. Der Wert auf dem Item hat keine Funktion.",
+  "abweichung": "Löst nur beim Erleiden von Schaden aus (Treffer oder Brand-/Gift-/Rauch-Tick), nicht von selbst, solange die Gesundheit kritisch ist."
+ },
+ "ModifyNoise": {
+  "text": "Die Geräusche, die du machst, reichen um X % weniger weit; das ist die Entfernung, in der Gegner dich hören können. Gleiche Effekte auf mehreren angelegten Items werden addiert, höchstens 100 %.",
+  "abweichung": ""
+ },
+ "ModifyBuildDistance": {
+  "text": "Die Reichweite, in der du mit Hammer, Hacke oder Pflug etwas platzieren kannst, wird mit (1 + X %) multipliziert. Das gilt nur fürs Platzieren: Abreißen mit dem Hammer nutzt weiter die normale Reichweite. Gleiche Effekte werden addiert; da der Effekt nur auf Werkzeugen vorkommt, muss das Werkzeug in der Hand sein.",
+  "abweichung": "Wirkt nur beim Platzieren, nicht beim Abreißen (und Kopieren) von Bauteilen."
+ },
+ "ModifyPickupRange": {
+  "text": "Der Radius, in dem liegende Gegenstände automatisch zu dir gezogen und eingesammelt werden, wird mit (1 + X %) multipliziert. Gleiche Effekte auf mehreren angelegten Items werden addiert.",
+  "abweichung": ""
+ },
+ "ModifyFireRate": {
+  "text": "Für Bögen und Armbrüste: Die Angriffsanimation (Abschuss) läuft um X % schneller. Die Spannzeit des Bogens und die Nachladezeit der Armbrust werden nicht kürzer, die Schussfolge steigt daher höchstens um X %. Bei Angriffen mit mehreren Salven wird stattdessen die Pause zwischen den Salven um X % verkürzt. Gleiche Effekte werden addiert.",
+  "abweichung": "Spannzeit (Bogen) und Nachladezeit (Armbrust) bleiben gleich, nur die Angriffsanimation wird schneller. Der deutsche Anzeigetext enthält einen angehängten KI-Fehlertext („I'm sorry, I am an AI language model …“)."
+ },
+ "ModifyMagicFireRate": {
+  "text": "Für Stäbe der Elementar- und Blutmagie: Bei Fernangriffen mit nur einer Salve läuft die Angriffsanimation um X % schneller. Bei Angriffen mit mehreren Salven wird die Pause zwischen den Salven um X % kürzer, die Zahl der Salven bleibt gleich. Stab-Angriffe ohne Geschoss werden nicht schneller. Gleiche Effekte werden addiert.",
+  "abweichung": ""
+ },
+ "ModifyProjectileSpeed": {
+  "text": "Alle Projektile, die du abschießt oder wirfst, starten X % schneller: Die Höchstgeschwindigkeit der Waffe wird mit 1 + X/100 multipliziert, ein Geschwindigkeitsbonus der Munition selbst nicht. Bei Bögen gilt das volle Tempo erst bei voll gespanntem Bogen. Beim Enterhaken wird zusätzlich die maximale Seillänge um X % länger. Werte aller angelegten Items addieren sich.",
+  "abweichung": ""
+ },
+ "ModifyEitrRegen": {
+  "text": "Deine Eitr-Regeneration wird um X % schneller; der Wert wird zum Regenerations-Multiplikator addiert, nicht mit anderen Boni multipliziert. Die Wartezeit nach dem Verbrauch und die Pausen beim Angreifen und Ausweichen bleiben. Gleiche Effekte werden addiert.",
+  "abweichung": ""
+ },
+ "AddBluntDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Hauen-Schaden (stumpf) in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Prozent-Boni wie „Alle Schäden“ oder „Physischer Schaden“ verstärken diesen Zusatz danach. Gleiche Effekte aus Set-Boni werden addiert, eine Waffe in der anderen Hand zählt nicht.",
+  "abweichung": ""
+ },
+ "AddSlashingDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Schlitzen-Schaden (Hieb) in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Prozent-Boni wie „Alle Schäden“ verstärken diesen Zusatz danach. Bei Äxten käme derselbe Betrag zusätzlich als Hackschaden dazu, laut Anforderungen kann der Effekt auf Äxten aber nicht vorkommen. Gleiche Effekte aus Set-Boni werden addiert.",
+  "abweichung": "Axt-Teil (gleicher Betrag als Hackschaden) steht im Code, ist aber nach den Anforderungen (nur Schwerter, Messer, Unbewaffnet) nicht erreichbar."
+ },
+ "AddPiercingDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Stechen-Schaden (Stich) in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Bei Bögen und Armbrüsten zählt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. Bei Spitzhacken käme derselbe Betrag als Spitzhackenschaden dazu, laut Anforderungen kann der Effekt dort aber nicht vorkommen. Prozent-Boni wie „Alle Schäden“ verstärken den Zusatz danach.",
+  "abweichung": "Spitzhacken-Teil steht im Code, ist aber nach den Anforderungen (nur Speere, Bögen, Armbrüste, Messer, Stangenwaffen) nicht erreichbar."
+ },
+ "AddFireDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Feuerschaden in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Feuer wirkt wie in Valheim üblich als Brennen über Zeit. Bei Bögen und Armbrüsten zählt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. Boni wie „Alle Schäden“ oder „Elementarschaden“ verstärken den Zusatz danach.",
+  "abweichung": ""
+ },
+ "AddFrostDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Frostschaden (im Tooltip „Eis“) in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Frost trifft sofort und verlangsamt das Ziel wie in Valheim üblich. Bei Bögen und Armbrüsten zählt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. Boni wie „Alle Schäden“ oder „Elementarschaden“ verstärken den Zusatz danach.",
+  "abweichung": ""
+ },
+ "AddLightningDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Blitzschaden in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Blitz trifft sofort und hilft wie in Valheim üblich auch, Gegner ins Taumeln zu bringen. Bei Bögen und Armbrüsten zählt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. Boni wie „Alle Schäden“ oder „Elementarschaden“ verstärken den Zusatz danach.",
+  "abweichung": ""
+ },
+ "AddPoisonDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Giftschaden in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Gift wirkt wie in Valheim üblich als Vergiftung über Zeit. Bei Bögen und Armbrüsten zählt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. Boni wie „Alle Schäden“ oder „Elementarschaden“ verstärken den Zusatz danach.",
+  "abweichung": ""
+ },
+ "AddSpiritDamage": {
+  "text": "Jeder Treffer mit dieser Waffe bekommt zusätzlich Geistschaden in Höhe von X % des Gesamtschadens der Waffe ohne Verzauberungen (alle Schadensarten außer Hacken und Spitzhacke, Qualitätsstufe eingerechnet). Geist wirkt wie in Valheim üblich als Schaden über Zeit. Bei Bögen und Armbrüsten zählt nur der Schaden der Waffe, nicht der des Pfeils oder Bolzens. Boni wie „Alle Schäden“ oder „Elementarschaden“ verstärken den Zusatz danach.",
+  "abweichung": ""
+ },
+ "AddFireResistancePercentage": {
+  "text": "Eingehender Feuerschaden sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen; dadurch fällt auch das Brennen danach schwächer aus. Die Werte aller angelegten Items und „Elementarwiderstand“ werden addiert, höchstens bis zur Obergrenze für Feuer (Server-Einstellung).",
+  "abweichung": ""
+ },
+ "AddFrostResistancePercentage": {
+  "text": "Eingehender Frostschaden (im Tooltip „Eis“) sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen; auch die Verlangsamung danach wird kürzer. Gegen Kälte und Erfrieren durch das Wetter hilft der Effekt nicht. Die Werte aller angelegten Items und „Elementarwiderstand“ werden addiert, höchstens bis zur Obergrenze für Frost (Server-Einstellung).",
+  "abweichung": ""
+ },
+ "AddLightningResistancePercentage": {
+  "text": "Eingehender Blitzschaden sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen. Die Werte aller angelegten Items und „Elementarwiderstand“ werden addiert, höchstens bis zur Obergrenze für Blitz (Server-Einstellung).",
+  "abweichung": ""
+ },
+ "AddPoisonResistancePercentage": {
+  "text": "Eingehender Giftschaden sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen; dadurch fällt auch die Vergiftung danach schwächer aus. Die Werte aller angelegten Items und „Elementarwiderstand“ werden addiert, höchstens bis zur Obergrenze für Gift (Server-Einstellung).",
+  "abweichung": ""
+ },
+ "AddSpiritResistancePercentage": {
+  "text": "Verringert Geistschaden aus eingehenden Treffern um X %. Addiert werden die Werte aller ausgerüsteten Items und der allgemeine Elementarwiderstand von EpicLoot, zusammen höchstens 50 % (Config MaxResistance). Die Minderung greift vor Valheims eigenen Widerständen und der Rüstung, daher sinkt auch der Geistschaden über Zeit, den der Treffer auslöst. Andere Schadensminderungen wirken getrennt (multiplikativ). Selbst zugefügte Treffer sind ausgenommen.",
+  "abweichung": "„Addiert sich mit anderen Schadensminderungen“ gilt nur für Geist- und Elementarwiderstand von EpicLoot (gemeinsame Grenze 50 %); andere Minderungen wirken multiplikativ."
+ },
+ "AddElementalResistancePercentage": {
+  "text": "Eingehender Feuer-, Frost-, Blitz-, Gift- und auch Geistschaden sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen. Der Wert wird zum jeweiligen Einzelwiderstand (z. B. Feuerwiderstand) addiert; die Summe ist durch dessen Obergrenze begrenzt (Server-Einstellung), eine eigene Grenze dieses Effekts nutzt der Code nicht. Gleiche Effekte aller angelegten Items werden addiert.",
+  "abweichung": "Wirkt auch auf Geistschaden (Beschreibung nennt nur Feuer, Frost, Blitz, Gift). Die eigene MaxResistance dieses Effekts wird ignoriert, es gilt die Obergrenze des Einzelwiderstands."
+ },
+ "AddBluntResistancePercentage": {
+  "text": "Eingehender Hauen-Schaden (stumpf) sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen. Die Werte aller angelegten Items und „Physischer Widerstand“ werden addiert, höchstens bis zur Obergrenze für Hauen-Schaden (Server-Einstellung).",
+  "abweichung": ""
+ },
+ "AddSlashingResistancePercentage": {
+  "text": "Eingehender Schlitzen-Schaden (Hieb) sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen. Die Werte aller angelegten Items und „Physischer Widerstand“ werden addiert, höchstens bis zur Obergrenze für Schlitzen-Schaden (Server-Einstellung).",
+  "abweichung": ""
+ },
+ "AddPiercingResistancePercentage": {
+  "text": "Eingehender Stechen-Schaden (Stich) sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen. Die Werte aller angelegten Items und „Physischer Widerstand“ werden addiert, höchstens bis zur Obergrenze für Stechen-Schaden (Server-Einstellung).",
+  "abweichung": ""
+ },
+ "AddPhysicalResistancePercentage": {
+  "text": "Eingehender Hauen-, Schlitzen-, Stechen- und auch Hackschaden sinkt um X %, vor Blocken, Rüstung und den normalen Resistenzen. Der Wert wird zum jeweiligen Einzelwiderstand addiert; die Summe ist durch dessen Obergrenze begrenzt (Server-Einstellung), eine eigene Grenze dieses Effekts nutzt der Code nicht. Gleiche Effekte aller angelegten Items werden addiert.",
+  "abweichung": "Wirkt auch auf Hackschaden (Beschreibung: nur Hauen, Schlitzen, Stechen). Die eigene MaxResistance dieses Effekts wird ignoriert, es gilt die Obergrenze des Einzelwiderstands."
+ },
+ "ModifyMovementSpeed": {
+  "text": "Erhöht dein Bewegungstempo um X % des Grundtempos (addiert zu den Tempo-Werten der Ausrüstung): Laufen wird um X % schneller, Sprinten sogar um 1,5 × X %; Gehen, Schleichen und Schwimmen bleiben gleich. Wie in Valheim üblich senkt ein höheres Bewegungstempo außerdem die Ausdauerkosten fürs Sprinten, Springen und Ausweichen um X %. Gleiche Effekte werden addiert, ohne Obergrenze.",
+  "abweichung": "Nicht pauschal X %: Sprinttempo steigt um 1,5 × X %, Gehen, Schleichen und Schwimmen gar nicht; zusätzlich sinken die Ausdauerkosten fürs Sprinten, Springen und Ausweichen."
+ },
+ "ModifySprintStaminaUse": {
+  "text": "Senkt den Ausdauerverbrauch beim Sprinten um X %; der Wert wird zu den Sprint-Modifikatoren der Ausrüstung addiert. Fertigkeit Sprinten und Bewegungstempo wirken zusätzlich. Gleiche Effekte werden addiert, eine Obergrenze gibt es im Code nicht.",
+  "abweichung": ""
+ },
+ "ModifyDodgeStaminaUse": {
+  "text": "Senkt die Ausdauerkosten fürs Ausweichen um X % der Grundkosten; der Wert wird zu den Ausweich-Modifikatoren der Ausrüstung addiert. Danach wirkt noch die Fertigkeit Ausweichen. Gleiche Effekte werden addiert, eine Obergrenze gibt es im Code nicht.",
+  "abweichung": ""
+ },
+ "ModifyJumpStaminaUse": {
+  "text": "Senkt die Ausdauerkosten fürs Springen um X % der Grundkosten; der Wert wird zu den Sprung-Modifikatoren der Ausrüstung addiert. Gleiche Effekte auf mehreren angelegten Items werden addiert, eine Obergrenze gibt es im Code nicht.",
+  "abweichung": ""
+ },
+ "ModifyAttackEitrUse": {
+  "text": "Die Eitr-Kosten deiner Angriffe werden mit 1 − X/100 multipliziert. Gezählt wird die Summe auf der angreifenden Waffe und der übrigen Ausrüstung, nicht auf einer zweiten Waffe in der anderen Hand.",
+  "abweichung": ""
+ },
+ "ModifyAttackHealthUse": {
+  "text": "Die Gesundheitskosten deiner Angriffe (z. B. bei Blutmagie-Waffen) werden mit 1 − X/100 multipliziert. Gezählt wird die Summe auf der angreifenden Waffe und der übrigen Ausrüstung, nicht auf einer zweiten Waffe in der anderen Hand.",
+  "abweichung": ""
+ },
+ "ModifyAttackStaminaUse": {
+  "text": "Die Ausdauerkosten deiner Angriffe (nach der Senkung durch deinen Skill) werden mit 1 − X/100 multipliziert. Gezählt wird die Summe auf der angreifenden Waffe und der übrigen Ausrüstung, nicht auf einer zweiten Waffe in der anderen Hand.",
+  "abweichung": ""
+ },
+ "Bloodlust": {
+  "text": "Angriffe mit dieser Waffe kosten keine Ausdauer, sondern Gesundheit: die Grund-Ausdauerkosten des Angriffs plus eventuelle eigene Gesundheitskosten der Waffe, gesenkt durch die Waffenfertigkeit wie üblich (−0,33 % je Stufe). Ausdauer-Modifikatoren von Ausrüstung und Buffs zählen dabei nicht. Die Kosten senken die Gesundheit nie unter 1. Kein Zahlenwert; als Set-Bonus wirkt der Effekt auf alle Ein- und Zweihandwaffen mit Ausdauerkosten (keine Spitzhacken, keine Magie).",
+  "abweichung": "Grundlage sind die Grund-Ausdauerkosten des Angriffs, nicht die tatsächliche Ausdauernutzung (Ausrüstungs- und Buff-Modifikatoren entfallen); Gesundheit sinkt nie unter 1."
+ },
+ "ModifyDrawStaminaUse": {
+  "text": "Senkt den Ausdauerverbrauch pro Sekunde beim Spannen dieses Bogens um X %. Es zählt nur der Wert auf diesem Item selbst (plus passende Set-Boni), nicht der anderer Ausrüstung; höchstens 100 %. Fertigkeit und andere Ausdauer-Boni wirken zusätzlich.",
+  "abweichung": ""
+ },
+ "ModifyBlockStaminaUse": {
+  "text": "Senkt die Ausdauerkosten beim Blocken um X %; der Wert wird zu den Blocken-Ausdauer-Modifikatoren der Ausrüstung addiert (Kosten × (1 + Modifikatoren − X %)). Die Werte aller angelegten Items zählen zusammen, auch wenn das Item mit dem Effekt nicht das blockende ist (z. B. Effekt auf der Waffe, Block mit dem Schild). Eine Obergrenze gibt es im Code nicht.",
+  "abweichung": ""
+ },
+ "Indestructible": {
+  "text": "Für dieses Item wird die Haltbarkeit abgeschaltet: Es nutzt sich nicht mehr ab, geht nie kaputt und muss nicht repariert werden. Das gilt nur für das Item mit dem Effekt.",
+  "abweichung": ""
+ },
+ "CoinHoarder": {
+  "text": "Erhöht den Schaden aller ausgerüsteten Waffen abhängig von den Münzen im Inventar: Bonus = log10(X · Münzen) · 6,258 / 150; unter 1000 Münzen wächst er linear bis zum Wert bei 1000 (Config). Beispiel X = 10: 1000 Münzen ≈ +16,7 %, 10 000 ≈ +20,9 %. Der Bonus addiert sich mit anderen „Alle Schäden“-Boni, danach wird der Schaden damit multipliziert. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": "Die deutsche EpicLoot-Beschreibung ist veraltet („+X % pro (999) Münzen, abnehmend nach 2k“); die englische passt zum Code."
+ },
+ "Weightless": {
+  "text": "Dieses Item wiegt 0, egal ob ausgerüstet oder nur im Inventar. Es wirkt nur auf das Item selbst.",
+  "abweichung": ""
+ },
+ "AddCarryWeight": {
+  "text": "Erhöht das maximale Tragegewicht um X – eine feste Zahl, kein Prozentwert. X aller ausgerüsteten Items wird addiert und kommt zu anderen Boni wie Megingjord einfach dazu. Wirkt, solange das Item ausgerüstet ist.",
+  "abweichung": ""
+ },
+ "LifeSteal": {
+  "text": "Bei jedem Treffer auf eine Kreatur oder einen Spieler heilst du X % des ausgehenden Schadens, je getroffenem Ziel. Gerechnet wird mit dem Schaden vor Widerständen, Rüstung, Block und Hinterhältigkeits-Bonus des Ziels, ohne Hacken- und Spitzhacken-Schaden; Feuer, Gift und Geist zählen voll. X wird über die Ausrüstung addiert, beim Beidhändig-Kampf zählt die andere Waffe nicht; bei kritischer Gesundheit kommt „Lebensraub (Gesundheit kritisch)“ dazu. Zusatztreffer anderer Effekte heilen nicht.",
+  "abweichung": "Nicht der tatsächlich verursachte Schaden, sondern der ausgehende vor Widerständen/Rüstung des Ziels; zählt je getroffenem Ziel, nicht je Angriff."
+ },
+ "LifeAfterKill": {
+  "text": "Tötet einer deiner Treffer ein Ziel (kein Spieler, kein zahmes Tier), heilst du sofort X Gesundheit, einmal pro Kill. Ob der Treffer tödlich ist, berechnet dein Spiel im Moment des Treffers; Feuer-, Gift- und Geistanteile zählen dabei nicht, und Tode durch Brennen oder Gift über Zeit lösen nichts aus. Gezählt wird die Summe auf der treffenden Waffe und der übrigen Ausrüstung.",
+  "abweichung": ""
+ },
+ "EitrLeech": {
+  "text": "Bei jedem Treffer auf eine Kreatur oder einen Spieler erhältst du X % des ausgehenden Schadens als Eitr, je getroffenem Ziel. Gerechnet wird mit dem Schaden vor Widerständen, Rüstung, Block und Hinterhältigkeits-Bonus des Ziels, ohne Hacken- und Spitzhacken-Schaden; Feuer, Gift und Geist zählen voll. Die benutzte Waffe muss magisch sein; X wird über die Ausrüstung addiert, beim Beidhändig-Kampf zählt die andere Waffe nicht. Zusatztreffer anderer Effekte geben nichts.",
+  "abweichung": "Nicht der tatsächlich verursachte Schaden, sondern der ausgehende vor Widerständen/Rüstung des Ziels; zählt je getroffenem Ziel, nicht je Angriff."
+ },
+ "ModifyAttackSpeed": {
+  "text": "Während eines Angriffs läuft deine Angriffsanimation X % schneller (Tempo × (1 + X/100)). Gezählt wird die Summe auf allen angelegten Items, und der Bonus gilt für jeden Angriff, solange das Item angelegt ist, nicht nur für diese Waffe.",
+  "abweichung": "Nicht auf Angriffe mit der magischen Waffe beschränkt: Werte aller angelegten Items werden summiert und gelten für jeden Angriff."
+ },
+ "Throwable": {
+  "text": "Die Zweitangriff-Taste wirft diese Waffe mit dem Wurfangriff des Feuersteinspeers; Schaden und Werkzeugstufe stammen von der Waffe. Als Trefferradius beim Aufprall nutzt der Wurf die Schlagbreite der Waffe. Wie ein Speer landet die Waffe am Aufschlagort und muss aufgehoben werden, außer sie hat auch Rückruf. Der bisherige Zweitangriff der Waffe entfällt.",
+  "abweichung": ""
+ },
+ "Waterproof": {
+  "text": "Solange ein Item mit Wasserdicht ausgerüstet ist, macht dich Regen nicht nass. Schwimmen oder Eintauchen in Wasser macht weiterhin nass, und ein bestehendes Nass läuft normal ab.",
+  "abweichung": ""
+ },
+ "Warmth": {
+  "text": "Solange ein Item mit Wärme ausgerüstet ist, gibt dir die Umgebung weder Kälte noch Erfrieren. Ein schon bestehendes Erfrieren bleibt in eisiger Umgebung bestehen; das Spiel entfernt es wie gewohnt, sobald sich die Bedingungen ändern (z. B. am Feuer). Eis-Schaden durch Angriffe und dessen Folgen bleiben unverändert, eine Resistenz gibt es nicht.",
+  "abweichung": ""
+ },
+ "Paralyze": {
+  "text": "Jeder deiner Treffer mit Schaden setzt die Bewegungsgeschwindigkeit des Ziels für X Sekunden auf 0. Ein neuer Treffer addiert nicht, sondern setzt die Restdauer auf mindestens X. Angreifen kann das Ziel dabei weiter, nur fortbewegen kann es sich nicht. Bei Nahkampfschlägen zählt die Waffe in der anderen Hand nicht mit, sonst wird X aller ausgerüsteten Items addiert.",
+  "abweichung": "Gelähmte Ziele können weiter angreifen; der Code setzt nur ihre Bewegungsgeschwindigkeit auf 0."
+ },
+ "DoubleJump": {
+  "text": "Du kannst in der Luft noch einmal springen; die Zahl der Luftsprünge ist die Summe der Effektwerte (normal 1 pro Item) und wird bei Bodenkontakt zurückgesetzt. Ein Luftsprung hebt die Fallgeschwindigkeit auf und springt mit voller Sprungkraft (steigt mit dem Skill Springen). Er kostet die normale Sprung-Ausdauer und trainiert Springen. Nicht möglich bei Überladung, während des Ausweichens, bei Rückstoß oder Taumeln.",
+  "abweichung": ""
+ },
+ "ExplosiveArrows": {
+  "text": "Jedes Projektil, das du verschießt, explodiert beim Einschlag (auch im Boden): Im Radius 2 m entsteht Feuerschaden in Höhe von X % des Projektilschadens (alle Schadensarten außer Hacken und Spitzhacke zusammengezählt). Feuerschaden wirkt in Valheim als Brennen über Zeit. Gezählt wird die Summe aller angelegten Items mit dem Effekt. EpicLoot-Treffereffekte wie Lebensraub löst die Explosion nicht aus.",
+  "abweichung": "Die Explosion macht reinen Feuerschaden, nicht Angriffsschaden in den Schadensarten der Waffe."
+ },
+ "QuickDraw": {
+  "text": "Beim Bogen wächst der Spannfortschritt um X % schneller (bis voll gespannt), die Spannzeit sinkt also auf 1/(1 + X/100). Derselbe Wert verkürzt die Nachladezeit von Armbrüsten um X %. X aller ausgerüsteten Items wird addiert, auch aus Set-Boni, und gilt für jeden Bogen und jede Armbrust in der Hand.",
+  "abweichung": "Nicht nur für den Zauberbogen: Der Wert gilt für jeden gehaltenen Bogen und verkürzt auch die Nachladezeit von Armbrüsten um X %."
+ },
+ "AddSwordsSkill": {
+  "text": "Erhöht die Fertigkeit Schwerter um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt der Waffenschaden um 0,6 % des Grundschadens und die Ausdauerkosten der Angriffe sinken um 0,33 % – beides auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddKnivesSkill": {
+  "text": "Erhöht die Fertigkeit Messer um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt der Waffenschaden um 0,6 % des Grundschadens und die Ausdauerkosten der Angriffe sinken um 0,33 % – beides auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddClubsSkill": {
+  "text": "Erhöht die Fertigkeit Schlagwaffen um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt der Waffenschaden um 0,6 % des Grundschadens und die Ausdauerkosten der Angriffe sinken um 0,33 % – beides auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddPolearmsSkill": {
+  "text": "Erhöht die Fertigkeit Stangenwaffen um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt der Waffenschaden um 0,6 % des Grundschadens und die Ausdauerkosten der Angriffe sinken um 0,33 % – beides auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddSpearsSkill": {
+  "text": "Erhöht die Fertigkeit Speere um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt der Waffenschaden um 0,6 % des Grundschadens und die Ausdauerkosten der Angriffe sinken um 0,33 % – beides auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddBlockingSkill": {
+  "text": "Erhöht die Fertigkeit Blocken um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt die Blockrüstung deines Schildes oder deiner Waffe (auch beim Parieren) um 0,5 % ihres Grundwerts, auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddAxesSkill": {
+  "text": "Erhöht die Fertigkeiten Äxte und Holzhacken um je X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe +0,6 % des Grundschadens – gegen Kreaturen über Äxte, gegen Bäume über Holzhacken – und −0,33 % Ausdauerkosten der Angriffe, auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddBowsSkill": {
+  "text": "Erhöht die Fertigkeit Bögen um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe +0,6 % Schaden und −0,33 % Ausdauerkosten (Angriff und Spannen), auch über Stufe 100 hinaus; die Spannzeit verkürzt sich dagegen nur bis Stufe 100.",
+  "abweichung": ""
+ },
+ "AddCrossbowsSkill": {
+  "text": "Erhöht die Fertigkeit Armbrüste um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt der Schaden um 0,6 % des Grundschadens, auch über Stufe 100 hinaus; die Nachladezeit verkürzt sich nur bis Stufe 100 (dort auf die Hälfte).",
+  "abweichung": ""
+ },
+ "AddBloodMagicSkill": {
+  "text": "Erhöht die Fertigkeit Blutmagie um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe +0,6 % Schaden und −0,33 % Eitr- und Gesundheitskosten der Angriffe, auch über Stufe 100 hinaus. Beschwörungen (z. B. Skelette) richten sich ebenfalls nach der erhöhten Stufe.",
+  "abweichung": ""
+ },
+ "AddCrafterSkills": {
+  "text": "Erhöht die Fertigkeiten Herstellung und Kochen um je X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Herstellung verkürzt die Herstellungsdauer und erhöht die Chance auf eine Bonusmenge bei stapelbaren Gegenständen, Kochen die Chance auf Bonusmenge an Kochstationen – beides auch über Stufe 100 hinaus. Landwirtschaft ist nicht enthalten.",
+  "abweichung": ""
+ },
+ "ModifySummonHealth": {
+  "text": "Beschworene Kreaturen (solche, die deine Blut- oder Elementarmagie mittrainieren) erhalten X % mehr maximale Gesundheit. Der Bonus wird angewendet, wenn ihre Gesundheit beim Erscheinen festgelegt wird; maßgeblich ist, was du in diesem Moment angelegt hast. Gleiche Effekte werden addiert.",
+  "abweichung": ""
+ },
+ "ModifySummonDamage": {
+  "text": "Beschworene Kreaturen (solche, die beim Kämpfen deine Blut- oder Elementarmagie mittrainieren) machen mit jedem Treffer X % mehr Schaden. Der Wert wird festgeschrieben, sobald die Kreatur erscheint: Das Item muss beim Beschwören angelegt sein, spätere Ausrüstungswechsel ändern ihn nicht. Gleiche Effekte werden addiert.",
+  "abweichung": ""
+ },
+ "AddElementalMagicSkill": {
+  "text": "Erhöht die Fertigkeit Elementarmagie um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe +0,6 % Schaden und −0,33 % Eitr- und Ausdauerkosten der Angriffe, auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddUnarmedSkill": {
+  "text": "Erhöht die Fertigkeit Unbewaffnet um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe steigt der Waffenschaden um 0,6 % des Grundschadens und die Ausdauerkosten der Angriffe sinken um 0,33 % – beides auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddPickaxesSkill": {
+  "text": "Erhöht die Fertigkeit Spitzhacken um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Je Stufe +0,6 % des Grundschadens (auch an Gestein und Erz) und −0,33 % Ausdauerkosten der Angriffe, auch über Stufe 100 hinaus.",
+  "abweichung": ""
+ },
+ "AddFishingSkill": {
+  "text": "Erhöht die Fertigkeit Angeln um X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Beim Angeln sinken die Ausdauerkosten am Haken und beim Einholen, und die Schnur wird schneller eingeholt – alles nur bis Stufe 100, darüber bringt der Bonus nichts mehr.",
+  "abweichung": ""
+ },
+ "ModifyWispRange": {
+  "text": "Der nebelfreie Bereich um dein Irrlicht wird um X % größer. Der Wert wird übernommen, sobald das Irrlicht erscheint (beim Anlegen), und auch andere Spieler sehen den größeren Bereich.",
+  "abweichung": "Der deutsche Name „Entfeuchtungsreichweite“ ist eine Fehlübersetzung; gemeint ist der nebelfreie Bereich des Irrlichts."
+ },
+ "ModifyGrapplePullSpeed": {
+  "text": "Sobald der Enterhaken greift, zieht er dich X % schneller heran: Die Zugkraft des Hakens wird mit 1 + X/100 multipliziert. Werte mehrerer Quellen addieren sich.",
+  "abweichung": ""
+ },
+ "ModifyGrappleFlightTime": {
+  "text": "Der Enterhaken bleibt X % länger in der Luft, bevor er verschwindet, und das Seil darf X % länger werden, bevor es reißt (verrechnet mit einem Projektilgeschwindigkeits-Bonus). Die Flugbahn selbst wird nicht höher; weiter entfernte Ziele erreichst du, indem du entsprechend zielst. Nachladen kannst du erst nach der längeren Flugzeit. Werte mehrerer Quellen addieren sich.",
+  "abweichung": "Kein höherer Bogen: Der Code verlängert nur Flugzeit, Nachladesperre und maximale Seillänge, nicht Geschwindigkeit oder Flugbahn."
+ },
+ "AddMovementSkills": {
+  "text": "Erhöht Springen, Sprinten, Schwimmen und Schleichen um je X Stufen; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen der Fertigkeit dazu. Über Stufe 100 hinaus wirken nur Sprint-Tempo (+0,25 % je Stufe) und Sprungkraft (+0,4 % je Stufe); Ausdauer beim Sprinten, Schwimmen und Schleichen sowie die Tarnung verbessern sich nur bis Stufe 100.",
+  "abweichung": ""
+ },
+ "ModifyStaggerDuration": {
+  "text": "Triffst du ein Ziel, das gerade nicht taumelt, wird es markiert; gerät es danach ins Taumeln, läuft die Taumel-Animation langsamer und dauert X % länger. Das gilt für Nah- und Fernkampf und auch für Angreifer, deren Schlag du blockst oder parierst. X aller ausgerüsteten Items wird addiert, Waffe und Schild zusammen. Das Taumeln selbst löst der Effekt nicht aus.",
+  "abweichung": "Nicht auf die magische Waffe beschränkt: Die Werte aller Items werden addiert und gelten für jeden Treffer sowie für geblockte oder parierte Angreifer."
+ },
+ "QuickLearner": {
+  "text": "Jeder Fertigkeitsfortschritt wird mit (1 + X/100) multipliziert, bei allen Fertigkeiten. X aller ausgerüsteten Items wird addiert. Nur Erfahrung, die der Splitter-Effekt Inspiration verteilt, wird nicht verstärkt.",
+  "abweichung": ""
+ },
+ "FreeBuild": {
+  "text": "Mit Hammer oder Hacke mit diesem Effekt baust du Bauteile und reißt sie ab, ohne dass ihre Werkstation in der Nähe sein muss; die Materialien brauchst du weiterhin. Bei der Standard-Servereinstellung („Gated Freebuild Mode“) gilt das für Schmiede-Teile erst nach Eikthyr, für Steinmetz-Teile nach dem Uralten, für Handwerkstisch-Teile nach Moder und für Schwarzschmiede- und Galdr-Tisch-Teile nach Yagluth; Teile aller anderen Stationen (z. B. Werkbank) sofort.",
+  "abweichung": "Verschweigt, dass es auch fürs Abreißen gilt und standardmäßig je Station erst nach bestimmten Bosssiegen wirkt."
+ },
+ "GreenThumb": {
+  "text": "Setzt du mit dem Pflug einen Samen oder Setzling, wird dein aktueller Wert X in die Pflanze geschrieben: Ihre Wachstumszeit sinkt um X %, höchstens um 75 % (Config „Max“). Der Bonus bleibt bei der Pflanze, auch wenn du den Pflug später weglegst; vorher gesetzte Pflanzen profitieren nicht. Werte aller angelegten Items addieren sich.",
+  "abweichung": "Verschweigt die Obergrenze (standardmäßig 75 %)."
+ },
+ "RecallWeapon": {
+  "text": "Nur zusammen mit Werfbar. Landet die geworfene Waffe, hebt dein Charakter sie automatisch auf (nach der üblichen Aufhebe-Sperre von 0,5 s); fliegt sie mehr als 80 m von dir weg, wird sie sofort zurückgeholt. Ist die rechte Hand frei, wird sie wieder ausgerüstet. Ist das Inventar voll, bleibt sie liegen.",
+  "abweichung": ""
+ },
+ "Apportation": {
+  "text": "Trifft die geworfene Waffe mit diesem Effekt eine Kreatur mit KI (Gegner, aber auch Tiere), wirst du sofort an die Stelle teleportiert, an der die Waffe liegen bleibt. Treffer auf Boden, Gebäude oder Bäume lösen nichts aus. Nur der Werfer wird versetzt, und nur das geworfene Item selbst zählt; der Effekt rollt nur auf Waffen mit „Werfbar“. Er hat keinen Zahlenwert.",
+  "abweichung": "Löst bei jeder Kreatur mit KI aus (auch Tiere), nicht nur bei Feinden."
+ },
+ "OffSetAttack": {
+  "text": "Löst der dritte Schlag einer Angriffskette aus, wird 0,5 Sekunden lang jeder Treffer, den du einsteckst, um X % verringert (höchstens 100 %) und verursacht weder Taumeln noch Rückstoß. Das gilt für alle Treffer in diesem Zeitfenster, auch Fernkampf- oder Fallschaden, nicht nur feindliche Nahkampfangriffe. X aller ausgerüsteten Items wird addiert. Waffen mit weniger als drei Schlägen in der Kette lösen es nie aus.",
+  "abweichung": "Kein Timing gegen einen Nahkampfangriff nötig: jeder Treffer in den 0,5 s nach dem dritten Kettenschlag wird reduziert, auch Fernkampf- und Fallschaden."
+ },
+ "ReflectDamage": {
+  "text": "Trifft dich ein Angreifer, bekommt er X % des eingehenden Schadens als Stechen-Schaden zurück. Berechnet wird vom Treffer vor Blocken und Rüstung, also auch bei geblockten Treffern; es zählen Hauen, Schlitzen, Stechen, Feuer, Eis und Blitz, nicht Gift und Geist. Ausgewichene Treffer lösen nichts aus. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": "Grundlage ist der Treffer vor Blocken und Rüstung (auch bei geblockten Treffern), ohne Gift und Geist; zurück geht er als Stechen-Schaden."
+ },
+ "AvoidDamageTaken": {
+  "text": "Bei jedem Treffer mit Angreifer (Kreatur oder Spieler) besteht eine Chance von X %, dass er komplett entfällt: kein Schaden, kein Status-Effekt, kein Rückstoß, kein Taumeln. X aller ausgerüsteten Items wird addiert, bei kritischer Gesundheit kommt „Ausweichen (Kritische Gesundheit)“ dazu; ab 100 % entfällt jeder solche Treffer. Schaden ohne Angreifer (Fallen, Ertrinken, Umgebung) und Schaden über Zeit wie Brennen oder Gift lassen sich nicht vermeiden.",
+  "abweichung": ""
+ },
+ "StaggerOnDamageTaken": {
+  "text": "Jeder Treffer, den du an einer Kreatur landest, lässt sie mit X % Chance sofort taumeln, unabhängig von ihrem Taumelbalken; Spieler nur bei PvP. X aller ausgerüsteten Items wird addiert (z. B. Brustteil und Schild) und gilt für jede Waffe, auch im Fernkampf. Trotz des Namens hat es nichts mit erlittenem Schaden zu tun.",
+  "abweichung": "Erhöht keine bestehende Chance, sondern gibt je Treffer eine eigene Chance auf sofortiges Taumeln; gilt für alle Angriffe und addiert alle Items, nicht nur die magische Waffe."
+ },
+ "FeatherFall": {
+  "text": "Solange das Item angelegt ist, hast du den Spieleffekt „Federfall“, denselben wie beim Federumhang: Deine Fallgeschwindigkeit ist auf 5 m/s begrenzt, Fallschaden −100 %, und Springen kostet 20 % weniger Ausdauer. Der Zahlenwert spielt keine Rolle.",
+  "abweichung": "Verschweigt, dass Springen 20 % weniger Ausdauer kostet (Teil von Federfall)."
+ },
+ "ModifyDiscoveryRadius": {
+  "text": "Der Radius, in dem deine Karte beim Erkunden aufgedeckt wird, wird mit (1 + X/100) multipliziert. X aller ausgerüsteten Items wird addiert. Das betrifft nur deine eigene Erkundung.",
+  "abweichung": ""
+ },
+ "Comfortable": {
+  "text": "Erhöht deine Komfortstufe um X, solange das Item getragen wird; X aller Items wird addiert (nur ganze Zahlen). Valheim berechnet die Komfortstufe alle 2 Sekunden, der Bonus zählt dabei immer, auch ohne Unterkunft und Möbel. Spürbar wird er beim Ausruhen: Die Dauer des Buffs „Ausgeruht“ richtet sich nach der Komfortstufe.",
+  "abweichung": ""
+ },
+ "ModifyMovementSpeedLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), wird X/100 zum Bewegungs-Modifikator deiner Ausrüstung addiert. Valheim macht daraus: Laufen +X %, Sprinten +1,5 × X %, und die Ausdauerkosten für Sprinten, Springen und Ausweichen sinken um X %. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": "Nicht nur Tempo: Sprinten steigt um 1,5 × X, und die Ausdauerkosten für Sprinten, Springen und Ausweichen sinken um X %."
+ },
+ "ModifyHealthRegenLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), wird X/100 zum Faktor deiner Gesundheitsregeneration addiert, also +X % der Heilung, die Nahrung alle 10 s gibt. Der Bonus kommt nach Statuseffekten wie Nass dazu und wird von ihnen nicht verringert. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": ""
+ },
+ "ModifyStaminaRegenLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), wird X/100 zum Faktor deiner Ausdauerregeneration addiert, also +X % der normalen Regeneration. Der Bonus kommt nach Statuseffekten wie Nass dazu und wird von ihnen nicht verringert. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": ""
+ },
+ "ModifyEitrRegenLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), wird X/100 zum Faktor deiner Eitr-Regeneration addiert, also +X % der normalen Regeneration. Der Bonus kommt nach den Statuseffekten dazu und wird von ihnen nicht verringert. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": ""
+ },
+ "ModifyArmorLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), steigt die Rüstung jedes getragenen Rüstungsteils um X %, deine gesamte Rüstung also um X %. X aller ausgerüsteten Items wird addiert und kommt zu den Rüstungsboni des jeweiligen Teils hinzu.",
+  "abweichung": ""
+ },
+ "ModifyDamageLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), macht deine magische Waffe X % mehr Schaden aller Schadensarten. Das addiert sich zu „Alle Schäden +%“ und ähnlichen Boni (ein gemeinsamer Faktor). Es zählen alle ausgerüsteten Items außer einer Waffe in der anderen Hand; nicht-magische Waffen bekommen den Bonus nicht.",
+  "abweichung": ""
+ },
+ "ModifyBlockPowerLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), steigt die Blockrüstung des Items, mit dem du gerade blockst, um X %, zusätzlich zu anderen Blockrüstungs-Boni. Es zählen alle ausgerüsteten Items außer der Waffe in der anderen Hand; blockst du mit einem Schild, bringt der Wert auf deiner Waffe also nichts.",
+  "abweichung": "Steht der Wert auf der Waffe und du blockst mit einem Schild, wirkt er nicht."
+ },
+ "ModifyParryLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), steigen bei einer Parade (Block kurz nach dem Hochnehmen, Standard 0,25 s) Blockrüstung und Blockmacht des blockenden Items um X %. Der Parierbonus-Faktor selbst bleibt gleich; die parierte Blockrüstung steigt dadurch insgesamt um X %. Es zählen alle ausgerüsteten Items außer der Waffe in der anderen Hand.",
+  "abweichung": "Der Parierbonus selbst wird nicht erhöht; erhöht werden beim Parieren nur Blockrüstung und Blockmacht."
+ },
+ "ModifyAttackSpeedLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), laufen deine Angriffsanimationen mit (1 + X/100)-facher Geschwindigkeit, bei jedem Angriff mit Waffe oder Werkzeug. Dieser Faktor wird mit dem normalen Angriffsgeschwindigkeits-Bonus multipliziert, nicht addiert. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": ""
+ },
+ "AvoidDamageTakenLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), steigt die Chance, einen Treffer ganz zu vermeiden, um X Prozentpunkte. Das addiert sich zu Ausweichen; ein vermiedener Treffer richtet nichts an. Es zählen nur Treffer mit Angreifer, also kein Fallschaden. X aller ausgerüsteten Items wird addiert; eine Obergrenze gibt es im Code nicht.",
+  "abweichung": ""
+ },
+ "LifeStealLowHealth": {
+  "text": "Solange deine Gesundheit bei höchstens 30 % liegt (Schwelle per „kritische Gesundheitsschwelle“ bis 75 % erhöhbar), heilt dich jeder Treffer um X % seines Schadens, gerechnet vor Rüstung und Resistenzen des Ziels und ohne Hacken- und Spitzhacken-Schaden. Das addiert sich zu Lebensraub. Es zählen alle ausgerüsteten Items außer einer Waffe in der anderen Hand.",
+  "abweichung": ""
+ },
+ "Glowing": {
+  "text": "Solange das Item ausgerüstet ist, hängt an deiner Figur ein warmweißes Punktlicht mit 10 m Reichweite samt Partikeln. Mehrere Items mit Leuchtend ergeben nur ein Licht, und auf legendären Items mit eigener Kennung (Unikate, Set-Teile) erscheint es nicht. Eine weitere Spielwirkung hat der Effekt im Code nicht.",
+  "abweichung": ""
+ },
+ "Executioner": {
+  "text": "Trifft dein Angriff ein Ziel mit weniger als 20 % seiner maximalen Gesundheit, wird der ganze Treffer mit 1 + X/100 multipliziert, noch vor Widerständen und Rüstung. Das klappt pro Ziel nur ein einziges Mal (die Liste gilt für die ganze Spielsitzung). Es zählt die Summe auf der angreifenden Waffe und der übrigen Ausrüstung, nicht auf einer zweiten Waffe in der anderen Hand; bei Pfeilen und Bolzen gilt der Wert beim Abschuss.",
+  "abweichung": ""
+ },
+ "Riches": {
+  "text": "Stirbt eine Kreatur, werden die Werte aller Spieler im Umkreis von 100 m addiert, egal wer getötet hat. Die Summe ist die Chance auf einen Zusatzfund (ab 100 % sicher). Dann wird ein zufälliger Eintrag gewählt (Config: Silberhalskette 300, Rubin 200, Bernstein Perle 100, Bernstein 50, Münzen 8) und ein Zufallsbudget von 0–100 × max(1, Summe) durch dessen Preis geteilt; reicht es nicht für ein Stück, gibt es Münzen. Unter 100 % sind das bis zu 12 Münzen oder 1–2 Bernstein.",
+  "abweichung": "Keine erhöhte Drop-Chance der Kreatur, sondern eine eigene Chance auf einen Zusatzfund; die Werte aller Spieler in 100 m werden addiert."
+ },
+ "Opportunist": {
+  "text": "Trifft einer deiner Angriffe ein Ziel, das gerade taumelt, wird der Treffer mit X % Chance mit der Hinterhältigkeit der Waffe multipliziert, wie ein Schleichangriff. Anders als beim normalen Schleichangriff muss das Ziel dafür nicht ahnungslos sein. Das kommt zum normalen doppelten Schaden gegen taumelnde Gegner hinzu. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": ""
+ },
+ "Duelist": {
+  "text": "Hast du nichts in der Nebenhand und blockst mit dieser Waffe, steigt ihre Blockrüstung um X % ihres Waffenschadens (alle Schadensarten außer Hacken und Spitzhacke, inkl. Verzauberungen, ohne Skill) und ihre Blockmacht (Rückstoß auf den Angreifer, bei EpicLoot „Parierkraft“) um X/2 % davon. Der Blockrüstungs-Bonus zählt zur Grund-Blockrüstung und wird daher vom Blocken-Skill und bei einer Parade vom Parierbonus mit verstärkt.",
+  "abweichung": ""
+ },
+ "Immovable": {
+  "text": "Solange du blockst (Block gehalten, nicht während Angriff oder Ausweichen), wirst du weder zurückgestoßen noch ins Taumeln gebracht, und Treffer bauen keinen Taumelwert auf. Das gilt für alle Treffer, auch von hinten; geht dir beim Blocken die Ausdauer aus, nimmst du zwar Schaden, taumelst aber nicht. Ohne zu blocken wirkt der Effekt nicht.",
+  "abweichung": ""
+ },
+ "ModifyStaggerDamage": {
+  "text": "Triffst du einen Gegner, der gerade taumelt, macht dieser Treffer X % mehr Schaden (alle Schadensarten). Das kommt multiplikativ zum normalen doppelten Schaden gegen taumelnde Gegner hinzu. Gilt für Nahkampf und Geschosse; bei Geschossen zählt der Wert beim Abschuss. Gleiche Effekte und Set-Boni werden addiert.",
+  "abweichung": ""
+ },
+ "CloseQuarter": {
+  "text": "Treffer mit dieser Waffe stoßen Gegner um X % schwächer zurück: die Rückstoßkraft wird mit (1 − X/100) multipliziert, ab 100 % gibt es keinen Rückstoß mehr. X wird über die Ausrüstung addiert, beim Beidhändig-Kampf zählt die andere Waffe nicht. Gilt für deine Treffer auf Kreaturen und Spieler, nicht für Zusatztreffer anderer Effekte.",
+  "abweichung": ""
+ },
+ "Luck": {
+  "text": "Glück verschiebt die Seltenheit, wenn EpicLoot magische Beute auswürfelt (Kreaturen, Truhen, Glücksspiel beim Händler). Gezählt wird das Glück aller Spieler im Umkreis von 100 m um die Fundstelle; je Spieler wird X aller ausgerüsteten Items addiert. Mit L = Summe/100 werden die Gewichte multipliziert: Magie ×(1−0,2·L, min. 0), Selten ×1, Episch ×(1+0,2·L), Legendär ×(1+L), Mythisch ×(1+1,1·L), Uralt ×(1+1,2·L). Was die Beutetabelle nicht vorsieht, bleibt ausgeschlossen. Am Verzauberungstisch wirkt Glück nicht.",
+  "abweichung": ""
+ },
+ "Prosperity": {
+  "text": "Stirbt eine Kreatur oder wird eine Truhe ausgewürfelt (meist beim ersten Öffnen, auch Schatzkarten-Truhen), zählt EpicLoot den Wohlstand aller Spieler im Umkreis von 100 m zusammen (P in %, je Spieler X aller ausgerüsteten Items). Es gibt floor(P/100) sichere Zusatzwürfe plus einen weiteren mit dem Rest als Chance, höchstens 3 (Config BonusRollsMax). Jeder Zusatzwurf würfelt die ganze EpicLoot-Beutetabelle des Ziels erneut. Normale Valheim-Beute bleibt gleich.",
+  "abweichung": "Höchstens 3 Zusatzwürfe (Config BonusRollsMax), auch wenn „je 100 % ein garantierter Wurf“ mehr ergäbe."
+ },
+ "ModifyParryWindow": {
+  "text": "Verlängert das Parierfenster um X Millisekunden. In Valheim zählt ein Treffer als pariert, wenn er in den ersten 250 ms nach dem Hochnehmen des Blocks kommt; mit dem Effekt sind es 250 + X ms. Es zählen die Werte aller angelegten Items, auch von einer Waffe, wenn du mit dem Schild blockst. Parieren geht weiterhin nur mit Items, die einen Parierbonus haben.",
+  "abweichung": ""
+ },
+ "Slow": {
+  "text": "Jeder Treffer, den du einem Ziel zufügst (kein Boss), verlangsamt es 2 Sekunden lang: Renn-, Schwimm- und schnelle Fluggeschwindigkeit, Beschleunigung und Angriffsanimationen werden mit (1 − X/100) multipliziert, höchstens um 90 %. X aller ausgerüsteten Items wird addiert. Das normale Lauftempo ohne Rennen bleibt unverändert. Weitere Treffer starten die 2 Sekunden neu, ändern aber nicht die Stärke einer laufenden Verlangsamung.",
+  "abweichung": "Bewegung: nur Renn-, Schwimm- und schnelle Fluggeschwindigkeit sowie Beschleunigung, nicht das normale Lauftempo."
+ },
+ "DoubleMagicShot": {
+  "text": "Gilt für Projektil-Angriffe, solange der Stab mit diesem Effekt ausgerüstet ist. Mit einer Chance (Config: 75 %) feuert der Angriff doppelt so viele Geschosse, jedes macht aber nur 66 % Schaden (zusammen 132 %) und streut 20 % stärker. Nur dann kostet der Angriff sein Eitr (und ggf. Ausdauer oder Gesundheit) ein zweites Mal; reicht das nicht, gibt es einen normalen Schuss.",
+  "abweichung": "Feuert nicht immer doppelt: nur mit Chance (Config 75 %), und jedes Geschoss macht nur 66 % Schaden; die doppelten Kosten fallen nur beim ausgelösten Doppelschuss an."
+ },
+ "TripleBowShot": {
+  "text": "Gilt für Bögen und Armbrüste. Mit einer Chance (Config: 75 %) feuert ein Schuss dreimal so viele Geschosse und verbraucht 3 Pfeile bzw. Bolzen; jedes Geschoss macht nur 40 % Schaden (zusammen 120 %) und streut 25 % stärker. Hat der Angriff Ausdauer- oder Eitrkosten, fallen sie noch einmal an; reicht das nicht, gibt es einen normalen Schuss.",
+  "abweichung": "Nur mit Chance (Config 75 %), jedes Geschoss macht nur 40 % Schaden; gilt auch für Armbrüste."
+ },
+ "SpellSword": {
+  "text": "Nur für Nahkampfwaffen: Jeder Angriff kostet halb so viel Ausdauer, dafür zusätzlich Eitr in Höhe der halben Grund-Ausdauerkosten des Angriffs (vor Rabatten durch Fertigkeit und Ausrüstung). **Ohne genug Eitr, etwa ohne Eitr-Essen, kannst du mit der Waffe nicht angreifen.** Außerdem steigt der Schaden um X % (addiert zu pauschalen Boni wie „Alle Schäden“); angezeigt wird X ohne %-Zeichen. Während Eitr-Infusion aktiv ist, entfällt der Eitr-Aufschlag.",
+  "abweichung": "„50 % der Kosten in Eitr umwandeln“ stimmt nur grob: Ausdauer wird halbiert, Eitr kostet die Hälfte der unreduzierten Grund-Ausdauerkosten, ohne Eitr ist kein Angriff möglich. Anzeige „+X“ ohne %-Zeichen."
+ },
+ "BulkUp": {
+  "text": "Die maximale Gesundheit steigt um X % (gerechnet auf Grundwert plus Essen, bevor prozentuale Boni anderer Effekte kommen). Gleichzeitig sinkt der Multiplikator der Gesundheitsregeneration aus Essen um X Prozentpunkte (z. B. 1,0 → 0,7 bei X = 30), nie unter 0; mit Regenerations-Boni ist der relative Verlust also kleiner. X aller ausgerüsteten Items wird addiert, höchstens 100 %.",
+  "abweichung": ""
+ },
+ "EitrWeave": {
+  "text": "Jede Parade (Block im normalen Parierfenster von 0,25 s mit einem Schild oder einer Waffe, die parieren kann) gibt dir sofort X Eitr. Die Werte aller angelegten Items mit dem Effekt werden addiert, eine Abklingzeit gibt es nicht. Ob durch andere Effekte verlängerte Parierfenster mitzählen, ist im Code unklar, weil die Prüfung fest 0,25 s nutzt.",
+  "abweichung": ""
+ },
+ "DartingThoughts": {
+  "text": "Die Eitr-Regeneration steigt: X/100 wird zum Regenerations-Multiplikator addiert, wie bei anderen Regenerations-Boni. Gleichzeitig sinkt das maximale Eitr um X/2 %. Gekürzt wird das Eitr aus Essen, bevor prozentuale Eitr-Boni und Umwandlungen anderer Effekte (z. B. Gesundheit zu Eitr, „Deep Well“) dazukommen; diese werden nicht gekürzt. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": ""
+ },
+ "HeadHunter": {
+  "text": "Stirbt eine Kreatur, zählt der höchste Wert unter allen Spielern im Umkreis von 100 m (nicht die Summe, egal wer getötet hat). Mit X % Chance fällt zusätzlich eine Trophäe dieser Kreatur, unabhängig vom normalen Trophäen-Drop; ab 100 % immer. Pro Tod gibt es höchstens eine Extra-Trophäe; Kreaturen ohne Trophäe in der Beuteliste geben nichts.",
+  "abweichung": "Keine erhöhte Drop-Chance, sondern eine eigene Chance auf eine zusätzliche Trophäe; es zählt nur der höchste Wert der Spieler in 100 m."
+ },
+ "Bulwark": {
+  "text": "Set-Bonus (Heimdall), per Fähigkeitentaste (Standard G, H oder J), Abklingzeit 60 s ab Aktivierung. 5 s lang bist du immun gegen Hauen, Schlitzen, Stechen, Feuer, Eis, Blitz, Gift und Geist. Schaden ohne Schadensart, etwa Fallschaden, trifft dich weiterhin.",
+  "abweichung": "Nicht jeder Schaden: Fallschaden und anderer Schaden ohne Schadensart wird nicht verhindert."
+ },
+ "Undying": {
+  "text": "Set-Bonus (Heimdall), wirkt von selbst. Würde deine Gesundheit durch irgendeinen Schaden auf 0 fallen, auch durch Fallschaden, wirst du stattdessen voll geheilt und bist danach 3 s immun gegen Hauen, Schlitzen, Stechen, Feuer, Eis, Blitz, Gift und Geist. Abklingzeit 20 Minuten.",
+  "abweichung": ""
+ },
+ "FrostDamageAOE": {
+  "text": "Hat deine Nahkampfwaffe Frostschaden (auch durch Verzauberung), erzeugt jeder Hieb oder Stoß Eisspitzen vor dir; Flächenangriffe lösen nichts aus. 0,3 s später erleiden alle Kreaturen in diesem Bereich X % deines Angriffsschadens (Waffenschaden mit Angriffs- und Skillfaktor, ohne Hacken und Spitzhacke) als Frostschaden. Der Bereich ist etwa 6 m breit und 9 m lang und liegt um den Punkt deiner Angriffsreichweite. Es gibt keine Feind-Prüfung: Auch zahme Tiere werden getroffen, Spieler nur bei PvP.",
+  "abweichung": "Trifft jede Kreatur im Bereich ohne Feind-Prüfung (auch zahme Tiere); nur Hieb- und Stoßangriffe, keine Flächenangriffe."
+ },
+ "Berserker": {
+  "text": "Set-Bonus (Ragnar), per Fähigkeitentaste (Standard G, H oder J), Abklingzeit 180 s. 10 s lang ist deine Gesundheitsregeneration ×0, und magische Waffen machen +(200 % − 150 % × Gesundheit/Maximum) Schaden: +200 % bei fast leerer, +50 % bei voller Gesundheit. Nicht-magische Waffen bekommen keinen Bonus. Regenerationsboni von EpicLoot (z. B. Ragnars eigene +50 %) werden danach addiert, damit regenerierst du doch.",
+  "abweichung": "Der Schadensbonus gilt nur für magische Waffen; Regenerationsboni (z. B. Ragnars 2er-Bonus +50 %) heben das Regenerationsverbot teilweise auf."
+ },
+ "OverwhelmingLaunch": {
+  "text": "Set-Bonus (Thor). Mit der Taste (Standard T) wirfst du die gehaltene Nahkampfwaffe bis 30 m weit dorthin, wo du hinschaust. Beim Aufschlag trifft sie Gegner und zerstörbare Objekte im Umkreis von 4 m mit Waffenschaden +X %, doppelter Taumelwirkung und Rückstoß. Der Wurf kostet 3× die Ausdauer eines normalen Angriffs; bis die Waffe zurückgeflogen ist, kannst du mit ihr nicht angreifen. Bögen, Armbrüste, Stäbe, Spitzhacken und Angel gehen nicht.",
+  "abweichung": ""
+ },
+ "Artillery": {
+  "text": "Armbrüste (Fertigkeit Armbrüste) schießen statt Bolzen den Feuerball des Stabs der Glut im hohen Bogen. Er landet dort, wohin du zielst (Strahl bis 60 m, sonst auf dem Boden 60 m voraus). Der Feuerball übernimmt Schaden und Schadensarten des Armbrustschusses, erhöht um X %, und macht Flächenschaden im Umkreis von 2,5 m. X aller ausgerüsteten Items wird addiert; Reichweite und Radius stammen aus der Config. Mit Dreifachschuss streuen die Ziele um bis zu 15 % der Entfernung.",
+  "abweichung": ""
+ },
+ "Assassin": {
+  "text": "Hältst du mit einer Nahkampfwaffe in der Hand (keine Spitzhacke) das Fadenkreuz 2 s auf einen Gegner in bis zu 20 m, springst du hinter ihn (sonst seitlich) und führst sofort den ersten Primärangriff der Waffe aus: ohne Ausdauer-, Eitr- und Gesundheitskosten, mit X % seines normalen Schadens. Danach Abklingzeit 340 − 0,8·X s, mindestens 30 s (Werte aus der Config). Ohne freien Platz oder bei Nebel zwischen euch gibt es keinen Sprung. X aller ausgerüsteten Items wird addiert.",
+  "abweichung": ""
+ },
+ "CoilingVenom": {
+  "text": "X % des physischen Schadens (Hauen, Schlitzen, Stechen) aller ausgerüsteten Waffen werden in Giftschaden umgewandelt; X aller Items wird addiert, höchstens 100 %. Trifft dein Gift eine Kreatur (kein Spieler, nicht gezähmt), zählt deren Giftwiderstand für diesen Treffer als normal – eine Immunität bleibt. Neues Gift wird zum restlichen Gift im Ziel addiert, statt wie sonst nur ein schwächeres zu ersetzen.",
+  "abweichung": ""
+ },
+ "NineSteps": {
+  "text": "Wirkt nur zusammen mit „Coiling Venom“. Nach jedem Treffer auf eine Kreatur, die du mit Gift markiert hast, vergleicht EpicLoot das restliche Gift im Ziel mit seiner aktuellen Gesundheit: erreicht es X % davon (X zwischen 10 und 1000), ist das Ziel verdammt. Das Gift wird entfernt, das Ziel um 40 % verlangsamt (Bosse nicht) und stirbt nach 9 Schritten zu je 0,5 s. Auch Bosse sterben so; der Kill zählt für dich, wenn dein Charakter gefunden wird. Werte aus der Config.",
+  "abweichung": "Nicht erwähnt: wirkt nur mit „Coiling Venom“ und tötet auch Bosse."
+ },
+ "SlightlyWeakToFire": {
+  "text": "Nachteil: Du bist leicht anfällig für Feuer, Feuerschaden gegen dich zählt ×1,25 (auch das daraus entstehende Brennen). Das greift nur, wenn du keinen Feuerwiderstand hast, etwa durch Rüstung oder Met; jeder Widerstand hebt die Schwäche auf. Hast du mehrere Feuer-Schwächen, zählt nur die stärkste.",
+  "abweichung": ""
+ },
+ "WeakToFire": {
+  "text": "Nachteil: Du bist anfällig für Feuer, Feuerschaden gegen dich zählt ×1,5 (auch das daraus entstehende Brennen). Das greift nur, wenn du keinen Feuerwiderstand hast, etwa durch Rüstung oder Met; jeder Widerstand hebt die Schwäche auf. Hast du mehrere Feuer-Schwächen, zählt nur die stärkste.",
+  "abweichung": ""
+ },
+ "VeryWeakToFire": {
+  "text": "Nachteil: Du bist sehr anfällig für Feuer, Feuerschaden gegen dich zählt ×2 (auch das daraus entstehende Brennen). Das greift nur, wenn du keinen Feuerwiderstand hast, etwa durch Rüstung oder Met; jeder Widerstand hebt die Schwäche auf. Hast du mehrere Feuer-Schwächen, zählt nur die stärkste.",
+  "abweichung": ""
+ },
+ "GiantsBlood": {
+  "text": "Du wirst X % größer; auch Reichweite, Höhe und Breite deiner Nahkampf- und Flächenangriffe wachsen um X %, und dein Körper wird schwerer. Zusätzlich: Tragfähigkeit +X % der Grund-Tragfähigkeit (300), Gesundheitsregeneration +4·X % und physischer Schaden (stumpf, Schnitt, Durchstoß, Hacken, Spitzhacke) aller angelegten Waffen +0,5·X %. Beim Ducken, Ausweichen und in der Luft bleibt deine Kollisionsform normal groß. Werte mehrerer Quellen addieren sich.",
+  "abweichung": "Verschweigt die größere Angriffsreichweite und den schwereren Körper."
+ },
+ "Hexen": {
+  "text": "Solange der Effekt aktiv ist, hast du die Gestalt einer Jotun-Hexe (60 % ihrer Größe). Primärangriff ist ihr Magiestoß, Sekundärangriff ihr Blitz; Ausweichen (Blocken oder Ducken plus Springen) löst ihre Ausweichbewegung in Bewegungsrichtung aus. Springen startet den Flug (ab 10 Eitr), gehaltenes Springen bzw. Ducken lässt dich steigen bzw. sinken. Fliegen kostet X Eitr pro Sekunde (kleiner ist besser) und stoppt die Eitr-Regeneration; bei 0 Eitr sinkst du zu Boden.",
+  "abweichung": ""
+ },
+ "Sniper": {
+  "text": "Set-Bonus (Egil). Mit einem Bogen (keine Armbrust) fliegen Pfeile (1 + 1,25 × X)-mal so schnell, das Spannen dauert aber ebenso (1 + 1,25 × X)-mal so lange (Faktoren per Config). Trifft ein Pfeil mehr als 15 m vom Schützen entfernt (Luftlinie), macht er +X % Schaden je Meter der gesamten Strecke, z. B. bei X = 0,8 und 30 m +24 %.",
+  "abweichung": "Die Kurzanzeige „pro Meter ab 15 m“ ist missverständlich: Über 15 m zählt die gesamte Strecke ab Abschuss, nicht nur die Meter über 15."
+ },
+ "Frostwalker": {
+  "text": "Watest du in mindestens 0,4 m tiefes Wasser oder schwimmst 0,3 s, gefriert das Wasser unter dir zu einer Eisfläche, die mit dir wandert (ab 10 Eitr). Solange du darauf stehst, kostet das X Eitr pro Sekunde, über dem Ozean der Aschenlande das Dreifache; ein kleinerer Wert ist also besser. Auf und im Wasser regeneriert dein Eitr nicht. Bei 0 Eitr oder wenn du dich duckst, brichst du ein; duckst du dich dann schwimmend erneut, frierst du wieder ein. Nicht auf Schiffen, in Dungeons oder beim Sitzen und Reiten.",
+  "abweichung": ""
+ },
+ "SpiritAnimal": {
+  "text": "Set-Bonus (Fylgja). Schau ein gezähmtes, kampffähiges Tier an und drück die Taste (Standard Y): Nach Bestätigung verschwindet es für immer und wird deine Fylgja. Im Kampf (Treffer oder Bedrohung in den letzten 10 s) erscheint sein Geist 120 s lang, kommt bei anhaltendem Kampf wieder und kehrt 30 s nach seinem Fall zurück; über 60 m Abstand verschwindet er. X % Stärke heißt: sein Schaden × X/100, erlittener Schaden × 100/X.",
+  "abweichung": "Die Set-Beschreibung verschweigt, dass das gebundene Tier dauerhaft aus der Welt verschwindet (nur das Bestätigungsfenster sagt es)."
+ },
+ "Earthshaker": {
+  "text": "In der Luft per Taste (Standard T): Du stürzt mit 30 m/s dorthin, wohin du zielst (mind. 45° abwärts, lenkbar), und schlägst für X Schaden auf, halb stumpf, halb Durchstoß, im Radius 5 m plus 1 m je 15 m Fallhöhe. Dazu +1 % je 10 Gewicht über 300 im Inventar (max. +300 %) und +2 % je Meter Fallhöhe über 5 m; hast du beim Start unter 3 m freie Luft unter dir, gibt es −50 %. Der Sturz kostet 25 Ausdauer und verursacht keinen Fallschaden. Alle Zahlen außer X sind per Config änderbare Standardwerte.",
+  "abweichung": ""
+ },
+ "PiercingBolts": {
+  "text": "Set-Bonus (Bolthorn). Armbrustbolzen ohne Flächenschaden fliegen durch jede Kreatur hindurch und treffen jede nur einmal. Nach jedem getroffenen Wesen behält der Bolzen X % seines Schadens und Rückstoßes; das dritte Ziel bekommt also X % von X %. Gelände, Bäume und Bauwerke stoppen ihn wie gewohnt.",
+  "abweichung": ""
+ },
+ "ElementalArchery": {
+  "text": "Solange der Effekt aktiv ist, nutzen deine Bögen (keine Armbrüste, nicht der Enterhaken) den Skill Elementarmagie statt Bögen: für Schaden, Spanngeschwindigkeit, Ausdauer beim Spannen und Schießen sowie die Tooltip-Werte. Treffer auf Kreaturen trainieren Elementarmagie statt Bögen. Der Zahlenwert spielt keine Rolle, nur ob der Effekt vorhanden ist.",
+  "abweichung": ""
+ },
+ "ConjuredArrows": {
+  "text": "Bögen (Fertigkeit Bögen) schießen beschworene Frostpfeile statt echter Pfeile; Pfeile werden weder gebraucht noch verbraucht. Jeder Schuss kostet 8 Eitr (Config) × (1 − 0,33 × Elementarmagie-Faktor), bei Elementarmagie 100 also 5,36 Eitr; ohne genug Eitr kein Schuss. Der Pfeil macht nur Eisschaden in Höhe von X % des Bogenschadens, der Schaden echter Pfeile entfällt. X aller ausgerüsteten Items wird addiert. Armbrüste sind nicht betroffen.",
+  "abweichung": ""
+ },
+ "ConvertHealthToEitr": {
+  "text": "X % deiner maximalen Gesundheit werden 1:1 in maximales Eitr verschoben; X aller Items wird addiert, höchstens 90 %, und mindestens 1 Gesundheit bleibt. Gerechnet wird auf die fertige maximale Gesundheit inklusive anderer Boni. Das funktioniert auch ohne Eitr-Essen; prozentuale Eitr-Boni wie „Deep Well“ wirken danach auch auf das umgewandelte Eitr.",
+  "abweichung": ""
+ },
+ "DeepWell": {
+  "text": "Das maximale Eitr steigt um X % (X aller Items addiert); gerechnet auf das bis dahin berechnete Eitr aus Essen, Boni und umgewandelter Gesundheit, nur wenn schon Eitr vorhanden ist. Dafür sinkt der Eitr-Regenerations-Multiplikator um 30 Prozentpunkte (Config EitrRegenReduction, nie unter 0), bevor Ausrüstungs-Boni zur Eitr-Regeneration dazukommen. Diese Strafe gilt einmal, egal wie viele Items den Effekt tragen.",
+  "abweichung": ""
+ },
+ "EitrBarrier": {
+  "text": "Ab 5 Eitr umgibt dich eine Barriere: Von jedem Treffer fängt sie X % (max. 100 %) ab, bevor Block, Widerstände und Rüstung wirken, und zahlt dafür standardmäßig 1 Eitr je abgefangenem Schadenspunkt; reicht das Eitr nicht, wird nur der bezahlbare Teil abgefangen. Jede Absorption setzt die Eitr-Regeneration kurz aus. Sinkt dein Eitr unter 0,5, bricht die Barriere für 5 s zusammen und entsteht danach erst ab 5 Eitr neu. Fallschaden wird mit abgefangen, Brennen- und Gift-Ticks sowie selbst verursachter Schaden nicht.",
+  "abweichung": ""
+ },
+ "Interconnected": {
+  "text": "Der Skill der Waffe in deiner Hand erhält Bonusstufen in Höhe von X % der Stufe seines Partner-Skills (abgerundet). Partner: Bögen ← Äxte oder Stangenwaffen, Blutmagie ← Schlagwaffen oder Unbewaffnet, Elementarmagie ← Schwerter oder Speere, Armbrüste ← Messer; umgekehrt Äxte/Stangenwaffen ← Bögen, Schlagwaffen/Unbewaffnet ← Blutmagie, Schwerter/Speere ← Elementarmagie, Messer ← Armbrüste. Bei zwei Partnern zählt der höhere. Die Bonusstufen wirken auf alle Skill-Werte im Spiel, dein gelernter Skill steigt nicht.",
+  "abweichung": ""
+ },
+ "AddAllSkills": {
+  "text": "Erhöht alle Fertigkeiten um X Stufen (auch Ausweichen, Reiten, Landwirtschaft), zusätzlich zu einzelnen Fertigkeits-Boni; X aller ausgerüsteten Items wird addiert. Die gelernte Stufe bleibt gleich, EpicLoot rechnet den Bonus beim Abfragen dazu. Über Stufe 100 hinaus hilft er nur, wo das Spiel linear rechnet: Waffenschaden (+0,6 % je Stufe), Angriffskosten (−0,33 %), Blockrüstung (+0,5 %), Sprint-Tempo, Sprungkraft. Spannzeit, Nachladen sowie Ausdauer beim Sprinten, Schwimmen, Schleichen, Ausweichen und Angeln enden bei 100.",
+  "abweichung": ""
+ },
+ "EitrInfusion": {
+  "text": "Per Taste (Standard T, ab 20 Eitr) gießt du dein ganzes Eitr in die Waffe; je 4 Eitr gibt 1 s Infusion. Solange sie läuft, erhält die Waffe in deiner Hand +X % ihres höchsten einzelnen Schadenswerts als Zusatzschaden dieser Art, oder als Blitz, Eis bzw. Feuer, wenn du beim Start den Status Blitz, Eis bzw. Brennen hattest oder an einem Feuer standest. Dein Eitr regeneriert währenddessen nicht, Zauberklinge kostet kein Eitr, erneutes Drücken legt neu gewonnenes Eitr nach. Der Bonus wirkt nur, wenn die Waffe in der Hand verzaubert (magisch) ist.",
+  "abweichung": "Nicht verzauberte Waffen bekommen keinen Infusionsschaden."
+ },
+ "QuarryMark": {
+  "text": "Set-Bonus (Ullr). Trifft ein Bogenpfeil (keine Armbrust) eine Kreatur, ist sie 10 s markiert; ein neuer Pfeiltreffer erneuert das. Dein nächster Nahkampftreffer mit Axt oder Stangenwaffe auf dieses Ziel verbraucht die Markierung: Er macht +X % Schaden und gibt dir 25 Ausdauer (Dauer und Ausdauer per Config). Spieler und gezähmte Tiere werden nicht markiert.",
+  "abweichung": ""
+ },
+ "HelsHarvest": {
+  "text": "Stirbt eine Kreatur (kein Spieler, nicht zahm) durch deinen letzten Treffer oder den deiner Beschwörungen, erhebt sich an ihrer Stelle ein Skelett-Knecht mit derselben Sternestufe, der dir folgt und standardmäßig 30 s kämpft. Sein Schaden steigt um 2 % je Stufe Blutmagie. Es gibt höchstens X Knechte gleichzeitig (gerundet); ein neuer ersetzt den ältesten. In über 1 m tiefem Wasser entsteht keiner, und Knechte lassen keine Beute fallen. Tode durch Brennen oder Gift über Zeit zählen nicht, weil diese Ticks keinen Angreifer haben.",
+  "abweichung": ""
+ },
+ "Vanish": {
+  "text": "Set-Bonus (Huldra). Weichst du aus, während ein alarmierter Gegner höchstens 15 m entfernt ist, entsteht Rauch: X Sekunden lang können Gegner dich weder sehen noch hören. Gegner in 15 m, die dich als Ziel haben, verlieren es und beruhigen sich (außer Bossen und Spielerjägern wie Überfall-Monstern). Dein nächster Treffer in dieser Zeit wird mit der Hinterhältigkeit der Waffe multipliziert und beendet das Verschwinden. Abklingzeit 20 s (Config).",
+  "abweichung": ""
+ },
+ "Firebrand": {
+  "text": "Mit einer Zweihandaxt oder einem Zweihandschwert bricht beim dritten Schlag jeder Kombo Feuer aus: Gegner im Umkreis von 3 m um einen Punkt knapp vor dir erleiden X % des Waffenschadens (inkl. Verzauberungen) als Feuerschaden und werden zurückgestoßen. Der Schaden skaliert wie ein Treffer mit deinem Waffenskill und wirkt als Brennen über Zeit. Dein Zweitangriff löst den Ausbruch mit halber Stärke aus. Er kommt bei jedem dieser Schläge, auch wenn du nichts triffst; Radius und Zweitangriffs-Anteil sind Config-Standardwerte.",
+  "abweichung": ""
+ },
+ "LifeSiphon": {
+  "text": "Jeder deiner Treffer saugt das Ziel 30 s lang aus; weitere Treffer erneuern die Zeit, es gilt der höchste Wert. Solange kann das Ziel nicht geheilt werden, und jeder Spieler, der ihm Schaden zufügt, heilt sich um X % des tatsächlich angerichteten Schadens. Feuer-, Gift- und Geistschaden zählen nicht, weil sie über Zeit wirken. Werte aller angelegten Items addieren sich; die Dauer ist ein Config-Standardwert.",
+  "abweichung": ""
+ },
+ "KineticQuake": {
+  "text": "Jeder erfolgreich geblockte Angriff lädt eine Ladung, außer der Block bricht durch Taumeln oder deine Ausdauer ist danach leer. Bei X Ladungen löst der nächste Block eine Felsen-Schockwelle aus, die 12 m geradeaus über den Boden läuft (4 m breit, stoppt an Wänden) und stumpfen Schaden von 300 % deiner Blockrüstung (mit Blocken-Skill, ohne Parierbonus) verursacht. Ein kleineres X ist also besser. Ladungen bleiben auch über Sitzungen gespeichert; Länge, Breite und 300 % sind Config-Standardwerte.",
+  "abweichung": ""
+ },
+ "ShieldThrow": {
+  "text": "Set-Bonus (Svalinn). Mit der Taste (Standard T) wirfst du den Schild bis 15 m weit oder bis zum ersten festen Hindernis, danach kehrt er zurück. Jeder Gegner wird auf Hin- und Rückweg je einmal getroffen, mit X % deiner Blockrüstung (mit Fertigkeit Blocken) als Hauen-Schaden. Geblockter Schaden füllt eine Leiste (5× Blockrüstung) für bis zu +300 %; der Wurf leert sie, nach 10 s ohne Blocken schwindet sie. Kostet 20 Ausdauer; bis zur Rückkehr kannst du nicht blocken.",
+  "abweichung": ""
+ },
+ "ReduceStaggerTaken": {
+  "text": "Set-Bonus (Svalinn). Jeder Taumelschaden, den du bekommst, sinkt um X %, höchstens um 90 %. Das gilt für normale Treffer und für geblockte Angriffe; dein Taumelbalken füllt sich also langsamer. X aller aktiven Quellen wird addiert.",
+  "abweichung": ""
+ }
+}

@@ -1,0 +1,472 @@
+{
+  "$locale": "en",
+  "epicloot.magicitem": {
+    "title": "Magic item",
+    "short": "Equipment with a rarity and magic effects from Epic Loot.",
+    "body": "Almost any equipment you can wear can be magic: weapons, armour, shields, tools, torches and trinkets, but not arrows. A magic item has a [[epicloot.rarity|rarity]], one or more [[epicloot.effects|magic effects]] and sometimes [[epicloot.shardslots|shard slots]]. In your inventory its icon has a background in the rarity colour, and on the ground a beam of light in that colour stands above it. You find it as loot, make it from plain equipment at the [[epicloot.table|enchanting table]] or get it by [[epicloot.table.identify|identifying]].",
+    "aliases": [
+      "magic item",
+      "magic items"
+    ]
+  },
+  "epicloot.effects": {
+    "title": "Magic effects",
+    "short": "The coloured lines of a magic item: each one is an effect with a rolled value.",
+    "body": "Each coloured line below the stats is a magic effect, also called an enchantment in Epic Loot, with the value rolled for this item. The symbol in front shows its history: ◆ rolled, ▼ [[epicloot.table.augment|augmented]] at least once, ▲ [[epicloot.temper|tempered]] by Hildir. When rolling, each effect appears at most once, some exclude each other, and which ones are possible depends on the item type and the [[epicloot.rarity|rarity]]. How many there are is explained under [[epicloot.effectcount]]; [[epicloot.stars|stars]] after a line mark effects that rarely roll.",
+    "aliases": [
+      "magic effects",
+      "magic effect",
+      "Active Magic Effects",
+      "Magic Effect Descriptions",
+      "Enchantment",
+      "Enchantments"
+    ]
+  },
+  "epicloot.effectcount": {
+    "title": "Number of effects",
+    "short": "How many effects a magic item gets depends on its rarity.",
+    "body": "When an item is created, the number of effects is rolled by [[epicloot.rarity|rarity]]; the tooltip shows it at the bottom next to “Effects:”. Per the server config (loottables.json): Magic 1–3, Rare 2–4, Epic 3–5, Legendary 4–6, Mythic 5–7, Ancient 6–8, with the lowest number at 80 %, the middle one at 18 % and the highest at 2 %. When [[epicloot.table.enchant|enchanting]], a higher level of that feature shifts the chances upwards, at level 7 by 14 percentage points to the middle and 7 to the highest number. [[epicloot.unique|Unique items]] and many [[epicloot.sets|set pieces]] have a fixed number, and effects from [[epicloot.shardslots|shard slots]] come on top.",
+    "aliases": []
+  },
+  "epicloot.stars": {
+    "title": "Rarity stars ★",
+    "short": "★ to ★★★ after an effect: this effect rarely rolls. It says nothing about how high its value is.",
+    "body": "The stars do not rate the rolled value but how often the effect is picked at all. Epic Loot compares the effect's selection weight with the median weight of all rollable effects: the lowest weight can get 3 stars, the second lowest 2, the third lowest 1, but only if it is below 6.25 %, 12.5 % or 35 % of the median, otherwise fewer. One star is light blue, two are purple, three are gold; the same stars appear in the effect lists at the [[epicloot.table|enchanting table]]. With this server's effects, for example Duelist and Quick Draw carry one star, Indestructible, Waterproof, Air Jump, Feather Fall and Executioner two, and only Free Build three. Each player chooses in their own Epic Loot config under “Effect Rarity Flare” whether and how the stars show (Off, Static, Animated).",
+    "aliases": []
+  },
+  "epicloot.rollrange": {
+    "title": "Roll range",
+    "short": "The span from the lowest to the highest value an effect can have at this rarity.",
+    "body": "Each effect has a lowest and a highest value and a step size per [[epicloot.rarity|rarity]]; the rolled value lies on that grid. Hold Shift over a magic item (controller: LT) and every effect shows “Roll range: \\[15-20\\]”; when [[epicloot.table.augment|augmenting]] and in the rune list the range follows the effect directly, at Hildir it is labelled “Min Max”. The range belongs to the item's current rarity; higher rarities usually have higher ranges. Values above the range can come from [[epicloot.temper|tempering]], from [[epicloot.runes|runes]] taken from rarer gear or from the power bonuses of an upgraded table.",
+    "aliases": [
+      "Roll range",
+      "Min Max"
+    ]
+  },
+  "epicloot.effectdetails": {
+    "title": "Effect details",
+    "short": "Holding Shift (controller: LT) shows the description, roll range and extra values under each effect.",
+    "body": "Hold Shift while hovering a magic item and a grey block appears under every effect: the description, the [[epicloot.rollrange|roll range]] and, if there are any, fixed extra values such as cooldown, duration or radius. On a controller you hold LT; only then does the tooltip also show the hint “Hold for effect details”. The same details exist for stones in [[epicloot.shardslots|shard slots]], for shardstones and for [[epicloot.sets.bonus|set bonuses]].",
+    "aliases": [
+      "Hold for effect details"
+    ]
+  },
+  "epicloot.rarity": {
+    "title": "Rarity",
+    "short": "The tier of a magic item, from Magic to Ancient; it sets the number of effects, the value ranges and the colour.",
+    "body": "Epic Loot has six rarities, from lowest to highest: [[epicloot.rarity.magic|Magic]], [[epicloot.rarity.rare|Rare]], [[epicloot.rarity.epic|Epic]], [[epicloot.rarity.legendary|Legendary]], [[epicloot.rarity.mythic|Mythic]] and [[epicloot.rarity.ancient|Ancient]]. The higher it is, the more [[epicloot.effectcount|effects]] the item gets, the higher their [[epicloot.rollrange|roll ranges]] and the more [[epicloot.shardslots|shard slots]] are possible. The tooltip shows it at the bottom next to “Rarity:”, and the name, the effects and the icon background carry its colour. [[epicloot.material|Enchanting materials]] come in every rarity too; enchanting and augmenting need materials of the same rarity.",
+    "aliases": [
+      "Rarity"
+    ]
+  },
+  "epicloot.rarity.magic": {
+    "title": "Magic (rarity)",
+    "short": "The lowest rarity: 1 to 3 effects, at most 1 shard slot.",
+    "body": "Magic is the first of six [[epicloot.rarity|rarities]]; its default colour is blue. Per the server config such an item gets 1 effect (80 %), 2 (18 %) or 3 (2 %) and a 10 % chance of one [[epicloot.shardslots|shard slot]]. [[epicloot.table.enchant|Enchanting]] at this tier costs 1 Magic Runestone, 5 Magic Dust and 5 Magic Essence (weapons, tools) or 5 Magic Reagent (armour, shields, accessories).",
+    "aliases": []
+  },
+  "epicloot.rarity.rare": {
+    "title": "Rare (rarity)",
+    "short": "The second rarity: 2 to 4 effects, at most 1 shard slot.",
+    "body": "Rare is the second of six [[epicloot.rarity|rarities]]; its default colour is yellow. Per the server config such an item gets 2 effects (80 %), 3 (18 %) or 4 (2 %) and a 25 % chance of one [[epicloot.shardslots|shard slot]]. Per the server config, 11 effects only become possible from this tier upwards.",
+    "aliases": [
+      "Rare"
+    ]
+  },
+  "epicloot.rarity.epic": {
+    "title": "Epic (rarity)",
+    "short": "The third rarity: 3 to 5 effects, up to 2 shard slots.",
+    "body": "Epic is the third of six [[epicloot.rarity|rarities]]; its default colour is purple. Per the server config such an item gets 3 effects (80 %), 4 (18 %) or 5 (2 %) and 0 (50 %), 1 (45 %) or 2 (5 %) [[epicloot.shardslots|shard slots]]. Per the server config, 16 effects only become possible from this tier upwards.",
+    "aliases": [
+      "Epic"
+    ]
+  },
+  "epicloot.rarity.legendary": {
+    "title": "Legendary (rarity)",
+    "short": "The fourth rarity: 4 to 6 effects, up to 2 shard slots, plus unique items and sets.",
+    "body": "Legendary is the fourth of six [[epicloot.rarity|rarities]]; its default colour is teal. Per the server config such an item gets 4 effects (80 %), 5 (18 %) or 6 (2 %) and 0 (15 %), 1 (55 %) or 2 (30 %) [[epicloot.shardslots|shard slots]]. With a 15 % chance it becomes a [[epicloot.sets|set piece]], otherwise it may become a [[epicloot.unique|unique item]] with its own name. From this tier upwards there is also [[epicloot.brokkrgift|Brokkr's Gift]].",
+    "aliases": [
+      "Legendary"
+    ]
+  },
+  "epicloot.rarity.mythic": {
+    "title": "Mythic (rarity)",
+    "short": "The fifth rarity: 5 to 7 effects, up to 3 shard slots.",
+    "body": "Mythic is the fifth of six [[epicloot.rarity|rarities]]; its default colour is orange. Per the server config such an item gets 5 effects (80 %), 6 (18 %) or 7 (2 %) and 0 (5 %), 1 (30 %), 2 (40 %) or 3 (25 %) [[epicloot.shardslots|shard slots]]. With a 15 % chance it becomes a [[epicloot.sets|set piece]]; on this server [[epicloot.unique|unique items]] outside of sets exist only at Legendary.",
+    "aliases": [
+      "Mythic"
+    ]
+  },
+  "epicloot.rarity.ancient": {
+    "title": "Ancient (rarity)",
+    "short": "The highest rarity: 6 to 8 effects and always 1 to 4 shard slots when created.",
+    "body": "Ancient is the highest of the six [[epicloot.rarity|rarities]]; its default colour is red. Per the server config such an item gets 6 effects (80 %), 7 (18 %) or 8 (2 %) and 1 (20 %), 2 (40 %), 3 (30 %) or 4 (10 %) [[epicloot.shardslots|shard slots]]. As with Legendary and Mythic, it becomes a [[epicloot.sets|set piece]] with a 15 % chance.",
+    "aliases": []
+  },
+  "epicloot.unique": {
+    "title": "Unique item",
+    "short": "A legendary item with a fixed name, its own description and guaranteed effects.",
+    "body": "When a [[epicloot.rarity.legendary|legendary]] item is created, it can become one of 19 unique items per the server config, such as Dyrnwyn or Mjolnir, if one fits its type. It then has a fixed name and its own description and certain effects are guaranteed; their values and all other effects roll as usual. Some have a fixed [[epicloot.effectcount|number of effects]] or a visible effect while equipped. The pieces of [[epicloot.sets|sets]] are named items of this kind too.",
+    "aliases": []
+  },
+  "epicloot.sets": {
+    "title": "Set item",
+    "short": "A piece of a named set; several equipped pieces of the same set unlock set bonuses.",
+    "body": "You recognise set pieces by the light cyan line at the very top, such as “Legendary Set Item”, and by the section “Set: Name (2/4):” in the tooltip. The first number counts your equipped pieces of this set, the second how many the full set needs; below are the pieces, equipped ones in their rarity colour, missing ones grey. Per the server config there are 23 sets, and every legendary, mythic or ancient item becomes a set piece with a 15 % chance when it drops, is enchanted or identified, if one fits it. What a set gives is listed under [[epicloot.sets.bonus|set bonuses]]; a [[epicloot.sets.rune|set rune]] moves a set onto another item. Epic Loot shows Valheim's own sets in the same form.",
+    "aliases": [
+      "Legendary Set Item",
+      "Mythic Set Item",
+      "Ancient Set Item",
+      "Epic Set Item",
+      "Rare Set Item",
+      "Magic Set Item",
+      "Legendary Sets"
+    ]
+  },
+  "epicloot.sets.bonus": {
+    "title": "Set bonuses",
+    "short": "Extra effects that work once enough pieces of the same set are equipped.",
+    "body": "In the set section each bonus reads “(2) ‣ effect”: the number in brackets is how many equipped pieces it needs. Active bonuses glow in the set colour, inactive ones are grey. If a bonus's strength depends on rarity, the tier it currently uses follows it, for example “(Legendary)”; for a bonus that needs 3 pieces, the rarity of your third best equipped piece counts. Some bonuses are abilities with their own key; the [[epicloot.effectdetails|effect details]] show it as “Activation key”.",
+    "aliases": [
+      "Set Bonuses",
+      "Activation key"
+    ]
+  },
+  "epicloot.sets.rune": {
+    "title": "Set rune",
+    "short": "An etched rune that holds a set; etched onto another item it makes that item a piece of the set.",
+    "body": "In the [[epicloot.table.runes|Runes]] tab, **Set Extract** takes the set out of a set piece and puts it into a set rune; per the server config the item keeps its rarity, effects and slots but no longer belongs to a set and gets a generated name. **Set Etch** turns a fitting magic item without a set or a name of its own into a piece of that set; it keeps its rarity and effects and takes the set piece's name. This only works at a rarity the set allows (Legendary, Mythic, Ancient on this server) and costs, among other things, [[epicloot.material.tokens|bounty tokens]].",
+    "aliases": [
+      "Set Rune",
+      "Set Etch",
+      "Set Extract",
+      "Etch Set Rune",
+      "Extract Set Rune"
+    ]
+  },
+  "epicloot.shardslots": {
+    "title": "Shard slots",
+    "short": "Free slots on a magic item for shardstones or etched runes; each stone adds an effect.",
+    "body": "The tooltip shows “Shard Slots (1/2):”, the used slots out of all slots, then the inserted stones with their effect and “◊ Empty Shard Slot” for each free one. To open them, hover the item in your inventory and press E (default key, controller: RT + X), then drag a [[epicloot.shardstone|shardstone]] or an [[epicloot.runes|etched rune]] in. Per the server config the most slots an item can have depend on its [[epicloot.rarity|rarity]]: Magic and Rare 1, Epic and Legendary 2, Mythic 3, Ancient 4; up to that, [[epicloot.brokkrgift|Brokkr's Gift]] adds more. Per the server config you cannot insert an effect the item already has from its rolls.",
+    "aliases": [
+      "Shard Slots",
+      "Shard Slot",
+      "Empty Shard Slot",
+      "Open shard slots"
+    ]
+  },
+  "epicloot.shardslots.removal": {
+    "title": "Removing stones",
+    "short": "Whether an inserted stone comes back out is set by the server; some have to be broken.",
+    "body": "Per the server config you can take etched runes and shardstones with a number value back out at any time and use them elsewhere. Shardstones whose effect has no number value (Warmth, for example) carry the note “(break to remove)”: a right-click breaks them after a confirmation and the stone is gone. The note “(permanent)” would mean a stone can never come out; this server does not use that. [[epicloot.table.sacrifice|Sacrificing]] or [[epicloot.table.disenchant|disenchanting]] the item returns all inserted stones.",
+    "aliases": [
+      "break to remove",
+      "Break Slotted Stone"
+    ]
+  },
+  "epicloot.shardstone": {
+    "title": "Shardstone",
+    "short": "A coloured stone for shard slots; its effect depends on colour, rarity and the item type.",
+    "body": "A shardstone is named like “Legendary Red Shardstone” and shows under “If slotted:” which effect it gives in which kind of item, for example a different one in melee weapons than in helmets. The value is fixed and depends on the stone's rarity, not the item's; [[epicloot.table.convert|Convert Materials]] raises a stone to the next rarity with [[epicloot.material.shard|shards]]. Shardstones drop as loot, and the biome decides their tier; special stones come from bosses (see [[epicloot.shardstone.exclusive]]). Per the server config several stones of the same colour in one item are weakened: the strongest counts fully, the next half, then a quarter, shown by the note “(50% strength)”.",
+    "aliases": [
+      "Shardstone",
+      "Shardstones",
+      "If slotted"
+    ]
+  },
+  "epicloot.shardstone.exclusive": {
+    "title": "Boss and unique shardstones",
+    "short": "Special shardstones with the same effect in every item; you may wear only one of each kind.",
+    "body": "The shardstones of the seven bosses from Eikthyr to Fader and the unique stones Firewalker and Stormcaller give the same effect in every item, shown as “All slots” in the tooltip. Across all your equipped gear only one item may hold a boss shardstone, and only one may hold a unique one; otherwise the game says, for example, “You are already wearing a boss shard”. The boss stones drop from their bosses and only exist from a certain rarity upwards, Fader's for example only at Mythic and Ancient.",
+    "aliases": [
+      "Boss shard",
+      "Unique shard"
+    ]
+  },
+  "epicloot.brokkrgift": {
+    "title": "Brokkr's Gift",
+    "short": "An artifact that gives a magic item extra shard slots.",
+    "body": "It comes as Legendary, Mythic and Ancient Brokkr's Gift; you drag it onto a magic item in your inventory and confirm, and it is used up either way. Per the server config it adds 1, 2 or 3 [[epicloot.shardslots|shard slots]] with a 100 % success chance, but never more than the item's rarity allows. It only works on items whose rarity is not higher than its own, also when they already have slots. You find it in chests of the Mistlands, Ashlands and Deep North, including their [[epicloot.adventure.treasuremap|treasure map]] chests.",
+    "aliases": [
+      "Brokkr's Gift"
+    ]
+  },
+  "epicloot.runes": {
+    "title": "Etched rune",
+    "short": "A runestone that holds a single enchantment, used to move it onto another item.",
+    "body": "An etched rune is made in the [[epicloot.table.runes|Runes]] tab when you extract an enchantment from an item; it is then named like “Etched Legendary Runestone” and has that item's rarity. Per the server config it holds 90 % of the original value, up to 110 % depending on the level of the Rune Manipulation feature; effects without a number value stay as they are. You can etch it onto an item, where it replaces an enchantment you pick, or put it into a free [[epicloot.shardslots|shard slot]], where its effect is added. It cannot be used for enchanting; that needs a blank [[epicloot.material.runestone|runestone]].",
+    "aliases": [
+      "Etched"
+    ]
+  },
+  "epicloot.runes.extractmode": {
+    "title": "Rune extract mode",
+    "short": "Sets what an item loses when you extract a rune from it; on this server only the chosen enchantment.",
+    "body": "A server can choose four modes: the item stays untouched, the chosen enchantment is removed, its rarity also drops one tier, or the item is destroyed. Per the server config (Rune Extract Mode = ReduceEnchants) only the chosen enchantment disappears and everything else stays. If it was the last enchantment and the item has no slots, it turns back into a normal item. The warning text in the [[epicloot.table.runes|Runes]] tab, which starts with “Extracting an enchantment”, names the active mode as well.",
+    "aliases": [
+      "Extracting an enchantment"
+    ]
+  },
+  "epicloot.unidentified": {
+    "title": "Unidentified item",
+    "short": "Magic loot with a known rarity and biome; what it becomes is decided only when you identify it.",
+    "body": "It is named like “Legendary Unidentified Meadows Gear”: the rarity comes first, and the biome decides which loot it can turn into. At the [[epicloot.table|enchanting table]] you turn it into a real item of that rarity with [[epicloot.table.identify|Identify]], or you sacrifice it for 1 Dust, Reagent and Essence of its rarity each. Only equipment can drop unidentified, and per the server config this happens more often than usual: weight 0.3 instead of 0.1, next to 0.6 for normal items, 0.15 for materials and 0.1 for shardstones.",
+    "aliases": [
+      "Unidentified Item",
+      "Unidentified"
+    ]
+  },
+  "epicloot.table": {
+    "title": "Enchanting table",
+    "short": "Epic Loot's station for magic items: sacrifice, identify, convert, enchant, augment, disenchant, runes.",
+    "body": "You build it with the hammer, per the server config from 10 Wood and 2 Greydwarf Eyes, and it needs no workbench. Its tabs are [[epicloot.table.sacrifice|Sacrifice]], [[epicloot.table.convert|Convert Materials]], [[epicloot.table.enchant|Enchant]], [[epicloot.table.augment|Augment]], [[epicloot.table.disenchant|Disenchant]], [[epicloot.table.runes|Runes]] and [[epicloot.table.upgrade|Upgrade Table]]. On a new table only Sacrifice is unlocked; everything else you unlock with materials and upgrade up to level 7, see [[epicloot.table.level|levels]]. The levels belong to this one table and apply to everyone who uses it.",
+    "aliases": [
+      "Enchanting Table"
+    ]
+  },
+  "epicloot.table.level": {
+    "title": "Enchanting table levels",
+    "short": "Each feature of the table is locked, unlocked or upgraded (level 1 to 7); higher levels give bonuses.",
+    "body": "In the [[epicloot.table.upgrade|Upgrade Table]] tab each feature shows “Current level”: “Locked”, “Unlocked” (the base level) or a number up to 7. Unlocking and every further level cost materials that get more expensive each level, such as Surtling Cores, metals, trophies, coins and bounty tokens. Per the server config level 7 gives: Sacrifice a 30 % chance of a double yield and 114 % power when identifying, Enchant more effects (+14 and +7 percentage points), Augment 6 instead of 2 new options and 75 % lower coin costs, Disenchant 5 fewer tokens and a 30 % chance of sacrifice materials, Rune Manipulation 30 % lower costs and 110 % rune power, Convert Materials a ratio of 1:1 instead of 5:1 (runestones 2:1). The levels apply to this table only.",
+    "aliases": [
+      "Current level",
+      "Max Level"
+    ]
+  },
+  "epicloot.table.upgrade": {
+    "title": "Upgrade Table",
+    "short": "The enchanting table tab where you unlock and upgrade its features.",
+    "body": "On the left you pick a feature, on the right you see its [[epicloot.table.level|level]], what each level gives (“Upgrades:”) and the cost. “Unlock” unlocks a locked feature and “Upgrade” raises it by one level; you pay with the listed materials from your inventory. The new level applies at once to everyone who uses this table.",
+    "aliases": [
+      "Upgrade Table",
+      "Unlock Cost"
+    ]
+  },
+  "epicloot.table.sacrifice": {
+    "title": "Sacrifice",
+    "short": "Destroys magic items, trophies and shardstones and gives enchanting materials in return.",
+    "body": "In the Sacrifice tab you pick items and, per the server config, get: 1 Dust and 1 Essence of their rarity for magic weapons and tools, 1 Dust and 1 Reagent for magic armour, shields and accessories, [[epicloot.material.shard|shards]] for trophies and [[epicloot.material.runestone|runestones]] for boss trophies. The list under “Destroy the selected items and receive:” shows exactly what you get; stones inserted in [[epicloot.shardslots|shard slots]] are returned. By default equipped items and items on your hotbar are not listed. From level 1 there is a chance of a double yield, and the same tab also holds [[epicloot.table.identify|Identify]].",
+    "aliases": [
+      "Sacrifice All",
+      "Sacrificing",
+      "Sacrifice Categories"
+    ]
+  },
+  "epicloot.table.identify": {
+    "title": "Identify",
+    "short": "Turns unidentified equipment into a real magic item of the same rarity.",
+    "body": "In the Sacrifice tab you switch to “Identify”, pick [[epicloot.unidentified|unidentified items]] and a category; per the server config Random costs 5 coins, Weapon or Armor 50 coins and 2 Gold Bounty Tokens each, Accessory 150 coins and 3 Gold Bounty Tokens. On top comes a material of the biome per item, 1 at Magic up to 6 at Ancient, such as Flint for the Meadows or Bloodgold for the Deep North. You get a random item of that category from the biome's loot; the list “Potential Items Identified” shows what is possible. If the biome's boss has not been defeated in this world yet, an item from a lower biome comes out instead and the list is marked “(Progress-gated)”.",
+    "aliases": [
+      "Identify",
+      "Identify Categories",
+      "Potential Items Identified",
+      "Progress-gated"
+    ]
+  },
+  "epicloot.table.convert": {
+    "title": "Convert Materials",
+    "short": "Trades enchanting materials: to a higher rarity, into other kinds, junk into something useful and shardstones upwards.",
+    "body": "The tab has four modes. “Upgrade Material Rarity” turns 5 materials of one rarity into 1 of the next, from Epic on with a few coins on top; per the server config “Convert Shards” trades 2 Dust and 2 Essence for 1 [[epicloot.material.shard|Shard]] or 2 Shards for 1 Dust, Essence or Reagent of the same rarity. “Salvage Junk” turns odds and ends into something useful, for example 10 Bone Fragments into a Skeleton Trophy, and “Upgrade Shardstones” raises a [[epicloot.shardstone|shardstone]] to the next rarity using shards. Higher levels of this feature lower the upgrade ratio down to 1:1 (runestones 2:1). Only recipes whose materials you already own some of are shown.",
+    "aliases": [
+      "Convert Materials",
+      "Upgrade Material Rarity",
+      "Convert Shards",
+      "Salvage Junk",
+      "Upgrade Shardstones",
+      "Conversion Cost",
+      "Salvage Cost"
+    ]
+  },
+  "epicloot.table.enchant": {
+    "title": "Enchant",
+    "short": "Turns plain equipment into a magic item of the rarity you choose.",
+    "body": "You pick a non-magic item and a [[epicloot.rarity|rarity]]; “Enchant Probabilities” then shows the chances for how many effects and [[epicloot.shardslots|shard slots]] it gets, followed by the possible effects with their ranges. Per the server config it costs 1 Runestone, 5 Dust and 5 Essence (weapons, tools) or 5 Reagent (armour, shields, accessories), all of the chosen rarity. Which effects it gets is rolled; from Legendary on, a [[epicloot.unique|unique item]] or a [[epicloot.sets|set piece]] can come out too. Higher levels of this feature raise the chance of more effects.",
+    "aliases": [
+      "Enchant",
+      "Enchant Cost",
+      "Enchant Probabilities"
+    ]
+  },
+  "epicloot.table.augment": {
+    "title": "Augment",
+    "short": "Rerolls a single effect of a magic item; you pick from offers or keep it.",
+    "body": "You pick a magic item and one of its effects and pay, per the server config, 1 Shard, 1 Dust and 1 Essence (weapons, tools) or 1 Reagent (armour, shields, accessories) of its rarity. You then get 2 new effects to choose from, up to 6 at an upgraded table, plus “(keep)” for the old one as the first option; the effect is marked ▼ afterwards, even if you keep it. You can augment further effects of the same item, each additional one costs extra coins (500, 1000, 1500 …), which higher levels cut by up to 75 %. Augmenting an already augmented effect again costs only the materials.",
+    "aliases": [
+      "Augment",
+      "Augment Cost",
+      "Augmenting item"
+    ]
+  },
+  "epicloot.table.disenchant": {
+    "title": "Disenchant",
+    "short": "Removes all magic; the item becomes normal again and can be enchanted anew.",
+    "body": "You pick a magic item that is not equipped and pay, per the server config, Iron Bounty Tokens by rarity: Magic 2, Rare 3, Epic 5, Legendary 7, Mythic 9, Ancient 11. Afterwards it is a normal item without effects, rarity or slots; inserted stones are returned. Higher levels of this feature save up to 5 tokens and give up to a 30 % chance of also getting the materials [[epicloot.table.sacrifice|sacrificing]] would have given. Unidentified items, shardstones and items with certain special effects cannot be disenchanted.",
+    "aliases": [
+      "Disenchant",
+      "Disenchant Cost"
+    ]
+  },
+  "epicloot.table.runes": {
+    "title": "Runes",
+    "short": "Tab for etched runes: take enchantments out, etch them onto other items and move sets.",
+    "body": "“Extract Rune” turns a chosen enchantment into an [[epicloot.runes|etched rune]] (per the server config for 1 Runestone of the item's rarity), “Etch Rune” replaces an enchantment of the item with the one in a rune (10 Dust). **Set Extract** and **Set Etch** do the same with whole sets, see [[epicloot.sets.rune|set rune]]. What happens to the item when extracting is set by the [[epicloot.runes.extractmode|rune extract mode]]. In the Upgrade Table the feature is called Rune Manipulation; its levels lower the costs by up to 30 % and raise rune power from 90 % up to 110 %.",
+    "aliases": [
+      "Rune Manipulation",
+      "Extract Rune",
+      "Etch Rune"
+    ]
+  },
+  "epicloot.material": {
+    "title": "Enchanting materials",
+    "short": "Dust, Essence, Reagent, Shards and Runestones in six rarities, for all work at the enchanting table.",
+    "body": "The tooltip starts with a line like “Legendary crafting material”, and the name begins with the rarity, for example “Epic Dust”. There are [[epicloot.material.dust|Dust]], [[epicloot.material.essence|Essence]], [[epicloot.material.reagent|Reagent]], [[epicloot.material.shard|Shards]] and [[epicloot.material.runestone|Runestones]]. You get them mainly by [[epicloot.table.sacrifice|sacrificing]], as loot (per the server config materials drop instead of an item with weight 0.15) and from Haldor's [[epicloot.adventure.secretstash|Secret Stash]]. [[epicloot.table.convert|Convert Materials]] trades them into other kinds or higher rarities.",
+    "aliases": [
+      "crafting material"
+    ]
+  },
+  "epicloot.material.dust": {
+    "title": "Dust",
+    "short": "Basic material for enchanting, augmenting and etching; comes from sacrificing magic items.",
+    "body": "Dust comes in all six rarities, from “Magic Dust” to “Ancient Dust”. You get it mainly by [[epicloot.table.sacrifice|sacrificing]] magic and unidentified items, 1 of their rarity each. Per the server config you need 5 for [[epicloot.table.enchant|enchanting]], 1 for [[epicloot.table.augment|augmenting]] and 10 for etching a [[epicloot.runes|rune]], always of the matching rarity.",
+    "aliases": [
+      "Magic Dust",
+      "Rare Dust",
+      "Epic Dust",
+      "Legendary Dust",
+      "Mythic Dust",
+      "Ancient Dust"
+    ]
+  },
+  "epicloot.material.essence": {
+    "title": "Essence",
+    "short": "Material for enchanting and augmenting weapons and tools; comes from sacrificing magic weapons.",
+    "body": "Essence comes in all six rarities, from “Magic Essence” to “Ancient Essence”. [[epicloot.table.sacrifice|Sacrificing]] a magic weapon, torch or tool gives 1 Essence of its rarity. Per the server config [[epicloot.table.enchant|enchanting]] a weapon costs 5 Essence and [[epicloot.table.augment|augmenting]] 1; armour, shields and accessories need [[epicloot.material.reagent|Reagent]] instead.",
+    "aliases": [
+      "Magic Essence",
+      "Rare Essence",
+      "Epic Essence",
+      "Legendary Essence",
+      "Mythic Essence",
+      "Ancient Essence"
+    ]
+  },
+  "epicloot.material.reagent": {
+    "title": "Reagent",
+    "short": "Material for enchanting and augmenting armour, shields and accessories; comes from sacrificing magic armour.",
+    "body": "Reagent comes in all six rarities, from “Magic Reagent” to “Ancient Reagent”. [[epicloot.table.sacrifice|Sacrificing]] magic armour, shields, capes, accessories or trinkets gives 1 Reagent of their rarity. Per the server config [[epicloot.table.enchant|enchanting]] such gear costs 5 Reagent and [[epicloot.table.augment|augmenting]] 1; weapons and tools need [[epicloot.material.essence|Essence]].",
+    "aliases": [
+      "Magic Reagent",
+      "Rare Reagent",
+      "Epic Reagent",
+      "Legendary Reagent",
+      "Mythic Reagent",
+      "Ancient Reagent",
+      "Reagent"
+    ]
+  },
+  "epicloot.material.shard": {
+    "title": "Shard",
+    "short": "Material for augmenting; comes from sacrificing animal and monster trophies.",
+    "body": "Shards such as “Epic Shard” are not the same as [[epicloot.shardstone|shardstones]]: they are a material, not a stone for slots. You get them by [[epicloot.table.sacrifice|sacrificing]] trophies, and the stronger the creature, the higher the shard's rarity. Per the server config each [[epicloot.table.augment|augment]] costs 1 Shard; you also need them to upgrade shardstones and for some table levels.",
+    "aliases": [
+      "Magic Shard",
+      "Rare Shard",
+      "Epic Shard",
+      "Legendary Shard",
+      "Mythic Shard",
+      "Ancient Shard"
+    ]
+  },
+  "epicloot.material.runestone": {
+    "title": "Runestone",
+    "short": "Rare material for enchanting and extracting; comes mainly from boss trophies.",
+    "body": "You get runestones such as “Legendary Runestone” by [[epicloot.table.sacrifice|sacrificing]] boss trophies, per the server config: Eikthyr 1 Magic, The Elder 1 Rare, Bonemass 1 Epic, Moder 2 Epic, Yagluth 1 Legendary, The Queen 2 Legendary, Fader 1 Mythic; Kall Fimbulbringer's Sacrificial Blood gives 1 Ancient. Haldor also sells them in the [[epicloot.adventure.secretstash|Secret Stash]] for Forest Tokens, and “Salvage Junk” turns for example 10 Dragon Tears into 1 Legendary Runestone. Each [[epicloot.table.enchant|enchant]] costs 1 Runestone of the chosen rarity, each rune extraction 1 of the item's rarity. A runestone holding an enchantment is called an [[epicloot.runes|etched rune]].",
+    "aliases": [
+      "Magic Runestone",
+      "Rare Runestone",
+      "Epic Runestone",
+      "Legendary Runestone",
+      "Mythic Runestone",
+      "Ancient Runestone"
+    ]
+  },
+  "epicloot.material.tokens": {
+    "title": "Bounty tokens",
+    "short": "Forest Tokens, Iron and Gold Bounty Tokens: Epic Loot's currencies for Haldor, Hildir and the enchanting table.",
+    "body": "**Forest Tokens** lie in chests from [[epicloot.adventure.treasuremap|treasure maps]]; Haldor takes them for runestones and [[epicloot.adventure.gamble|gambles]]. **Iron Bounty Tokens** and **Gold Bounty Tokens** are the reward for finished [[epicloot.adventure.bounty|bounties]]. Per the server config they are paid, among other things, for [[epicloot.temper|tempering]] (1 Iron up to Epic, 1 Gold from Legendary), [[epicloot.table.disenchant|disenchanting]] (2 to 11 Iron), identifying with a chosen category (2 or 3 Gold) and unlocking some table features.",
+    "aliases": [
+      "Forest Token",
+      "Iron Bounty Token",
+      "Gold Bounty Token"
+    ]
+  },
+  "epicloot.temper": {
+    "title": "Temper",
+    "short": "For a payment Hildir raises an enchantment's value by one step, with a chance of success.",
+    "body": "At Hildir an extra window opens next to the trade window: you pick a magic item from your inventory and an enchantment with a number value and pay, per the server config, 1 Iron Bounty Token (Magic to Epic) or 1 Gold Bounty Token (from Legendary). On success the value rises by one step, on a critical success by two, and the effect gets the mark ▲. The success chance is 50 % when the value sits exactly at the top of its [[epicloot.rollrange|roll range]], higher below it and at least 15 percentage points lower for each step above; a critical success gets rarer the closer the value is to the maximum and is impossible from there on. Per the server config a failure only costs the payment.",
+    "aliases": [
+      "Temper",
+      "Tempering",
+      "Critical Success"
+    ]
+  },
+  "epicloot.favorites": {
+    "title": "Favourited items",
+    "short": "Items protected with the mod Item Favorite Framework are left out of every destructive list at the enchanting table.",
+    "body": "Epic Loot only respects favourites when the mod Item Favorite Framework is installed and “Respect Item Favorites” is on in the Epic Loot config (the default). Then favourited items and everything in favourited inventory slots are missing from every list that destroys or uses up an item: Sacrifice, Identify, Disenchant, Set Extract, Extract Rune (unless the item would stay unchanged) and the runes offered for etching. At the table and at Hildir a star on the icon then shows that an item is favourited; it has nothing to do with the [[epicloot.stars|rarity stars]] after effects. Without that mod there is no such protection.",
+    "aliases": []
+  },
+  "epicloot.adventure": {
+    "title": "Treasure & Bounties",
+    "short": "Epic Loot's adventures at Haldor: Secret Stash, Gamble, Treasure Maps and Bounties.",
+    "body": "When you talk to the trader Haldor, an Epic Loot window opens next to his trade window with [[epicloot.adventure.secretstash|Secret Stash]], [[epicloot.adventure.gamble|Gamble]], [[epicloot.adventure.treasuremap|Treasure Maps]] and [[epicloot.adventure.bounty|Bounties]]. The offers change at midnight at fixed intervals, per the server config the stash and gambles every in-game day, treasure maps and bounties every 7 in-game days; the hint “Refresh Intervals” lists them. Running treasure maps and bounties appear in the compendium on the page “Treasure & Bounties” and as markers on the map. Hildir, on the other hand, offers [[epicloot.temper|tempering]].",
+    "aliases": [
+      "Treasure & Bounties",
+      "Refresh Intervals"
+    ]
+  },
+  "epicloot.adventure.secretstash": {
+    "title": "Secret Stash",
+    "short": "Haldor's shop for enchanting materials, runestones and the ring Andvaranaut.",
+    "body": "Per the server config Haldor sells one enchanting material of each rarity here for coins, changing every in-game day, from 5 coins at Magic to 1000 at Ancient. On top come runestones for 5 to 30 [[epicloot.material.tokens|Forest Tokens]] and the ring [[epicloot.andvaranaut|Andvaranaut]] for 1998 coins. He only offers materials and runestones of a kind you have owned before.",
+    "aliases": [
+      "Secret Stash"
+    ]
+  },
+  "epicloot.adventure.gamble": {
+    "title": "Gamble",
+    "short": "At Haldor you pay a premium for a random piece of equipment that may be magic.",
+    "body": "Gamble offers equipment you can get at your current progress; when you pay, the piece is made with a random rarity whose chances the tooltip shows under “Chance for:”. Per the server config there are 4 offers each in-game day for coins only (10 % non-magic, 68 % Magic, 15 % Rare, 4 % Epic, 2 % Legendary, 0.75 % Mythic, 0.25 % Ancient), plus 2 with Forest Tokens (at least Rare), 2 with Iron Bounty Tokens (at least Epic) and 1 with Gold Bounty Tokens (at least Legendary). You can buy an offer as often as you like.",
+    "aliases": [
+      "Gamble"
+    ]
+  },
+  "epicloot.adventure.treasuremap": {
+    "title": "Treasure map",
+    "short": "A map bought from Haldor that leads to a chest in a biome you know; its location is roughly marked on the map.",
+    "body": "Per the server config a treasure map costs 100 coins (Meadows) up to 800 (Deep North) depending on the biome, and there is one per biome every 7 in-game days. After buying it, an area on the map is marked where the treasure chest lies; the ring [[epicloot.andvaranaut|Andvaranaut]] helps you search. The chest holds loot of the biome and [[epicloot.material.tokens|Forest Tokens]] (5 in the Meadows up to 40 in the Deep North), from the Mistlands on sometimes also a [[epicloot.brokkrgift|Brokkr's Gift]]. Only biomes you have discovered are offered, and there are none for the ocean.",
+    "aliases": [
+      "Treasure Map",
+      "Treasure Maps"
+    ]
+  },
+  "epicloot.adventure.bounty": {
+    "title": "Bounty",
+    "short": "A job from Haldor: hunt a special monster and get bounty tokens and coins for it.",
+    "body": "Under Bounties you take a job with “Accept Bounty”; the target then appears somewhere in the named biome, stronger than usual, and is marked on the map. Once it is dead you collect the reward from Haldor with “Claim Reward”, per the server config Iron or Gold Bounty Tokens and coins, for example 2 Iron Bounty Tokens and 50 coins for a deer in the Meadows. New jobs come every 7 in-game days; “Abandon Bounty” cancels one, and it may not be accepted again afterwards. Running bounties are listed in the compendium under “Active Bounties”.",
+    "aliases": [
+      "Accept Bounty",
+      "Abandon Bounty",
+      "Claim Reward",
+      "Active Bounties"
+    ]
+  },
+  "epicloot.andvaranaut": {
+    "title": "Andvaranaut",
+    "short": "A dwarven ring from Haldor that, like the Wishbone, leads to treasure map chests and bounty targets.",
+    "body": "You buy Andvaranaut in the [[epicloot.adventure.secretstash|Secret Stash]], per the server config for 1998 coins. While worn it pings like the Wishbone, but only towards chests from [[epicloot.adventure.treasuremap|treasure maps]] and targets of [[epicloot.adventure.bounty|bounties]]; the stronger the signal, the closer you are. Per the server config it detects them within 20 metres.",
+    "aliases": [
+      "Andvaranaut"
+    ]
+  }
+}

@@ -1,0 +1,726 @@
+{
+ "DvergerCirclet": {
+  "text": "Label only: EpicLoot lists the Dverger Circlet as a magic item with this effect but runs no code for it. The light comes entirely from the Valheim item itself.",
+  "abweichung": ""
+ },
+ "Megingjord": {
+  "text": "Label only: EpicLoot lists Megingjord as a magic item with this effect but runs no code for it. The extra carry weight (+150 per the display) comes entirely from the Valheim belt.",
+  "abweichung": ""
+ },
+ "Wishbone": {
+  "text": "Marks the Wishbone as a magic item; the effect itself has no code of its own, and the finding is Valheim's normal function. The only EpicLoot change: the Wishbone ignores treasure chests from Haldor's maps and bounty targets; Andvaranaut finds those.",
+  "abweichung": ""
+ },
+ "Andvaranaut": {
+  "text": "Marks the Andvaranaut ring; the effect itself has no code of its own. While worn, the ring pings like the Wishbone, faster the closer you get, but only for treasure chests from Haldor's maps and for bounty targets, and only within 20 m (config 'Andvaranaut Range').",
+  "abweichung": "The item tooltip only mentions Haldor's treasure chests; according to the code the ring also finds bounty targets."
+ },
+ "ChainLightning": {
+  "text": "Each hit with this weapon (melee, ranged and magic weapons, not pickaxes) has a fixed 15% chance to spawn the game's chain lightning object at the target, which can jump to further targets. X is not a bonus on weapon damage: the lightning damage of the first strike is multiplied by X/100 (X from all equipped items added up). Base damage and jumps come from the game prefab and are not visible in the code. Chain lightning hits trigger no further effects.",
+  "abweichung": "“+X% damage”: X only multiplies the lightning damage of the chain lightning object (×X/100) and is not a bonus to weapon damage; values below 100 even lower the base lightning."
+ },
+ "DodgeBuff": {
+  "text": "If you perfectly dodge an enemy melee or area attack (the hit lands during your dodge's invulnerability), you get the 10 s buff 'Adrenaline Rush'. While it lasts, the damage of all your equipped weapons rises by X% (all damage types, non-magic weapons too); X is added to other percentage all-damage bonuses. Values from several items with this effect are summed. The buff can only trigger again after it ends; projectiles never trigger it.",
+  "abweichung": ""
+ },
+ "ModifyDamage": {
+  "text": "Multiplies all damage of this weapon (every damage type, including chop and pickaxe) by (1 + X%), after extra damage such as 'Imbue Fire Damage' has been added. Other flat damage bonuses such as Spellblade or the critical-health 'All Damage' are added to X, not multiplied. On bows and crossbows only the weapon's own damage rises, not the arrow or bolt. Set bonuses count, a weapon in your other hand does not.",
+  "abweichung": "With bows and crossbows the damage of arrows and bolts is not increased, although the description speaks of the weapon's total damage."
+ },
+ "ModifyPhysicalDamage": {
+  "text": "Multiplies the blunt, slash, pierce, chop and pickaxe damage of this weapon by (1 + X%), including extra damage such as 'Blunt Damage +X%'. So axes also fell trees faster and pickaxes mine faster. On bows and crossbows only the weapon's own damage rises, not the arrow or bolt. 'All Damage' applies on top afterwards (multiplicative).",
+  "abweichung": "With bows and crossbows the damage of arrows and bolts is not increased, although the description speaks of the weapon's damage."
+ },
+ "ModifyElementalDamage": {
+  "text": "Multiplies the fire, frost, lightning, poison and spirit damage of this weapon by (1 + X%), including extra damage such as 'Imbue Fire Damage'. Without elemental damage on the weapon the effect does nothing. On bows and crossbows only the weapon's own damage rises, not the arrow or bolt. 'All Damage' applies on top afterwards (multiplicative).",
+  "abweichung": "With bows and crossbows the elemental damage of arrows and bolts is not increased."
+ },
+ "ModifyDurability": {
+  "text": "The maximum durability of this item is multiplied by (1 + X%) (quality level included). Only the value on the item itself counts, and it always applies, even when the item is not equipped. Repairing fills it up to the raised maximum.",
+  "abweichung": ""
+ },
+ "ReduceWeight": {
+  "text": "The weight of this item alone is reduced by X% (weight × (1 − X/100)), even while it just sits in your inventory. Values on other items do not affect it. If the same item also has Weightless, only that applies (weight 0).",
+  "abweichung": ""
+ },
+ "RemoveSpeedPenalty": {
+  "text": "Cancels the negative movement speed value of this item while it is equipped; penalties of other items remain. This also removes the higher stamina costs for sprinting, jumping and dodging that the penalty would cause, as well as the protection against knockback it would otherwise give. The item's weight does not change.",
+  "abweichung": ""
+ },
+ "ModifyBlockPower": {
+  "text": "Raises the block armor of the item you are currently blocking with (shield, otherwise your weapon) by X% of its base value (quality level included). The Blocking skill and the parry bonus are applied on top as usual. The same effect on other gear and from set bonuses adds up, but a weapon in your other hand does not count. On a weapon it does nothing while you block with a shield.",
+  "abweichung": ""
+ },
+ "ModifyBlockForce": {
+  "text": "Raises the block force (EpicLoot: 'Block Force') of the shield you block with by X%; that is the knockback a melee attacker receives when you block successfully, not the block armor. The sum on the shield and the rest of your gear counts, not on the weapon in the other hand.",
+  "abweichung": ""
+ },
+ "ModifyParry": {
+  "text": "Only when you parry (block inside the parry window), the block armor and block force (how far the attacker is knocked back) of the blocking item rise by X% of their base value. This adds to other bonuses on these values; the Blocking skill and the parry bonus apply afterwards as usual. The parry bonus itself stays the same, the tooltip only converts the increase into a parry bonus figure. Set bonuses count, a weapon in your other hand does not.",
+  "abweichung": "The description lists block armor, block power and parry bonus as three increases; when parrying, the code only raises block armor and block power, the parry bonus multiplier stays the same (the tooltip only converts, there is no double effect)."
+ },
+ "ModifyArmor": {
+  "text": "The armor value of this exact armor piece (quality level included) is multiplied by 1 + X/100. Other pieces do not benefit; only set bonuses with this effect raise all equipped pieces.",
+  "abweichung": ""
+ },
+ "ModifyBackstab": {
+  "text": "The weapon's backstab multiplier (e.g. ×3 for bows) is multiplied by 1 + X/100 for your attacks. Backstab only works against enemies that are not yet alerted, and at most once every 300 s per enemy. The sum on the weapon and the rest of your gear counts, not on a second weapon in the other hand.",
+  "abweichung": ""
+ },
+ "IncreaseMiningDrop": {
+  "text": "When your pickaxe destroys a piece of an ore deposit or rock (or a stone only pickaxes can damage), its drop table rolls X extra times; like a normal drop, each roll yields e.g. a stack of ore or stone. The whole-number part of the sum on your weapon and other gear counts. The bonus only applies if your hit destroys the piece.",
+  "abweichung": "X is not a total bonus but X extra drop rolls per destroyed piece, so deposits with many pieces give far more than X extra items."
+ },
+ "IncreaseTreeDrop": {
+  "text": "When your axe fells a tree or destroys a log section or another object that counts as a tree, its drop table rolls X extra times; like a normal drop, each roll yields e.g. a stack of wood. The whole-number part of the sum on your weapon and other gear counts. The bonus only applies if your hit destroys the part.",
+  "abweichung": "X is not a total bonus but X extra drop rolls per destroyed part (tree, every log section and so on)."
+ },
+ "IncreaseHealth": {
+  "text": "Raises your maximum health by a flat X, on top of the base value (25) and food. Values of all equipped items add up; percentage health bonuses from other effects are calculated afterwards and include X.",
+  "abweichung": ""
+ },
+ "IncreaseHeatResistance": {
+  "text": "Raises your heat resistance by X percentage points, added to your gear's heat resistance. Heat resistance slows heat build-up near lava and in the Ashlands ocean and lowers lava heat damage by the same share; at 100% no heat builds up. Values of all equipped items add up.",
+  "abweichung": ""
+ },
+ "IncreaseStamina": {
+  "text": "Raises your maximum stamina by a flat X, on top of the base value (50) and food. Values of all equipped items add up; percentage stamina bonuses from other effects are calculated afterwards and include X.",
+  "abweichung": ""
+ },
+ "IncreaseEitr": {
+  "text": "Raises your maximum Eitr by a flat X, on top of food. Values of all equipped items add up; percentage Eitr bonuses from other effects are calculated afterwards and include X.",
+  "abweichung": ""
+ },
+ "DecreaseForsakenCooldown": {
+  "text": "When you activate your Forsaken Power, its cooldown is multiplied by (1 − X/100). X from all equipped items is added up; the code has no cap. The duration of the power itself is unchanged.",
+  "abweichung": ""
+ },
+ "DecreaseMeadCooldown": {
+  "text": "Only affects meads that restore health, stamina or Eitr over time. When you drink one, its status effect duration is multiplied by (1 − X/100). While that effect runs, Valheim blocks meads of the same category – this is the cooldown, so it gets X% shorter. X from all equipped items is added up, capped at 100%. Resistance meads and other kinds without restoration over time are not affected.",
+  "abweichung": "Does not affect all meads, only those that restore over time (health, stamina, eitr)."
+ },
+ "ModifyHealthRegen": {
+  "text": "Your healing from food (every 10 s) rises by X%: the value is added to the regeneration factor (1 + X/100) after the game's status effects, so penalties such as 'Wet' do not reduce it. Values of all equipped items add up. Without food that has healing there is nothing to boost.",
+  "abweichung": ""
+ },
+ "ModifyLowHealth": {
+  "text": "Raises the 'critical health' threshold: the default is 30% of your maximum health, and X is added in percentage points (e.g. 30% + 10 = 40%). Identical effects add up, at most up to the server's cap. All '(below X% health)' effects as well as Instant Mead and Automatic Mead Consumption use this threshold. If you wear such effects, a marker on the health bar shows the threshold.",
+  "abweichung": ""
+ },
+ "AddHealthRegen": {
+  "text": "In Valheim, food heals you by its regeneration value every 10 seconds; this effect adds X health to each such tick. The extra amount is then multiplied by all health regeneration bonuses. It only works while at least one eaten food with regeneration is active. Identical effects (including set bonuses) add up.",
+  "abweichung": "Only works while food with regeneration is active (no healing without food); one tick is 10 seconds."
+ },
+ "ModifyStaminaRegen": {
+  "text": "Your stamina regeneration gets X% faster; the value is added to the regeneration multiplier, not multiplied with other bonuses. The delay after spending stamina stays the same. Identical effects on several equipped items add up.",
+  "abweichung": ""
+ },
+ "AmmoConservation": {
+  "text": "Every shot that uses ammo (e.g. arrows, bolts) has an X% chance to put one piece of that ammo straight back into your inventory. X from all equipped items is added up. At most one piece is returned per shot, even if a multi-shot used more. With crossbows a success also skips the reload: the weapon is loaded again immediately.",
+  "abweichung": "Not mentioned: with crossbows, a successful saving also skips reloading."
+ },
+ "InstantMead": {
+  "text": "If you drink a mead that restores health, stamina or Eitr over time while your health is critical, you get the whole amount instantly instead of over time. This also applies when Automatic Mead drinks for you. Critical means at most 30% of max health, raised by Health Critical Threshold effects (config cap 75%). Meads already running are not changed. The value on the item has no function.",
+  "abweichung": ""
+ },
+ "AutoMead": {
+  "text": "If an incoming hit (after block, resistances and armor) or a burn, poison or smoke tick would push your health below the critical threshold – or it is already below – EpicLoot automatically drinks a healing mead from your inventory that is not on cooldown; at most one per trigger. Threshold: 30% of max health, raised by Health Critical Threshold effects (config cap 75%). Nothing is drunk unless you take damage. The value on the item has no function.",
+  "abweichung": "Only triggers when you take damage (a hit or a burning, poison or smoke tick), not on its own while your health is critical."
+ },
+ "ModifyNoise": {
+  "text": "The noise you make carries X% less far; this is the distance at which enemies can hear you. Identical effects on several equipped items add up, at most 100%.",
+  "abweichung": ""
+ },
+ "ModifyBuildDistance": {
+  "text": "The range at which you can place things with the hammer, hoe or cultivator is multiplied by (1 + X%). This only affects placing: removing pieces with the hammer still uses the normal range. Identical effects add up; since the effect only appears on tools, the tool has to be in your hand.",
+  "abweichung": "Only works when placing, not when removing (or copying) building pieces."
+ },
+ "ModifyPickupRange": {
+  "text": "The radius in which items on the ground are automatically pulled to you and picked up is multiplied by (1 + X%). Identical effects on several equipped items add up.",
+  "abweichung": ""
+ },
+ "ModifyFireRate": {
+  "text": "For bows and crossbows: the attack (shooting) animation runs X% faster. The bow's draw time and the crossbow's reload time do not get shorter, so the rate of fire rises by at most X%. For attacks with several bursts, the pause between bursts is cut by X% instead. Identical effects add up.",
+  "abweichung": "Draw time (bow) and reload time (crossbow) stay the same; only the attack animation gets faster."
+ },
+ "ModifyMagicFireRate": {
+  "text": "For Elemental and Blood Magic staffs: ranged attacks with a single burst play their attack animation X% faster. For attacks with several bursts, the pause between bursts gets X% shorter; the number of bursts stays the same. Staff attacks without projectiles do not get faster. Identical effects add up.",
+  "abweichung": ""
+ },
+ "ModifyProjectileSpeed": {
+  "text": "All projectiles you shoot or throw launch X% faster: the weapon's maximum speed is multiplied by 1 + X/100, while a speed bonus of the ammo itself is not. With bows the full speed only applies at full draw. With the grappling hook the maximum rope length also grows by X%. Values of all equipped items add up.",
+  "abweichung": ""
+ },
+ "ModifyEitrRegen": {
+  "text": "Your eitr regeneration gets X% faster; the value is added to the regeneration multiplier, not multiplied with other bonuses. The delay after spending eitr and the pauses while attacking and dodging remain. Identical effects add up.",
+  "abweichung": ""
+ },
+ "AddBluntDamage": {
+  "text": "Every hit with this weapon gets extra blunt damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). Percentage bonuses such as 'All Damage' or 'Physical Damage' boost this extra damage afterwards. The same effect from set bonuses adds up; a weapon in your other hand does not count.",
+  "abweichung": ""
+ },
+ "AddSlashingDamage": {
+  "text": "Every hit with this weapon gets extra slash damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). Percentage bonuses such as 'All Damage' boost this extra damage afterwards. On axes the same amount would also be added as chop damage, but by its requirements the effect cannot appear on axes. The same effect from set bonuses adds up.",
+  "abweichung": "An axe part (the same amount as chop damage) is in the code but cannot be reached under the requirements (swords, knives and unarmed only)."
+ },
+ "AddPiercingDamage": {
+  "text": "Every hit with this weapon gets extra pierce damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). On bows and crossbows only the weapon's own damage counts, not the arrow or bolt. On pickaxes the same amount would also be added as pickaxe damage, but by its requirements the effect cannot appear there. Percentage bonuses such as 'All Damage' boost the extra damage afterwards.",
+  "abweichung": "A pickaxe part is in the code but cannot be reached under the requirements (spears, bows, crossbows, knives and polearms only)."
+ },
+ "AddFireDamage": {
+  "text": "Every hit with this weapon gets extra fire damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). As usual in Valheim, fire is dealt as burning over time. On bows and crossbows only the weapon's own damage counts, not the arrow or bolt. Bonuses such as 'All Damage' or 'Elemental Damage' boost the extra damage afterwards.",
+  "abweichung": ""
+ },
+ "AddFrostDamage": {
+  "text": "Every hit with this weapon gets extra frost damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). Frost hits instantly and slows the target as usual in Valheim. On bows and crossbows only the weapon's own damage counts, not the arrow or bolt. Bonuses such as 'All Damage' or 'Elemental Damage' boost the extra damage afterwards.",
+  "abweichung": ""
+ },
+ "AddLightningDamage": {
+  "text": "Every hit with this weapon gets extra lightning damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). Lightning hits instantly and, as usual in Valheim, also helps to stagger enemies. On bows and crossbows only the weapon's own damage counts, not the arrow or bolt. Bonuses such as 'All Damage' or 'Elemental Damage' boost the extra damage afterwards.",
+  "abweichung": ""
+ },
+ "AddPoisonDamage": {
+  "text": "Every hit with this weapon gets extra poison damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). As usual in Valheim, poison is dealt over time. On bows and crossbows only the weapon's own damage counts, not the arrow or bolt. Bonuses such as 'All Damage' or 'Elemental Damage' boost the extra damage afterwards.",
+  "abweichung": ""
+ },
+ "AddSpiritDamage": {
+  "text": "Every hit with this weapon gets extra spirit damage equal to X% of the weapon's total damage without enchantments (all damage types except chop and pickaxe, quality level included). As usual in Valheim, spirit damage is dealt over time. On bows and crossbows only the weapon's own damage counts, not the arrow or bolt. Bonuses such as 'All Damage' or 'Elemental Damage' boost the extra damage afterwards.",
+  "abweichung": ""
+ },
+ "AddFireResistancePercentage": {
+  "text": "Incoming fire damage is reduced by X%, before blocking, armor and normal resistances; the burning afterwards is weaker as well. Values from all equipped items and 'Elemental Resistance' add up, at most up to the cap for fire (server setting).",
+  "abweichung": ""
+ },
+ "AddFrostResistancePercentage": {
+  "text": "Incoming frost damage is reduced by X%, before blocking, armor and normal resistances; the slow afterwards is shorter as well. It does not help against cold and freezing from the weather. Values from all equipped items and 'Elemental Resistance' add up, at most up to the cap for frost (server setting).",
+  "abweichung": ""
+ },
+ "AddLightningResistancePercentage": {
+  "text": "Incoming lightning damage is reduced by X%, before blocking, armor and normal resistances. Values from all equipped items and 'Elemental Resistance' add up, at most up to the cap for lightning (server setting).",
+  "abweichung": ""
+ },
+ "AddPoisonResistancePercentage": {
+  "text": "Incoming poison damage is reduced by X%, before blocking, armor and normal resistances; the poisoning afterwards is weaker as well. Values from all equipped items and 'Elemental Resistance' add up, at most up to the cap for poison (server setting).",
+  "abweichung": ""
+ },
+ "AddSpiritResistancePercentage": {
+  "text": "Reduces spirit damage from incoming hits by X%. Values from all equipped items are added together with EpicLoot's general Elemental Resistance, capped at 50% in total (config MaxResistance). It applies before Valheim's own resistances and armor, so the spirit damage over time caused by the hit is reduced as well. Other damage reductions apply separately (multiplicatively). Self-inflicted hits are excluded.",
+  "abweichung": "“Stacks with other damage reductions” only holds for EpicLoot's spirit and elemental resistance (shared cap 50%); other reductions multiply."
+ },
+ "AddElementalResistancePercentage": {
+  "text": "Incoming fire, frost, lightning, poison and also spirit damage is reduced by X%, before blocking, armor and normal resistances. The value is added to the matching single resistance (e.g. fire resistance); the sum is limited by that resistance's cap (server setting), this effect's own cap is not used by the code. Identical effects on all equipped items add up.",
+  "abweichung": "Also works against spirit damage (the description names only fire, frost, lightning and poison). This effect's own MaxResistance is ignored; the cap of the single resistance applies."
+ },
+ "AddBluntResistancePercentage": {
+  "text": "Incoming blunt damage is reduced by X%, before blocking, armor and normal resistances. Values from all equipped items and 'Physical Resistance' add up, at most up to the cap for blunt damage (server setting).",
+  "abweichung": ""
+ },
+ "AddSlashingResistancePercentage": {
+  "text": "Incoming slash damage is reduced by X%, before blocking, armor and normal resistances. Values from all equipped items and 'Physical Resistance' add up, at most up to the cap for slash damage (server setting).",
+  "abweichung": ""
+ },
+ "AddPiercingResistancePercentage": {
+  "text": "Incoming pierce damage is reduced by X%, before blocking, armor and normal resistances. Values from all equipped items and 'Physical Resistance' add up, at most up to the cap for pierce damage (server setting).",
+  "abweichung": ""
+ },
+ "AddPhysicalResistancePercentage": {
+  "text": "Incoming blunt, slash, pierce and also chop damage is reduced by X%, before blocking, armor and normal resistances. The value is added to the matching single resistance; the sum is limited by that resistance's cap (server setting), this effect's own cap is not used by the code. Identical effects on all equipped items add up.",
+  "abweichung": "Also works against chop damage (the description names only blunt, slash and pierce). This effect's own MaxResistance is ignored; the cap of the single resistance applies."
+ },
+ "ModifyMovementSpeed": {
+  "text": "Raises your movement speed by X% of the base speed (added to the speed values of your gear): jogging gets X% faster, sprinting even 1.5 × X%; walking, sneaking and swimming stay the same. As usual in Valheim, higher movement speed also lowers the stamina cost of sprinting, jumping and dodging by X%. Identical effects add up, without cap.",
+  "abweichung": "Not a flat X%: sprint speed rises by 1.5 × X%, walking, sneaking and swimming not at all; in addition the stamina cost of sprinting, jumping and dodging drops."
+ },
+ "ModifySprintStaminaUse": {
+  "text": "Lowers the stamina used while sprinting by X%; the value is added to your gear's sprint stamina modifiers. The Run skill and movement speed apply on top. Identical effects add up; the code has no cap.",
+  "abweichung": ""
+ },
+ "ModifyDodgeStaminaUse": {
+  "text": "Lowers the stamina cost of dodging by X% of the base cost; the value is added to your gear's dodge stamina modifiers. The Dodge skill reduction applies afterwards. Identical effects add up; the code has no cap.",
+  "abweichung": ""
+ },
+ "ModifyJumpStaminaUse": {
+  "text": "Lowers the stamina cost of jumping by X% of the base cost; the value is added to your gear's jump stamina modifiers. Identical effects on several equipped items add up; the code has no cap.",
+  "abweichung": ""
+ },
+ "ModifyAttackEitrUse": {
+  "text": "The Eitr cost of your attacks is multiplied by 1 − X/100. The sum on the attacking weapon and the rest of your gear counts, not on a second weapon in the other hand.",
+  "abweichung": ""
+ },
+ "ModifyAttackHealthUse": {
+  "text": "The health cost of your attacks (e.g. Blood Magic weapons) is multiplied by 1 − X/100. The sum on the attacking weapon and the rest of your gear counts, not on a second weapon in the other hand.",
+  "abweichung": ""
+ },
+ "ModifyAttackStaminaUse": {
+  "text": "The stamina cost of your attacks (after the reduction from your skill) is multiplied by 1 − X/100. The sum on the attacking weapon and the rest of your gear counts, not on a second weapon in the other hand.",
+  "abweichung": ""
+ },
+ "Bloodlust": {
+  "text": "Attacks with this weapon cost no stamina but health instead: the attack's base stamina cost plus any health cost the weapon already has, reduced by the weapon skill as usual (−0.33% per level). Stamina modifiers from gear and buffs do not apply. The cost never drops your health below 1. No numeric value; as a set bonus it covers all one- and two-handed weapons with stamina costs (no pickaxes, no magic).",
+  "abweichung": "Based on the attack's base stamina cost, not the stamina actually used (equipment and buff modifiers are left out); health never drops below 1."
+ },
+ "ModifyDrawStaminaUse": {
+  "text": "Lowers the stamina drained per second while drawing this bow by X%. Only the value on this item itself counts (plus matching set bonuses), not other gear; at most 100%. Skill and other stamina bonuses apply on top.",
+  "abweichung": ""
+ },
+ "ModifyBlockStaminaUse": {
+  "text": "Lowers the stamina cost of blocking by X%; the value is added to the block stamina modifiers of your gear (cost × (1 + modifiers − X%)). Values from all equipped items add up, even if the item with the effect is not the one you block with (e.g. effect on your weapon while blocking with a shield). The code has no cap.",
+  "abweichung": ""
+ },
+ "Indestructible": {
+  "text": "Durability is switched off for this item: it no longer wears down, never breaks and never needs repairs. This applies only to the item carrying the effect.",
+  "abweichung": ""
+ },
+ "CoinHoarder": {
+  "text": "Raises the damage of all equipped weapons depending on the coins in your inventory: bonus = log10(X · coins) · 6.258 / 150; below 1000 coins it grows linearly up to the value at 1000 (config). Example X = 10: 1000 coins ≈ +16.7%, 10,000 ≈ +20.9%. The bonus adds up with other All Damage bonuses, then damage is multiplied by the sum. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "Weightless": {
+  "text": "This item weighs 0, whether equipped or just carried in your inventory. It only affects the item itself.",
+  "abweichung": ""
+ },
+ "AddCarryWeight": {
+  "text": "Raises your maximum carry weight by X – a flat amount, not a percentage. X from all equipped items is added up and simply stacks with other bonuses such as Megingjord. Works as long as the item is equipped.",
+  "abweichung": ""
+ },
+ "LifeSteal": {
+  "text": "Each hit on a creature or player heals you for X% of the outgoing damage, per target hit. It uses the damage before the target's resistances, armor, block and backstab bonus, without chop and pickaxe damage; fire, poison and spirit count in full. X is added up over your equipment, but when dual-wielding the other weapon does not count; at critical health the Health Critical version of Lifesteal is added. Bonus hits from other effects do not heal.",
+  "abweichung": "Not the damage actually dealt but the outgoing damage before the target's resistances and armor; counts per target hit, not per attack."
+ },
+ "LifeAfterKill": {
+  "text": "If one of your hits kills a target (not a player, not a tamed animal), you instantly heal X health, once per kill. Whether the hit is lethal is calculated by your game at the moment of the hit; fire, poison and spirit portions do not count, and deaths from burning or poison over time trigger nothing. The sum on the hitting weapon and the rest of your gear counts.",
+  "abweichung": ""
+ },
+ "EitrLeech": {
+  "text": "Each hit on a creature or player gives you X% of the outgoing damage as Eitr, per target hit. It uses the damage before the target's resistances, armor, block and backstab bonus, without chop and pickaxe damage; fire, poison and spirit count in full. The weapon used must be magic; X is added up over your equipment, but when dual-wielding the other weapon does not count. Bonus hits from other effects give nothing.",
+  "abweichung": "Not the damage actually dealt but the outgoing damage before the target's resistances and armor; counts per target hit, not per attack."
+ },
+ "ModifyAttackSpeed": {
+  "text": "During an attack your attack animation plays X% faster (speed × (1 + X/100)). The sum over all equipped items counts, and the bonus applies to every attack while the item is equipped, not just to this weapon.",
+  "abweichung": "Not limited to attacks with the magic weapon: the values of all equipped items add up and apply to every attack."
+ },
+ "Throwable": {
+  "text": "The secondary attack key throws this weapon using the Flint Spear's throw attack; damage and tool tier come from the weapon. On impact the throw uses the weapon's swing width as its hit radius. Like a spear, the weapon lands where it hits and must be picked up unless it also has Recalling. The weapon's original secondary attack is replaced.",
+  "abweichung": ""
+ },
+ "Waterproof": {
+  "text": "While an item with Waterproof is equipped, rain does not make you wet. Swimming or entering water still makes you wet, and existing Wet wears off normally.",
+  "abweichung": ""
+ },
+ "Warmth": {
+  "text": "While an item with Warmth is equipped, the environment cannot give you Cold or Freezing. Freezing you already have stays while you remain in freezing conditions; the game removes it as usual once conditions change (e.g. at a fire). Frost damage from attacks and its effects are unchanged; there is no resistance.",
+  "abweichung": ""
+ },
+ "Paralyze": {
+  "text": "Each of your hits that deals damage sets the target's movement speed to 0 for X seconds. A new hit does not add up; it sets the remaining time to at least X. The target can still attack; it just cannot move. For melee swings the weapon in your other hand does not count; otherwise X from all equipped items is added up.",
+  "abweichung": "Paralyzed targets can still attack; the code only sets their movement speed to 0."
+ },
+ "DoubleJump": {
+  "text": "You can jump once more while airborne; the number of air jumps is the summed effect value (normally 1 per item) and resets when you touch the ground. An air jump cancels your falling speed and jumps with full jump force (scaling with the Jump skill). It costs the normal jump stamina and trains Jump. Not possible while encumbered, dodging, knocked back or staggered.",
+  "abweichung": ""
+ },
+ "ExplosiveArrows": {
+  "text": "Every projectile you fire explodes on impact (ground too): within 2 m it deals fire damage equal to X% of the projectile's damage (all damage types except chop and pickaxe added up). In Valheim fire damage works as burning over time. The sum of all equipped items with this effect counts. The explosion does not trigger EpicLoot on-hit effects such as life steal.",
+  "abweichung": "The explosion deals pure fire damage, not attack damage in the weapon's damage types."
+ },
+ "QuickDraw": {
+  "text": "Bow draw progress grows X% faster (up to full draw), so draw time drops to 1/(1 + X/100). The same value cuts crossbow reload time by X%. X from all equipped items is added up, set bonuses included, and applies to any bow or crossbow you hold.",
+  "abweichung": "Not only for the spell bow: the value applies to every bow you hold and also shortens the reload time of crossbows by X%."
+ },
+ "AddSwordsSkill": {
+  "text": "Raises the Swords skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base weapon damage and cuts attack stamina costs by 0.33% – both keep working above level 100.",
+  "abweichung": ""
+ },
+ "AddKnivesSkill": {
+  "text": "Raises the Knives skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base weapon damage and cuts attack stamina costs by 0.33% – both keep working above level 100.",
+  "abweichung": ""
+ },
+ "AddClubsSkill": {
+  "text": "Raises the Clubs skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base weapon damage and cuts attack stamina costs by 0.33% – both keep working above level 100.",
+  "abweichung": ""
+ },
+ "AddPolearmsSkill": {
+  "text": "Raises the Polearms skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base weapon damage and cuts attack stamina costs by 0.33% – both keep working above level 100.",
+  "abweichung": ""
+ },
+ "AddSpearsSkill": {
+  "text": "Raises the Spears skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base weapon damage and cuts attack stamina costs by 0.33% – both keep working above level 100.",
+  "abweichung": ""
+ },
+ "AddBlockingSkill": {
+  "text": "Raises the Blocking skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level raises the block armor of your shield or weapon (parries included) by 0.5% of its base value, also above level 100.",
+  "abweichung": ""
+ },
+ "AddAxesSkill": {
+  "text": "Raises the Axes and Wood Cutting skills by X levels each; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base damage – against creatures via Axes, against trees via Wood Cutting – and cuts attack stamina costs by 0.33%, also above level 100.",
+  "abweichung": ""
+ },
+ "AddBowsSkill": {
+  "text": "Raises the Bows skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% damage and cuts stamina costs (attack and drawing) by 0.33%, also above level 100; draw time, however, only shortens up to level 100.",
+  "abweichung": ""
+ },
+ "AddCrossbowsSkill": {
+  "text": "Raises the Crossbows skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base damage, also above level 100; reload time only shortens up to level 100 (where it is halved).",
+  "abweichung": ""
+ },
+ "AddBloodMagicSkill": {
+  "text": "Raises the Blood Magic skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% damage and cuts the Eitr and health costs of attacks by 0.33%, also above level 100. Summons (e.g. skeletons) also use the raised level.",
+  "abweichung": ""
+ },
+ "AddCrafterSkills": {
+  "text": "Raises the Crafting and Cooking skills by X levels each; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Crafting shortens crafting time and raises the chance for a bonus amount on stackable items, Cooking raises the bonus-amount chance at cooking stations – both also above level 100. Farming is not included.",
+  "abweichung": ""
+ },
+ "ModifySummonHealth": {
+  "text": "Summoned creatures (those that train your Blood or Elemental Magic) get X% more maximum health. The bonus is applied when their health is set as they appear; what counts is what you have equipped at that moment. Identical effects add up.",
+  "abweichung": ""
+ },
+ "ModifySummonDamage": {
+  "text": "Summoned creatures (those that train your Blood or Elemental Magic while fighting) deal X% more damage with every hit. The value is locked in when the creature appears: the item has to be equipped when you summon, later gear changes do not alter it. Identical effects add up.",
+  "abweichung": ""
+ },
+ "AddElementalMagicSkill": {
+  "text": "Raises the Elemental Magic skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% damage and cuts the Eitr and stamina costs of attacks by 0.33%, also above level 100.",
+  "abweichung": ""
+ },
+ "AddUnarmedSkill": {
+  "text": "Raises the Unarmed skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base weapon damage and cuts attack stamina costs by 0.33% – both keep working above level 100.",
+  "abweichung": ""
+ },
+ "AddPickaxesSkill": {
+  "text": "Raises the Pickaxes skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Each level adds 0.6% of base damage (rock and ore included) and cuts attack stamina costs by 0.33%, also above level 100.",
+  "abweichung": ""
+ },
+ "AddFishingSkill": {
+  "text": "Raises the Fishing skill by X levels; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. While fishing, stamina costs when hooked and when reeling drop and the line reels in faster – all only up to level 100; above that the bonus does nothing more.",
+  "abweichung": ""
+ },
+ "ModifyWispRange": {
+  "text": "The mist-free area around your Wisplight grows by X%. The value is taken when the wisp appears (when you equip it), and other players see the larger area too.",
+  "abweichung": ""
+ },
+ "ModifyGrapplePullSpeed": {
+  "text": "Once the grappling hook latches on, it reels you in X% faster: the hook's pull force is multiplied by 1 + X/100. Values from several sources add up.",
+  "abweichung": ""
+ },
+ "ModifyGrappleFlightTime": {
+  "text": "The grappling hook stays airborne X% longer before it vanishes, and the rope may stretch X% longer before it breaks (combined with any projectile speed bonus). The trajectory itself does not get higher; you reach farther targets by aiming accordingly. You can only reload after the longer flight time. Values from several sources add up.",
+  "abweichung": "No higher arc: the code only lengthens flight time, the reload block and the maximum rope length, not speed or trajectory."
+ },
+ "AddMovementSkills": {
+  "text": "Raises Jump, Run, Swim and Sneak by X levels each; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever the game reads the skill. Above level 100 only sprint speed (+0.25% per level) and jump force (+0.4% per level) keep improving; stamina for sprinting, swimming and sneaking and stealth only improve up to level 100.",
+  "abweichung": ""
+ },
+ "ModifyStaggerDuration": {
+  "text": "When you hit a target that is not staggering, it gets tagged; if it then staggers, its stagger animation plays slower and lasts X% longer. This works for melee and ranged hits, and also for attackers whose blow you block or parry. X from all equipped items is added up, weapon and shield together. The effect does not cause the stagger itself.",
+  "abweichung": "Not limited to the magic weapon: the values of all items add up and apply to every hit and to blocked or parried attackers."
+ },
+ "QuickLearner": {
+  "text": "Every skill gain is multiplied by (1 + X/100), for all skills. X from all equipped items is added up. Only experience handed out by the Inspiration shard effect is not boosted.",
+  "abweichung": ""
+ },
+ "FreeBuild": {
+  "text": "With a hammer or hoe carrying this effect you can build and dismantle pieces without their crafting station nearby; you still need the materials. With the default server setting ('Gated Freebuild Mode') this applies to forge pieces only after Eikthyr, stonecutter pieces after The Elder, artisan table pieces after Moder, and black forge and galdr table pieces after Yagluth; pieces of all other stations (e.g. workbench) right away.",
+  "abweichung": "Does not say that it also applies to dismantling and that by default it only works per station after certain boss kills."
+ },
+ "GreenThumb": {
+  "text": "When you plant a seed or sapling with the cultivator, your current value X is written into the plant: its grow time drops by X%, at most 75% (config 'Max'). The bonus stays with the plant even if you put the cultivator away later; plants set earlier do not benefit. Values of all equipped items add up.",
+  "abweichung": "Does not mention the cap (75% by default)."
+ },
+ "RecallWeapon": {
+  "text": "Only together with Throwable. When the thrown weapon lands, your character picks it up automatically (after the usual 0.5 s pickup delay); if it flies more than 80 m away from you, it is recalled at once. If your right hand is free, it is equipped again. If your inventory is full, it stays on the ground.",
+  "abweichung": ""
+ },
+ "Apportation": {
+  "text": "If the thrown weapon with this effect hits a creature with AI (enemies, but also animals), you are teleported instantly to the spot where the weapon drops. Hits on the ground, buildings or trees do nothing. Only the thrower is moved and only the thrown item itself counts; the effect only rolls on weapons that are Throwable. It has no numeric value.",
+  "abweichung": "Triggers on every creature with AI (animals too), not only on enemies."
+ },
+ "OffSetAttack": {
+  "text": "When the third swing of an attack chain triggers, every hit you take during the next 0.5 seconds is reduced by X% (max 100%) and causes no stagger or knockback. This applies to all hits in that window, including ranged and fall damage, not only enemy melee attacks. X from all equipped items is added up. Weapons with fewer than three swings in their chain never trigger it.",
+  "abweichung": "No timing against a melee attack needed: every hit in the 0.5 s after the third combo strike is reduced, including ranged and fall damage."
+ },
+ "ReflectDamage": {
+  "text": "When an attacker hits you, they take X% of the incoming damage back as pierce damage. It is based on the hit before blocking and armour, so blocked hits count too; blunt, slash, pierce, fire, frost and lightning count, poison and spirit do not. Dodged hits trigger nothing. X from all equipped items is added up.",
+  "abweichung": "Based on the hit before blocking and armor (also for blocked hits), without poison and spirit; it goes back as pierce damage."
+ },
+ "AvoidDamageTaken": {
+  "text": "Every hit that has an attacker (creature or player) has an X% chance to be cancelled completely: no damage, no status effect, no knockback, no stagger. X from all equipped items is added up; at critical health the Health Critical version of Feint is added; at 100% every such hit is cancelled. Damage without an attacker (falling, drowning, environment) and damage over time such as burning or poison cannot be avoided.",
+  "abweichung": ""
+ },
+ "StaggerOnDamageTaken": {
+  "text": "Each hit you land on a creature has an X% chance to stagger it instantly, regardless of its stagger bar; players only with PvP on. X from all equipped items is added up (e.g. chest and shield) and applies to every weapon, ranged too. Despite its name it has nothing to do with damage you take.",
+  "abweichung": "Does not raise an existing chance but gives each hit its own chance of an instant stagger; applies to all attacks and adds up all items, not just the magic weapon."
+ },
+ "FeatherFall": {
+  "text": "While the item is equipped you have the game's 'Feather fall' status, the same as the Feather Cape: your fall speed is capped at 5 m/s, fall damage −100%, and jumping costs 20% less stamina. The numeric value does not matter.",
+  "abweichung": "Does not mention that jumping costs 20% less stamina (part of Feather Fall)."
+ },
+ "ModifyDiscoveryRadius": {
+  "text": "The radius in which your map is revealed while exploring is multiplied by (1 + X/100). X from all equipped items is added up. Only your own exploration is affected.",
+  "abweichung": ""
+ },
+ "Comfortable": {
+  "text": "Raises your comfort level by X while the item is worn; X from all items is added up (whole numbers only). Valheim recalculates comfort every 2 seconds and the bonus always counts, even without shelter or furniture. You notice it when resting: the duration of the Rested buff depends on the comfort level.",
+  "abweichung": ""
+ },
+ "ModifyMovementSpeedLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), X/100 is added to your equipment movement modifier. Valheim turns that into: running +X%, sprinting +1.5 × X%, and stamina costs for sprinting, jumping and dodging drop by X%. X from all equipped items is added up.",
+  "abweichung": "Not just speed: sprinting rises by 1.5 × X, and the stamina cost of sprinting, jumping and dodging drops by X%."
+ },
+ "ModifyHealthRegenLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), X/100 is added to your health regeneration factor, i.e. +X% of the healing food gives every 10 s. The bonus is added after status effects such as Wet and is not reduced by them. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "ModifyStaminaRegenLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), X/100 is added to your stamina regeneration factor, i.e. +X% of normal regeneration. The bonus is added after status effects such as Wet and is not reduced by them. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "ModifyEitrRegenLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), X/100 is added to your eitr regeneration factor, i.e. +X% of normal regeneration. The bonus is added after status effects and is not reduced by them. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "ModifyArmorLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), the armour of every worn armour piece rises by X%, so your total armour rises by X%. X from all equipped items is added up and adds to each piece's own armour bonuses.",
+  "abweichung": ""
+ },
+ "ModifyDamageLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), your magic weapon deals X% more damage of every type. This adds to All Damage +% and similar bonuses (one shared factor). All equipped items count except a weapon in your other hand; non-magic weapons get no bonus.",
+  "abweichung": ""
+ },
+ "ModifyBlockPowerLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), the block armour of the item you are blocking with rises by X%, on top of other block armour bonuses. All equipped items count except the weapon in your other hand, so when you block with a shield the value on your weapon does nothing.",
+  "abweichung": "If the value is on the weapon and you block with a shield, it has no effect."
+ },
+ "ModifyParryLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), a parry (a block right after raising it, 0.25 s by default) raises the block armour and block force of the blocking item by X%. The parry bonus factor itself is unchanged; the parried block armour rises by X% overall. All equipped items count except the weapon in your other hand.",
+  "abweichung": "The parry bonus itself is not increased; parrying only raises block armor and block power."
+ },
+ "ModifyAttackSpeedLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), your attack animations run at (1 + X/100) times speed, for every attack with a weapon or tool. This factor is multiplied with the normal Attack Speed bonus, not added. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "AvoidDamageTakenLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), your chance to avoid a hit completely rises by X percentage points. This adds to Feint; an avoided hit does nothing at all. Only hits with an attacker count, so no fall damage. X from all equipped items is added up; the code has no upper limit.",
+  "abweichung": ""
+ },
+ "LifeStealLowHealth": {
+  "text": "While your health is at or below 30% (threshold can be raised to 75% by Health Critical Threshold), every hit heals you for X% of its damage, counted before the target's armour and resistances and without chop and pickaxe damage. This adds to Lifesteal. All equipped items count except a weapon in your other hand.",
+  "abweichung": ""
+ },
+ "Glowing": {
+  "text": "While the item is equipped, a warm white point light with 10 m range and particles is attached to your character. Several items with Glowing still give only one light, and on legendary items with their own ID (uniques, set pieces) it does not appear. The code gives it no other gameplay effect.",
+  "abweichung": ""
+ },
+ "Executioner": {
+  "text": "If your attack hits a target below 20% of its max health, the whole hit is multiplied by 1 + X/100, before resistances and armor. This works only once per target (the list lasts for the whole game session). The sum on the attacking weapon and the rest of your gear counts, not on a second weapon in the other hand; for arrows and bolts the value at the moment of firing is used.",
+  "abweichung": ""
+ },
+ "Riches": {
+  "text": "When a creature dies, the values of all players within 100 m are added up, no matter who killed it. The sum is the chance for a bonus find (certain from 100%). A random entry is then picked (config: Silver Necklace 300, Ruby 200, Amber Pearl 100, Amber 50, Coins 8) and a random budget of 0–100 × max(1, sum) is divided by its price; if that buys less than one, you get coins instead. Below 100% this yields up to 12 coins or 1–2 amber.",
+  "abweichung": "Not a higher drop chance of the creature but a separate chance of an extra find; the values of all players within 100 m add up."
+ },
+ "Opportunist": {
+  "text": "When one of your attacks hits a target that is currently staggering, the hit has an X% chance to be multiplied by the weapon's backstab bonus, like a sneak attack. Unlike a normal sneak attack, the target does not have to be unaware. This stacks with the normal double damage against staggered enemies. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "Duelist": {
+  "text": "With nothing in your off hand and blocking with this weapon, its block armor rises by X% of the weapon's damage (all damage types except chop and pickaxe, enchantments included, no skill) and its block force (knockback on the attacker, EpicLoot's 'parry force') by X/2% of it. The block armor bonus is added to the base block armor, so the Blocking skill and, on a parry, the parry bonus amplify it too.",
+  "abweichung": ""
+ },
+ "Immovable": {
+  "text": "While you are blocking (block held, not during an attack or dodge) you are neither knocked back nor staggered, and hits build up no stagger. This applies to all hits, even from behind; if your stamina runs out while blocking you still take damage but do not stagger. When not blocking the effect does nothing.",
+  "abweichung": ""
+ },
+ "ModifyStaggerDamage": {
+  "text": "When you hit an enemy that is currently staggered, that hit deals X% more damage (all damage types). This multiplies with the normal double damage against staggered enemies. It works for melee and projectiles; for projectiles the value at the moment of firing counts. Identical effects and set bonuses add up.",
+  "abweichung": ""
+ },
+ "CloseQuarter": {
+  "text": "Hits with this weapon knock enemies back X% less: the knockback force is multiplied by (1 − X/100), and from 100% on there is no knockback at all. X is added up over your equipment, but when dual-wielding the other weapon does not count. Applies to your hits on creatures and players, not to bonus hits from other effects.",
+  "abweichung": ""
+ },
+ "Luck": {
+  "text": "Luck shifts the rarity whenever EpicLoot rolls magic loot (creatures, chests, gambling at the trader). It counts the Luck of every player within 100 m of the drop point; per player, X from all equipped items is added up. With L = total/100 the weights are multiplied: Magic ×(1−0.2·L, min. 0), Rare ×1, Epic ×(1+0.2·L), Legendary ×(1+L), Mythic ×(1+1.1·L), Ancient ×(1+1.2·L). Rarities the loot table does not allow stay impossible. Luck does nothing at the enchanting table.",
+  "abweichung": ""
+ },
+ "Prosperity": {
+  "text": "When a creature dies or a chest is rolled (usually when first opened, treasure map chests included), EpicLoot adds up the Prosperity of all players within 100 m (P in %, per player X from all equipped items). That gives floor(P/100) guaranteed extra rolls plus one more with the remainder as its chance, at most 3 (config BonusRollsMax). Each extra roll rolls the target's whole EpicLoot loot table again. Normal Valheim drops are unchanged.",
+  "abweichung": "At most 3 extra rolls (config BonusRollsMax), even if “one guaranteed roll per 100%” would give more."
+ },
+ "ModifyParryWindow": {
+  "text": "Extends the parry window by X milliseconds. In Valheim a hit counts as parried if it lands within the first 250 ms after you raise your block; with the effect that becomes 250 + X ms. Values from all equipped items count, including a weapon while you block with a shield. Parrying still only works with items that have a parry bonus.",
+  "abweichung": ""
+ },
+ "Slow": {
+  "text": "Every hit you deal to a target (not a boss) slows it for 2 seconds: running, swimming and fast-flying speed, acceleration and attack animations are multiplied by (1 − X/100), at most 90% slower. X from all equipped items is added up. Normal movement speed without running is not reduced. Further hits restart the 2 seconds but do not change the strength of a slow already running.",
+  "abweichung": "Movement: only run, swim and fast fly speed plus acceleration, not the normal walking speed."
+ },
+ "DoubleMagicShot": {
+  "text": "Applies to projectile attacks while the staff with this effect is equipped. With a chance (config: 75%) the attack fires twice as many projectiles, but each deals only 66% damage (132% combined) and spreads 20% wider. Only then does the attack cost its eitr (and any stamina or health) a second time; if you cannot pay, a normal shot fires.",
+  "abweichung": "Does not always fire twice: only by chance (config 75%), and each projectile deals only 66% damage; the doubled cost only applies when the double shot triggers."
+ },
+ "TripleBowShot": {
+  "text": "Applies to bows and crossbows. With a chance (config: 75%) a shot fires three times as many projectiles and uses 3 arrows or bolts; each projectile deals only 40% damage (120% combined) and spreads 25% wider. If the attack has a stamina or eitr cost, it is paid again; if you cannot pay, a normal shot fires.",
+  "abweichung": "Only by chance (config 75%), each projectile deals only 40% damage; also applies to crossbows."
+ },
+ "SpellSword": {
+  "text": "Melee weapons only: every attack costs half the stamina, but additionally costs eitr equal to half of the attack's base stamina cost (before skill and gear discounts). **Without enough eitr, e.g. without eitr food, you cannot attack with the weapon.** Damage also rises by X% (added to flat bonuses such as 'All Damage'); X is shown without a % sign. While Eitr Infusion is active, the extra eitr cost is dropped.",
+  "abweichung": "“Converts 50% of the cost to eitr” is only roughly right: stamina is halved, eitr costs half of the unreduced base stamina cost, and without eitr no attack is possible. Shown as “+X” without a % sign."
+ },
+ "BulkUp": {
+  "text": "Max health rises by X% (calculated on base value plus food, before percentage bonuses from other effects). At the same time the food health regeneration multiplier drops by X percentage points (e.g. 1.0 → 0.7 at X = 30), never below 0, so with regen bonuses the relative loss is smaller. X from all equipped items is added up, capped at 100%.",
+  "abweichung": ""
+ },
+ "EitrWeave": {
+  "text": "Every parry (a block within the normal 0.25 s parry window with a shield or weapon that can parry) instantly gives you X Eitr. Values of all equipped items with this effect are added together; there is no cooldown. Whether parry windows extended by other effects count is unclear in the code, because the check uses a fixed 0.25 s.",
+  "abweichung": ""
+ },
+ "DartingThoughts": {
+  "text": "Eitr regeneration rises: X/100 is added to the regeneration multiplier, like other regen bonuses. At the same time max Eitr drops by X/2%. The cut applies to the Eitr from food, before percentage Eitr bonuses and conversions from other effects (e.g. Health to Eitr, Deep Well) are added; those are not reduced. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "HeadHunter": {
+  "text": "When a creature dies, the highest value among all players within 100 m counts (not the sum, no matter who killed it). With an X% chance an extra trophy of that creature drops, independent of the normal trophy drop; at 100% always. At most one extra trophy per death; creatures without a trophy in their loot list give nothing.",
+  "abweichung": "Not a higher drop chance but a separate chance of an extra trophy; only the highest value of the players within 100 m counts."
+ },
+ "Bulwark": {
+  "text": "Heimdall set bonus, used with an ability key (default G, H or J), cooldown 60 s from activation. For 5 s you are immune to blunt, slash, pierce, fire, frost, lightning, poison and spirit damage. Damage without a damage type, such as fall damage, still hurts you.",
+  "abweichung": "Not all damage: fall damage and other damage without a damage type is not prevented."
+ },
+ "Undying": {
+  "text": "Heimdall set bonus, works on its own. If any damage, fall damage included, would drop your health to 0, you are fully healed instead and are then immune to blunt, slash, pierce, fire, frost, lightning, poison and spirit damage for 3 s. Cooldown 20 minutes.",
+  "abweichung": ""
+ },
+ "FrostDamageAOE": {
+  "text": "If your melee weapon deals frost damage (enchantments count), every swing or thrust creates ice spikes in front of you; area attacks trigger nothing. 0.3 s later every creature in that zone takes X% of your attack damage (weapon damage with attack and skill factor, without chop and pickaxe) as frost damage. The zone is about 6 m wide and 9 m long, centred on your attack's reach point. There is no enemy check: tamed animals are hit too, players only with PvP on.",
+  "abweichung": "Hits every creature in the area without an enemy check (tamed animals too); only swing and thrust attacks, not area attacks."
+ },
+ "Berserker": {
+  "text": "Ragnar set bonus, used with an ability key (default G, H or J), cooldown 180 s. For 10 s your health regeneration is ×0, and magic weapons deal +(200% − 150% × health/max) damage: +200% near zero health, +50% at full health. Non-magic weapons get no bonus. EpicLoot regeneration bonuses (e.g. Ragnar's own +50%) are added afterwards, so with them you still regenerate.",
+  "abweichung": "The damage bonus only applies to magic weapons; regeneration bonuses (e.g. Ragnar's 2-piece bonus +50%) partly lift the regeneration ban."
+ },
+ "OverwhelmingLaunch": {
+  "text": "Thor set bonus. Press the key (default T) to throw your held melee weapon up to 30 m to where you aim. On impact it hits enemies and destructible objects within 4 m for weapon damage +X%, double stagger and knockback. The throw costs 3× the stamina of a normal attack; you cannot attack with that weapon until it has flown back. Bows, crossbows, staffs, pickaxes and the fishing rod cannot be thrown.",
+  "abweichung": ""
+ },
+ "Artillery": {
+  "text": "Crossbows (Crossbows skill) fire the Staff of Embers fireball in a high arc instead of bolts. It lands where you aim (ray up to 60 m, otherwise on the ground 60 m ahead). The fireball takes the damage and damage types of the crossbow shot, increased by X%, and deals area damage within 2.5 m. X from all equipped items is added up; range and radius come from the config. With Triple Shot the targets scatter by up to 15% of the distance.",
+  "abweichung": ""
+ },
+ "Assassin": {
+  "text": "If you keep your crosshair on an enemy within 20 m for 2 s with a melee weapon in hand (no pickaxe), you blink behind it (or to its side) and instantly perform the weapon's first primary attack: no stamina, Eitr or health cost, dealing X% of its normal damage. Then a cooldown of 340 − 0.8·X s, at least 30 s (values from the config). Without free space or with mist between you there is no blink. X from all equipped items is added up.",
+  "abweichung": ""
+ },
+ "CoilingVenom": {
+  "text": "X% of the physical damage (blunt, slash, pierce) of all your equipped weapons is converted into poison; X from all items is added up, max 100%. When your poison hits a creature (not a player, not tamed), its poison resistance counts as normal for that hit – immunity remains. New poison is added to the poison left in the target instead of only replacing a weaker one as usual.",
+  "abweichung": ""
+ },
+ "NineSteps": {
+  "text": "Only works together with Coiling Venom. After every hit on a creature you have marked with poison, EpicLoot compares the poison left in it with its current health: once it reaches X% of that (X between 10 and 1000), the target is doomed. The poison is removed, the target is slowed by 40% (bosses are not) and dies after 9 steps of 0.5 s each. Bosses die this way too; the kill is credited to you if your character is found. Values from the config.",
+  "abweichung": "Not mentioned: only works with “Coiling Venom” and kills bosses too."
+ },
+ "SlightlyWeakToFire": {
+  "text": "Drawback: you are slightly weak to fire, fire damage against you counts ×1.25 (including the resulting burning). It only applies if you have no fire resistance, e.g. from armor or mead; any resistance cancels the weakness. With several fire weaknesses only the strongest counts.",
+  "abweichung": ""
+ },
+ "WeakToFire": {
+  "text": "Drawback: you are weak to fire, fire damage against you counts ×1.5 (including the resulting burning). It only applies if you have no fire resistance, e.g. from armor or mead; any resistance cancels the weakness. With several fire weaknesses only the strongest counts.",
+  "abweichung": ""
+ },
+ "VeryWeakToFire": {
+  "text": "Drawback: you are very weak to fire, fire damage against you counts ×2 (including the resulting burning). It only applies if you have no fire resistance, e.g. from armor or mead; any resistance cancels the weakness. With several fire weaknesses only the strongest counts.",
+  "abweichung": ""
+ },
+ "GiantsBlood": {
+  "text": "You grow X% larger; the reach, height and width of your melee and area attacks grow by X% too, and your body gets heavier. In addition: carry weight +X% of the base 300, health regeneration +4×X% and physical damage (blunt, slash, pierce, chop, pickaxe) of all equipped weapons +0.5×X%. While crouching, dodging or airborne your collision shape stays normal size. Values from several sources add up.",
+  "abweichung": "Does not mention the longer attack reach and the heavier body."
+ },
+ "Hexen": {
+  "text": "While the effect is active you take the shape of a Jotun Witch (60% of her size). Your primary attack is her magic blast, your secondary her lightning bolt; dodging (block or crouch plus jump) performs her dodge move in your movement direction. Jumping takes off (needs 10 Eitr), holding jump or crouch makes you rise or sink. Flying drains X Eitr per second (lower is better) and stops Eitr regeneration; at 0 Eitr you sink to the ground.",
+  "abweichung": ""
+ },
+ "Sniper": {
+  "text": "Egil set bonus. With a bow (not a crossbow) arrows fly (1 + 1.25 × X) times as fast, but drawing also takes (1 + 1.25 × X) times as long (factors set by config). If an arrow hits more than 15 m from the shooter (straight line), it deals +X% damage per metre of the whole distance, e.g. +24% at X = 0.8 and 30 m.",
+  "abweichung": "The short display “per metre past 15 m” is misleading: beyond 15 m the whole distance from the shot counts, not only the metres beyond 15."
+ },
+ "Frostwalker": {
+  "text": "If you wade into water at least 0.4 m deep or swim for 0.3 s, the water freezes under you into an ice floor that moves with you (needs 10 Eitr). While you stand on it, it drains X Eitr per second, three times as much over the Ashlands ocean, so a lower value is better. Your Eitr does not regenerate on or in the water. At 0 Eitr or when you crouch you break through; crouching again while swimming refreezes. Not on ships, in dungeons or while seated or riding.",
+  "abweichung": ""
+ },
+ "SpiritAnimal": {
+  "text": "Fylgja set bonus. Look at a tamed creature that can fight and press the key (default Y): after you confirm, it leaves the world for good and becomes your fylgja. In combat (a hit or threat within the last 10 s) its spirit appears for 120 s, is summoned again while the fight goes on and returns 30 s after it falls; beyond 60 m it vanishes. X% strength means its damage × X/100 and damage it takes × 100/X.",
+  "abweichung": "The set description does not say that the bound animal disappears from the world for good (only the confirmation window says so)."
+ },
+ "Earthshaker": {
+  "text": "Mid-air, press the key (default T): you dive at 30 m/s where you aim (at least 45° down, steerable) and slam for X damage, half blunt and half pierce, within 5 m plus 1 m per 15 m fallen. On top: +1% per 10 inventory weight above 300 (max +300%) and +2% per metre fallen beyond 5 m; with less than 3 m of clear air below you at the start, −50%. The dive costs 25 stamina and causes no fall damage. All numbers except X are configurable defaults.",
+  "abweichung": ""
+ },
+ "PiercingBolts": {
+  "text": "Bolthorn set bonus. Crossbow bolts without area damage pass through every creature and hit each one only once. After each creature the bolt keeps X% of its damage and knockback, so the third target gets X% of X%. Terrain, trees and buildings stop it as usual.",
+  "abweichung": ""
+ },
+ "ElementalArchery": {
+  "text": "While the effect is active, your bows (not crossbows, not the grappling hook) use the Elemental Magic skill instead of Bows for damage, draw speed, stamina for drawing and shooting, and tooltip values. Hitting creatures trains Elemental Magic instead of Bows. The numeric value does not matter, only whether the effect is present.",
+  "abweichung": ""
+ },
+ "ConjuredArrows": {
+  "text": "Bows (Bows skill) fire conjured frost arrows instead of real ones; arrows are neither needed nor used up. Each shot costs 8 Eitr (config) × (1 − 0.33 × Elemental Magic factor), so 5.36 Eitr at Elemental Magic 100; without enough Eitr you cannot shoot. The arrow deals only frost damage equal to X% of the bow's damage, real arrow damage is lost. X from all equipped items is added up. Crossbows are not affected.",
+  "abweichung": ""
+ },
+ "ConvertHealthToEitr": {
+  "text": "X% of your max health is moved 1:1 into max Eitr; X from all items is added up, capped at 90%, and at least 1 health remains. It uses your final max health including other bonuses. This works without any Eitr food; percentage Eitr bonuses such as Deep Well apply to the converted Eitr afterwards.",
+  "abweichung": ""
+ },
+ "DeepWell": {
+  "text": "Max Eitr rises by X% (X from all items added up), calculated on the Eitr from food, bonuses and converted health computed so far, and only if you already have Eitr. In return the Eitr regeneration multiplier drops by 30 percentage points (config EitrRegenReduction, never below 0), before gear bonuses to Eitr regeneration are added. This penalty applies once, no matter how many items carry the effect.",
+  "abweichung": ""
+ },
+ "EitrBarrier": {
+  "text": "From 5 Eitr on a barrier surrounds you: it catches X% (max 100%) of every hit before block, resistances and armor apply, paying by default 1 Eitr per point of damage caught; if your Eitr runs short, only the affordable part is caught. Each absorption briefly pauses Eitr regeneration. If your Eitr drops below 0.5, the barrier collapses for 5 s and only rises again at 5 Eitr. Fall damage is absorbed too; burning and poison ticks and self-inflicted damage are not.",
+  "abweichung": ""
+ },
+ "Interconnected": {
+  "text": "The skill of the weapon in your hand gains bonus levels equal to X% of its partner skill's level (rounded down). Partners: Bows ← Axes or Polearms, Blood Magic ← Clubs or Unarmed, Elemental Magic ← Swords or Spears, Crossbows ← Knives; in turn Axes/Polearms ← Bows, Clubs/Unarmed ← Blood Magic, Swords/Spears ← Elemental Magic, Knives ← Crossbows. With two partners the higher one counts. The bonus levels affect all skill values in play; your learned skill does not rise.",
+  "abweichung": ""
+ },
+ "AddAllSkills": {
+  "text": "Raises every skill by X levels (Dodge, Riding and Farming too), on top of single-skill bonuses; X from all equipped items is added up. Your learned level stays the same; EpicLoot adds the bonus whenever a skill is read. Above level 100 it only helps where the game scales linearly: weapon damage (+0.6% per level), attack costs (−0.33%), block armor (+0.5%), sprint speed, jump force. Draw time, reload and stamina for sprinting, swimming, sneaking, dodging and fishing stop at 100.",
+  "abweichung": ""
+ },
+ "EitrInfusion": {
+  "text": "Press the key (default T, needs 20 Eitr) to pour all your Eitr into your weapon; every 4 Eitr gives 1 s of infusion. While it lasts, the weapon in your hand gains +X% of its highest single damage value as extra damage of that type, or as lightning, frost or fire if you had the Lightning, Frost or Burning status or stood at a fire when it began. Your Eitr does not regenerate meanwhile, Spellsword costs no Eitr, and pressing again adds Eitr you regained. The bonus only works if the weapon in hand is enchanted (magic).",
+  "abweichung": "Weapons that are not enchanted get no infusion damage."
+ },
+ "QuarryMark": {
+  "text": "Ullr set bonus. When a bow arrow (not a crossbow bolt) hits a creature, it is marked for 10 s; another arrow hit renews the mark. Your next melee hit with an axe or polearm on that target uses up the mark: it deals +X% damage and gives you 25 stamina (duration and stamina set by config). Players and tamed creatures are not marked.",
+  "abweichung": ""
+ },
+ "HelsHarvest": {
+  "text": "If a creature (not a player, not tamed) dies to your last hit or that of your summons, a skeleton thrall of the same star level rises in its place, follows you and fights for 30 s by default. Its damage rises by 2% per Blood Magic level. There are at most X thralls at once (rounded); a new one replaces the oldest. None rises in water deeper than 1 m, and thralls drop no loot. Deaths from burning or poison over time do not count, because those ticks have no attacker.",
+  "abweichung": ""
+ },
+ "Vanish": {
+  "text": "Huldra set bonus. If you dodge while an alerted enemy is within 15 m, smoke rises: for X seconds enemies can neither see nor hear you. Enemies within 15 m that target you lose that target and calm down (except bosses and player hunters such as raid monsters). Your next hit during that time is multiplied by the weapon's backstab bonus and ends the vanish. Cooldown 20 s (config).",
+  "abweichung": ""
+ },
+ "Firebrand": {
+  "text": "With a two-handed axe or two-handed sword, the third swing of every combo erupts in fire: enemies within 3 m of a point just in front of you take X% of the weapon's damage (enchantments included) as fire damage and are pushed back. The damage scales with your weapon skill like a hit and works as burning over time. Your secondary attack erupts at half strength. It erupts on every such swing even if you hit nothing; radius and secondary share are configurable defaults.",
+  "abweichung": ""
+ },
+ "LifeSiphon": {
+  "text": "Each of your hits drains the target for 30 s; further hits renew the timer, and the highest value applies. Meanwhile the target cannot be healed, and every player who damages it heals for X% of the damage actually dealt. Fire, poison and spirit damage do not count because they act over time. Values of all equipped items add up; the duration is a configurable default.",
+  "abweichung": ""
+ },
+ "KineticQuake": {
+  "text": "Every attack you successfully block stores a charge, unless the block breaks into a stagger or your stamina is empty afterwards. At X charges the next block releases a rock shockwave that runs 12 m straight ahead along the ground (4 m wide, stopped by walls), dealing blunt damage equal to 300% of your block armor (with Blocking skill, without parry bonus). So a lower X is better. Charges are kept even across sessions; length, width and 300% are configurable defaults.",
+  "abweichung": ""
+ },
+ "ShieldThrow": {
+  "text": "Svalinn set bonus. Press the key (default T) to throw your shield up to 15 m or to the first solid obstacle, after which it flies back. Each enemy is hit once on the way out and once on the way back for X% of your block armour (including Blocking skill) as blunt damage. Blocked damage fills a gauge (5× block armour) worth up to +300%; the throw empties it, and after 10 s without blocking it drains. Costs 20 stamina; you cannot block until it returns.",
+  "abweichung": ""
+ },
+ "ReduceStaggerTaken": {
+  "text": "Svalinn set bonus. All stagger damage you receive is reduced by X%, at most by 90%. This applies to normal hits and to blocked attacks, so your stagger bar fills more slowly. X from all active sources is added up.",
+  "abweichung": ""
+ }
+}

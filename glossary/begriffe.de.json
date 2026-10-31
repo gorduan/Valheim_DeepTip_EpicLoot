@@ -1,0 +1,478 @@
+{
+  "$locale": "de",
+  "epicloot.magicitem": {
+    "title": "Magischer Gegenstand",
+    "short": "Ausrüstung mit Seltenheit und magischen Effekten aus Epic Loot.",
+    "body": "Fast jede Ausrüstung, die man anlegen kann, kann magisch sein: Waffen, Rüstung, Schilde, Werkzeuge, Fackeln und Schmuckstücke, aber keine Pfeile. Ein magischer Gegenstand hat eine [[epicloot.rarity|Seltenheit]], einen oder mehrere [[epicloot.effects|magische Effekte]] und manchmal [[epicloot.shardslots|Splitter-Steckplätze]]. Im Inventar hat sein Symbol einen Hintergrund in der Farbe der Seltenheit, und liegt er am Boden, steht ein Lichtstrahl in dieser Farbe über ihm. Du findest ihn als Beute, machst ihn am [[epicloot.table|Verzauberungstisch]] aus normaler Ausrüstung oder erhältst ihn durch [[epicloot.table.identify|Identifizieren]].",
+    "aliases": [
+      "magische Gegenstände",
+      "magischer Gegenstände",
+      "magisches Item"
+    ]
+  },
+  "epicloot.effects": {
+    "title": "Magische Effekte",
+    "short": "Die farbigen Zeilen eines magischen Gegenstands: jede ist ein Effekt mit ausgewürfeltem Wert.",
+    "body": "Jede farbige Zeile unter den Werten ist ein magischer Effekt, in Epic Loot auch Verzauberung genannt, mit dem Wert, der für diesen Gegenstand ausgewürfelt wurde. Das Zeichen davor zeigt seine Geschichte: ◆ ausgewürfelt, ▼ schon einmal [[epicloot.table.augment|verstärkt]], ▲ bei Hildir [[epicloot.temper|gehärtet]]. Beim Würfeln kommt jeder Effekt höchstens einmal vor, manche schließen sich gegenseitig aus, und welche möglich sind, hängt von der Art des Gegenstands und der [[epicloot.rarity|Seltenheit]] ab. Wie viele es sind, erklärt [[epicloot.effectcount]]; [[epicloot.stars|Sterne]] hinter einer Zeile markieren Effekte, die selten ausgewürfelt werden.",
+    "aliases": [
+      "magische Effekte",
+      "magischen Effekte",
+      "Aktive magische Effekte",
+      "Magische Effektbeschreibungen",
+      "Verzauberung",
+      "Verzauberungen"
+    ]
+  },
+  "epicloot.effectcount": {
+    "title": "Anzahl der Effekte",
+    "short": "Wie viele Effekte ein magischer Gegenstand bekommt, hängt von seiner Seltenheit ab.",
+    "body": "Beim Entstehen wird die Zahl der Effekte nach der [[epicloot.rarity|Seltenheit]] ausgewürfelt; im Tooltip steht sie unten bei „Effekte:“. Laut Server-Konfiguration (loottables.json) gilt: Magie 1–3, selten 2–4, Epos 3–5, Legendär 4–6, Mythisch 5–7, Uralt 6–8, dabei kommt die kleinste Zahl mit 80 %, die mittlere mit 18 % und die größte mit 2 %. Beim [[epicloot.table.enchant|Verzaubern]] verschiebt eine höhere Stufe dieser Funktion die Chancen nach oben, auf Stufe 7 um 14 Prozentpunkte zur mittleren und 7 zur größten Zahl. [[epicloot.unique|Einzigartige Gegenstände]] und viele [[epicloot.sets|Set-Teile]] haben eine feste Zahl, und Effekte aus [[epicloot.shardslots|Splitter-Steckplätzen]] kommen noch dazu.",
+    "aliases": []
+  },
+  "epicloot.stars": {
+    "title": "Seltenheits-Sterne ★",
+    "short": "★ bis ★★★ hinter einem Effekt: Dieser Effekt wird selten ausgewürfelt. Mit der Höhe seines Werts hat das nichts zu tun.",
+    "body": "Die Sterne bewerten nicht den gewürfelten Wert, sondern wie oft der Effekt überhaupt gewählt wird. Epic Loot vergleicht dazu das Auswahlgewicht des Effekts mit dem mittleren Gewicht (Median) aller würfelbaren Effekte: Das kleinste Gewicht kann 3 Sterne bekommen, das zweitkleinste 2, das drittkleinste 1, aber nur, wenn es unter 6,25 %, 12,5 % bzw. 35 % des Medians liegt, sonst entsprechend weniger. Ein Stern ist hellblau, zwei sind violett, drei golden; dieselben Sterne stehen auch in den Effektlisten am [[epicloot.table|Verzauberungstisch]]. Mit den Effekten dieses Servers tragen z. B. Duellist und Schnellziehen einen Stern, Unzerstörbar, Wasserdicht, Luftsprung, Federfall und Henker zwei und nur Freies Bauen drei. Ob und wie die Sterne erscheinen, stellt jeder Spieler in seiner Epic-Loot-Konfiguration unter „Effect Rarity Flare“ ein (Off, Static, Animated).",
+    "aliases": []
+  },
+  "epicloot.rollrange": {
+    "title": "Wurfbereich",
+    "short": "Die Spanne vom kleinsten bis zum größten Wert, die ein Effekt bei dieser Seltenheit haben kann.",
+    "body": "Jeder Effekt hat pro [[epicloot.rarity|Seltenheit]] einen kleinsten und einen größten Wert und eine Schrittweite; ausgewürfelt wird ein Wert auf diesem Raster. Hältst du über einem magischen Gegenstand die Umschalttaste (Controller: LT), steht unter jedem Effekt „Wurfbereich: \\[15-20\\]“; beim [[epicloot.table.augment|Verstärken]] und in der Runenliste steht der Bereich direkt hinter dem Effekt, bei Hildir als „Min/Max“. Der Bereich gilt für die aktuelle Seltenheit des Gegenstands; höhere Seltenheiten haben meist höhere Bereiche. Werte über dem Bereich können durch [[epicloot.temper|Härten]], durch [[epicloot.runes|Runen]] aus seltenerer Ausrüstung oder durch die Kraftboni eines aufgerüsteten Tisches entstehen.",
+    "aliases": [
+      "Wurfbereich",
+      "Min/Max"
+    ]
+  },
+  "epicloot.effectdetails": {
+    "title": "Effekt-Details",
+    "short": "Umschalttaste (Controller: LT) gedrückt halten zeigt unter jedem Effekt Beschreibung, Wurfbereich und Zusatzwerte.",
+    "body": "Hältst du die Umschalttaste gedrückt, während du über einem magischen Gegenstand bist, erscheint unter jedem Effekt ein grauer Block: die Beschreibung, der [[epicloot.rollrange|Wurfbereich]] und, falls vorhanden, feste Zusatzwerte wie Abklingzeit, Dauer oder Radius. Am Controller hältst du LT; nur dann steht auch der Hinweis „Hold for effect details“ im Tooltip, der noch nicht übersetzt ist. Dieselben Details gibt es für Steine in [[epicloot.shardslots|Splitter-Steckplätzen]], für Splittersteine und für [[epicloot.sets.bonus|Set-Boni]].",
+    "aliases": [
+      "Hold for effect details"
+    ]
+  },
+  "epicloot.rarity": {
+    "title": "Seltenheit",
+    "short": "Die Stufe eines magischen Gegenstands, von Magie bis Uralt; sie bestimmt Effektzahl, Wertebereiche und Farbe.",
+    "body": "Epic Loot kennt sechs Seltenheiten, von unten nach oben: [[epicloot.rarity.magic|Magie]], [[epicloot.rarity.rare|selten]], [[epicloot.rarity.epic|Epos]], [[epicloot.rarity.legendary|Legendär]], [[epicloot.rarity.mythic|Mythisch]] und [[epicloot.rarity.ancient|Uralt]]. Je höher sie ist, desto mehr [[epicloot.effectcount|Effekte]] bekommt der Gegenstand, desto höher liegen ihre [[epicloot.rollrange|Wurfbereiche]] und desto mehr [[epicloot.shardslots|Splitter-Steckplätze]] sind möglich. Im Tooltip steht sie unten bei „Seltenheit:“, und Name, Effekte und Symbolhintergrund tragen ihre Farbe. Auch [[epicloot.material|Verzauberungsmaterial]] gibt es in jeder Seltenheit; zum Verzaubern und Verstärken brauchst du Material derselben Seltenheit.",
+    "aliases": [
+      "Seltenheit"
+    ]
+  },
+  "epicloot.rarity.magic": {
+    "title": "Magie (Seltenheit)",
+    "short": "Die unterste Seltenheit: 1 bis 3 Effekte, höchstens 1 Splitter-Steckplatz.",
+    "body": "Magie ist die erste von sechs [[epicloot.rarity|Seltenheiten]], ihre Farbe ist standardmäßig blau. Laut Server-Konfiguration bekommt ein solcher Gegenstand 1 Effekt (80 %), 2 (18 %) oder 3 (2 %) und mit 10 % Chance einen [[epicloot.shardslots|Splitter-Steckplatz]]. Zum [[epicloot.table.enchant|Verzaubern]] in dieser Stufe brauchst du 1 Magie Runenstein, 5 Magie Staub und 5 Magie Essenz (Waffen, Werkzeuge) bzw. 5 Magie Reagenz (Rüstung, Schilde, Zubehör).",
+    "aliases": []
+  },
+  "epicloot.rarity.rare": {
+    "title": "Selten (Seltenheit)",
+    "short": "Die zweite Seltenheit: 2 bis 4 Effekte, höchstens 1 Splitter-Steckplatz.",
+    "body": "Selten ist die zweite von sechs [[epicloot.rarity|Seltenheiten]], standardmäßig gelb; im Spiel steht sie kleingeschrieben, etwa „Seltenheit: selten“ oder „selten Staub“. Laut Server-Konfiguration bekommt ein solcher Gegenstand 2 Effekte (80 %), 3 (18 %) oder 4 (2 %) und mit 25 % Chance einen [[epicloot.shardslots|Splitter-Steckplatz]]. Laut Server-Konfiguration sind 11 Effekte erst ab dieser Stufe möglich.",
+    "aliases": [
+      "selten"
+    ]
+  },
+  "epicloot.rarity.epic": {
+    "title": "Epos (Seltenheit)",
+    "short": "Die dritte Seltenheit (englisch Epic): 3 bis 5 Effekte, bis zu 2 Splitter-Steckplätze.",
+    "body": "Epos ist die dritte von sechs [[epicloot.rarity|Seltenheiten]], standardmäßig violett; im Englischen heißt sie Epic. Laut Server-Konfiguration bekommt ein solcher Gegenstand 3 Effekte (80 %), 4 (18 %) oder 5 (2 %) und 0 (50 %), 1 (45 %) oder 2 (5 %) [[epicloot.shardslots|Splitter-Steckplätze]]. Laut Server-Konfiguration sind 16 Effekte erst ab dieser Stufe möglich.",
+    "aliases": [
+      "Epos"
+    ]
+  },
+  "epicloot.rarity.legendary": {
+    "title": "Legendär (Seltenheit)",
+    "short": "Die vierte Seltenheit: 4 bis 6 Effekte, bis zu 2 Splitter-Steckplätze, dazu einzigartige Gegenstände und Sets.",
+    "body": "Legendär ist die vierte von sechs [[epicloot.rarity|Seltenheiten]], standardmäßig türkis. Laut Server-Konfiguration bekommt ein solcher Gegenstand 4 Effekte (80 %), 5 (18 %) oder 6 (2 %) und 0 (15 %), 1 (55 %) oder 2 (30 %) [[epicloot.shardslots|Splitter-Steckplätze]]. Mit 15 % Chance wird er ein [[epicloot.sets|Set-Teil]], sonst kann er ein [[epicloot.unique|einzigartiger Gegenstand]] mit eigenem Namen werden. Ab dieser Stufe gibt es auch die [[epicloot.brokkrgift|Gabe Brokkrs]].",
+    "aliases": [
+      "Legendär"
+    ]
+  },
+  "epicloot.rarity.mythic": {
+    "title": "Mythisch (Seltenheit)",
+    "short": "Die fünfte Seltenheit: 5 bis 7 Effekte, bis zu 3 Splitter-Steckplätze.",
+    "body": "Mythisch ist die fünfte von sechs [[epicloot.rarity|Seltenheiten]], standardmäßig orange. Laut Server-Konfiguration bekommt ein solcher Gegenstand 5 Effekte (80 %), 6 (18 %) oder 7 (2 %) und 0 (5 %), 1 (30 %), 2 (40 %) oder 3 (25 %) [[epicloot.shardslots|Splitter-Steckplätze]]. Mit 15 % Chance wird er ein [[epicloot.sets|Set-Teil]]; [[epicloot.unique|einzigartige Gegenstände]] außerhalb von Sets gibt es auf dem Server nur in Legendär.",
+    "aliases": [
+      "Mythisch"
+    ]
+  },
+  "epicloot.rarity.ancient": {
+    "title": "Uralt (Seltenheit)",
+    "short": "Die höchste Seltenheit: 6 bis 8 Effekte und beim Entstehen immer 1 bis 4 Splitter-Steckplätze.",
+    "body": "Uralt ist die höchste der sechs [[epicloot.rarity|Seltenheiten]], standardmäßig rot. Laut Server-Konfiguration bekommt ein solcher Gegenstand 6 Effekte (80 %), 7 (18 %) oder 8 (2 %) und 1 (20 %), 2 (40 %), 3 (30 %) oder 4 (10 %) [[epicloot.shardslots|Splitter-Steckplätze]]. Wie bei Legendär und Mythisch wird er mit 15 % Chance ein [[epicloot.sets|Set-Teil]].",
+    "aliases": [
+      "Uralt"
+    ]
+  },
+  "epicloot.unique": {
+    "title": "Einzigartiger Gegenstand",
+    "short": "Ein legendärer Gegenstand mit festem Namen, eigener Beschreibung und garantierten Effekten.",
+    "body": "Entsteht ein [[epicloot.rarity.legendary|legendärer]] Gegenstand, kann er laut Server-Konfiguration einer von 19 einzigartigen Gegenständen werden, etwa Dyrnwyn oder Mjolnir, sofern einer zu seiner Art passt. Er trägt dann einen festen Namen und eine eigene Beschreibung und hat bestimmte Effekte garantiert; ihre Werte und alle weiteren Effekte werden wie üblich ausgewürfelt. Manche haben eine feste [[epicloot.effectcount|Effektzahl]] oder einen sichtbaren Effekt, solange sie angelegt sind. Die Teile der [[epicloot.sets|Sets]] sind ebenfalls solche benannten Gegenstände.",
+    "aliases": []
+  },
+  "epicloot.sets": {
+    "title": "Set-Item",
+    "short": "Ein Teil eines benannten Sets; mehrere angelegte Teile desselben Sets schalten Set-Boni frei.",
+    "body": "Set-Teile erkennst du an der türkisblauen Zeile ganz oben, etwa „Legendäres Set-Item“, und am Abschnitt „Set: Name (2/4):“ im Tooltip. Die erste Zahl zählt deine angelegten Teile dieses Sets, die zweite, wie viele das volle Set braucht; darunter stehen die Teile, angelegte in ihrer Seltenheitsfarbe, fehlende grau. Laut Server-Konfiguration gibt es 23 Sets, und jeder legendäre, mythische oder uralte Gegenstand wird beim Entstehen, Verzaubern oder Identifizieren mit 15 % Chance ein Set-Teil, sofern eines zu ihm passt. Was ein Set bringt, steht unter [[epicloot.sets.bonus|Set-Boni]]; mit einer [[epicloot.sets.rune|Set-Rune]] überträgst du ein Set auf einen anderen Gegenstand. Auch Valheims eigene Sets zeigt Epic Loot in dieser Form an.",
+    "aliases": [
+      "Legendäres Set-Item",
+      "Mythisches Set-Item",
+      "Ancient Set Item",
+      "Epic Set Item",
+      "Rare Set Item",
+      "Magic Set Item",
+      "Legendäre Sets"
+    ]
+  },
+  "epicloot.sets.bonus": {
+    "title": "Set-Boni",
+    "short": "Zusätzliche Effekte, die ab einer bestimmten Zahl angelegter Teile desselben Sets wirken.",
+    "body": "Im Set-Abschnitt steht jeder Bonus als „(2) ‣ Effekt“: Die Zahl in Klammern ist die Menge angelegter Teile, ab der er wirkt. Aktive Boni leuchten in der Set-Farbe, inaktive sind grau. Hängt die Stärke eines Bonus von der Seltenheit ab, steht dahinter, nach welcher Stufe er gerade wirkt, z. B. „(Legendär)“; bei einem Bonus ab 3 Teilen zählt die Seltenheit deines drittbesten angelegten Teils. Manche Boni sind Fähigkeiten mit eigener Taste; welche, zeigen die [[epicloot.effectdetails|Effekt-Details]] als „Activation key“.",
+    "aliases": [
+      "Set-Boni",
+      "Activation key"
+    ]
+  },
+  "epicloot.sets.rune": {
+    "title": "Set-Rune",
+    "short": "Eine gravierte Rune, die ein Set enthält; geätzt macht sie einen anderen Gegenstand zum Teil dieses Sets.",
+    "body": "Im Reiter [[epicloot.table.runes|Runen]] löst **Set Extract** das Set aus einem Set-Teil und legt es in eine Set-Rune; laut Server-Konfiguration behält der Gegenstand dabei Seltenheit, Effekte und Steckplätze, gehört aber keinem Set mehr an und bekommt einen erzeugten Namen. Mit **Set Etch** machst du einen passenden magischen Gegenstand ohne Set und ohne eigenen Namen zum Teil dieses Sets; er behält Seltenheit und Effekte und übernimmt den Namen des Set-Teils. Das geht nur bei einer Seltenheit, die das Set erlaubt (auf dem Server Legendär, Mythisch, Uralt), und kostet unter anderem [[epicloot.material.tokens|Belohnungstoken]]. Die Bezeichnungen dafür sind noch nicht übersetzt und erscheinen auch im deutschen Spiel auf Englisch.",
+    "aliases": [
+      "Set Rune",
+      "Set Etch",
+      "Set Extract",
+      "Etch Set Rune",
+      "Extract Set Rune"
+    ]
+  },
+  "epicloot.shardslots": {
+    "title": "Splitter-Steckplätze",
+    "short": "Freie Plätze an einem magischen Gegenstand für Splittersteine oder gravierte Runen; jeder Stein bringt einen Effekt dazu.",
+    "body": "Im Tooltip steht „Splitter-Steckplätze (1/2):“, also belegte von allen Plätzen, darunter die eingesetzten Steine mit ihrem Effekt und „◊ Leerer Splitter-Steckplatz“ für jeden freien. Zum Öffnen fährst du im Inventar über den Gegenstand und drückst E (Standardtaste, Controller: RT + X); dann ziehst du einen [[epicloot.shardstone|Splitterstein]] oder eine [[epicloot.runes|gravierte Rune]] hinein. Wie viele Plätze ein Gegenstand höchstens haben kann, hängt laut Server-Konfiguration von der [[epicloot.rarity|Seltenheit]] ab: Magie und selten 1, Epos und Legendär 2, Mythisch 3, Uralt 4; bis dahin fügt die [[epicloot.brokkrgift|Gabe Brokkrs]] weitere hinzu. Einen Effekt, den der Gegenstand schon durch Würfeln hat, kannst du laut Server-Konfiguration nicht zusätzlich einsetzen.",
+    "aliases": [
+      "Splitter-Steckplätze",
+      "Splitter-Steckplatz",
+      "Leerer Splitter-Steckplatz",
+      "Splitter-Steckplätze öffnen"
+    ]
+  },
+  "epicloot.shardslots.removal": {
+    "title": "Steine entfernen",
+    "short": "Ob ein eingesetzter Stein wieder herauskommt, legt der Server fest; manche müssen zerbrochen werden.",
+    "body": "Laut Server-Konfiguration kannst du gravierte Runen und Splittersteine mit Zahlenwert jederzeit wieder herausziehen und woanders einsetzen. Splittersteine, deren Effekt keinen Zahlenwert hat (etwa Wärme), tragen den Hinweis „(zum Entfernen zerbrechen)“: Ein Rechtsklick zerbricht sie nach einer Rückfrage, und der Stein ist weg. Der Hinweis „(dauerhaft)“ hieße, dass ein Stein gar nicht mehr herauskann; das ist auf dem Server nicht eingestellt. Beim [[epicloot.table.sacrifice|Opfern]] und [[epicloot.table.disenchant|Entzaubern]] bekommst du alle eingesetzten Steine zurück.",
+    "aliases": [
+      "zum Entfernen zerbrechen",
+      "Eingesetzten Stein zerbrechen"
+    ]
+  },
+  "epicloot.shardstone": {
+    "title": "Splitterstein",
+    "short": "Ein farbiger Stein für Splitter-Steckplätze; sein Effekt hängt von Farbe, Seltenheit und Art des Gegenstands ab.",
+    "body": "Ein Splitterstein heißt etwa „Legendär Rot Splitterstein“ und zeigt unter „Wenn eingesetzt:“, welchen Effekt er in welcher Art Gegenstand bringt, z. B. in Nahkampfwaffen einen anderen als in Helmen. Der Wert ist fest und hängt von der Seltenheit des Steins ab, nicht von der des Gegenstands; mit [[epicloot.table.convert|Materialien umwandeln]] hebst du einen Stein mit [[epicloot.material.shard|Splittern]] auf die nächste Seltenheit. Splittersteine fallen als Beute, wobei das Biom die Stufe bestimmt; besondere Steine gibt es von Bossen (siehe [[epicloot.shardstone.exclusive]]). Mehrere Steine derselben Farbe in einem Gegenstand wirken laut Server-Konfiguration abgeschwächt: der stärkste voll, der nächste halb, dann ein Viertel, was der Zusatz „(50 % Stärke)“ anzeigt.",
+    "aliases": [
+      "Splitterstein",
+      "Splittersteine",
+      "Wenn eingesetzt"
+    ]
+  },
+  "epicloot.shardstone.exclusive": {
+    "title": "Boss- und einzigartige Splittersteine",
+    "short": "Besondere Splittersteine mit gleichem Effekt in jedem Gegenstand; von jeder Sorte darf nur einer getragen werden.",
+    "body": "Die Splittersteine der sieben Bosse von Eikthyr bis Fader und die einzigartigen Steine Feuerläufer und Sturmrufer geben in jedem Gegenstand denselben Effekt, im Tooltip „Alle Steckplätze“. Von deiner angelegten Ausrüstung darf nur ein Teil einen Boss-Splitterstein tragen und nur eines einen einzigartigen; sonst meldet das Spiel etwa „Du trägst bereits einen Boss-Splitter“. Die Boss-Steine lassen die jeweiligen Bosse fallen, und es gibt sie erst ab einer bestimmten Seltenheit, die Steine von Fader z. B. nur in Mythisch und Uralt.",
+    "aliases": [
+      "Boss-Splitter",
+      "Einzigartiger Splitter"
+    ]
+  },
+  "epicloot.brokkrgift": {
+    "title": "Gabe Brokkrs",
+    "short": "Ein Artefakt, das einem magischen Gegenstand zusätzliche Splitter-Steckplätze gibt.",
+    "body": "Die Gabe gibt es als Legendäre, Mythische und Uralte Gabe Brokkrs; du ziehst sie im Inventar auf einen magischen Gegenstand und bestätigst die Rückfrage, dabei wird sie in jedem Fall verbraucht. Laut Server-Konfiguration fügt sie 1, 2 bzw. 3 [[epicloot.shardslots|Splitter-Steckplätze]] hinzu, mit 100 % Erfolgschance, aber nie mehr, als die Seltenheit des Gegenstands erlaubt. Sie wirkt nur auf Gegenstände, deren Seltenheit nicht höher ist als ihre eigene, auch wenn sie schon Plätze haben. Du findest sie in Truhen der Nebellande, der Aschenlande und des Hohen Nordens, auch in deren [[epicloot.adventure.treasuremap|Schatzkarten]]-Truhen.",
+    "aliases": [
+      "Gabe Brokkrs"
+    ]
+  },
+  "epicloot.runes": {
+    "title": "Gravierte Rune",
+    "short": "Ein Runenstein, der eine einzelne Verzauberung trägt; du überträgst sie damit auf einen anderen Gegenstand.",
+    "body": "Eine gravierte Rune entsteht im Reiter [[epicloot.table.runes|Runen]], wenn du eine Verzauberung aus einem Gegenstand extrahierst; sie heißt dann etwa „Gravierte Rune Legendär Runenstein“ und hat die Seltenheit dieses Gegenstands. Laut Server-Konfiguration trägt sie 90 % des ursprünglichen Werts, je nach Stufe der Funktion Runenmanipulation bis 110 %; Effekte ohne Zahlenwert bleiben, wie sie sind. Du kannst sie auf einen Gegenstand ätzen, wo sie eine gewählte Verzauberung ersetzt, oder in einen freien [[epicloot.shardslots|Splitter-Steckplatz]] setzen, wo ihr Effekt dazukommt. Zum Verzaubern taugt sie nicht, dafür brauchst du einen unbeschrifteten [[epicloot.material.runestone|Runenstein]].",
+    "aliases": [
+      "Gravierte Rune"
+    ]
+  },
+  "epicloot.runes.extractmode": {
+    "title": "Extraktionsmodus",
+    "short": "Legt fest, was ein Gegenstand verliert, wenn du eine Rune aus ihm extrahierst; auf dem Server nur die gewählte Verzauberung.",
+    "body": "Ein Server kann vier Modi einstellen: Der Gegenstand bleibt unverändert, die gewählte Verzauberung wird entfernt, zusätzlich sinkt die Seltenheit um eine Stufe, oder der Gegenstand wird zerstört. Laut Server-Konfiguration (Rune Extract Mode = ReduceEnchants) verschwindet nur die gewählte Verzauberung, alles andere bleibt. War sie die letzte Verzauberung und hat der Gegenstand keine Steckplätze, wird er wieder ein normaler Gegenstand. Den gültigen Modus nennt auch der Warntext im Reiter [[epicloot.table.runes|Runen]], der mit „Das Extrahieren einer Verzauberung“ beginnt.",
+    "aliases": [
+      "Extrahieren einer Verzauberung"
+    ]
+  },
+  "epicloot.unidentified": {
+    "title": "Unidentifizierter Gegenstand",
+    "short": "Magische Beute mit bekannter Seltenheit und bekanntem Biom; was daraus wird, entscheidet sich erst beim Identifizieren.",
+    "body": "Er heißt etwa „Legendär Unidentifizierte Wiesen-Ausrüstung“: Vorne steht die Seltenheit, das Biom bestimmt, aus welcher Beute er später wird. Am [[epicloot.table|Verzauberungstisch]] machst du daraus mit [[epicloot.table.identify|Identifizieren]] einen echten Gegenstand dieser Seltenheit, oder du opferst ihn für je 1 Staub, Reagenz und Essenz seiner Seltenheit. Nur Ausrüstung kann unidentifiziert fallen, und laut Server-Konfiguration passiert das öfter als üblich: Gewicht 0,3 statt 0,1, neben 0,6 für normale Gegenstände, 0,15 für Material und 0,1 für Splittersteine.",
+    "aliases": [
+      "Unidentifizierter Gegenstand",
+      "Unidentifizierte",
+      "unidentifiziert",
+      "Unidentified"
+    ]
+  },
+  "epicloot.table": {
+    "title": "Verzauberungstisch",
+    "short": "Epic Loots Station für magische Gegenstände: opfern, identifizieren, umwandeln, verzaubern, verstärken, entzaubern, Runen.",
+    "body": "Du baust ihn mit dem Hammer, laut Server-Konfiguration aus 10 Holz und 2 Grauzwergen-Augen, eine Werkbank brauchst du dafür nicht. Er hat die Reiter [[epicloot.table.sacrifice|Opfer]], [[epicloot.table.convert|Materialien umwandeln]], [[epicloot.table.enchant|Verzaubern]], [[epicloot.table.augment|Verstärken]], [[epicloot.table.disenchant|Entzaubern]], [[epicloot.table.runes|Runen]] und [[epicloot.table.upgrade|Upgrade-Tabelle]]. An einem neuen Tisch ist nur Opfern freigeschaltet; alles andere schaltest du mit Material frei und rüstest es bis Stufe 7 auf, siehe [[epicloot.table.level|Stufen]]. Die Stufen gehören zu diesem einen Tisch und gelten für alle, die ihn benutzen.",
+    "aliases": [
+      "Verzauberungstisch"
+    ]
+  },
+  "epicloot.table.level": {
+    "title": "Stufen des Verzauberungstisches",
+    "short": "Jede Funktion des Tisches ist gesperrt, entsperrt oder aufgerüstet (Stufe 1 bis 7); höhere Stufen geben Boni.",
+    "body": "Im Reiter [[epicloot.table.upgrade|Upgrade-Tabelle]] steht bei jeder Funktion „Aktuelles Level“: „Gesperrt“, „Entsperrt“ (die Grundstufe) oder eine Zahl bis 7. Freischalten und jede weitere Stufe kosten Material, das von Stufe zu Stufe teurer wird, etwa Surtling-Kerne, Metalle, Trophäen, Münzen und Belohnungstoken. Laut Server-Konfiguration bringt Stufe 7: Opfern 30 % Chance auf doppelte Ausbeute und 114 % Kraft beim Identifizieren, Verzaubern mehr Effekte (+14 und +7 Prozentpunkte), Verstärken 6 statt 2 neue Vorschläge und 75 % weniger Münzkosten, Entzaubern 5 Token weniger und 30 % Chance auf Opfermaterial, Runenmanipulation 30 % geringere Kosten und 110 % Runenkraft, Materialien umwandeln ein Verhältnis von 1:1 statt 5:1 (Runensteine 2:1). Die Stufen gelten nur für diesen Tisch.",
+    "aliases": [
+      "Aktuelles Level",
+      "Maximales Level"
+    ]
+  },
+  "epicloot.table.upgrade": {
+    "title": "Upgrade-Tabelle",
+    "short": "Reiter des Verzauberungstisches, in dem du seine Funktionen freischaltest und aufrüstest.",
+    "body": "Links wählst du eine Funktion, rechts siehst du ihre [[epicloot.table.level|Stufe]], was jede Stufe bringt („Upgrades:“) und die Kosten. „Entsperren“ schaltet eine gesperrte Funktion frei, „Aufrüsten“ hebt sie um eine Stufe; bezahlt wird mit dem angezeigten Material aus deinem Inventar. Die neue Stufe gilt sofort für alle, die diesen Tisch benutzen.",
+    "aliases": [
+      "Upgrade-Tabelle",
+      "Entsperrkosten"
+    ]
+  },
+  "epicloot.table.sacrifice": {
+    "title": "Opfern",
+    "short": "Zerstört magische Gegenstände, Trophäen und Splittersteine und gibt dafür Verzauberungsmaterial.",
+    "body": "Im Reiter Opfer wählst du Gegenstände und bekommst laut Server-Konfiguration: für magische Waffen und Werkzeuge je 1 Staub und 1 Essenz ihrer Seltenheit, für magische Rüstung, Schilde und Zubehör je 1 Staub und 1 Reagenz, für Trophäen [[epicloot.material.shard|Splitter]] und für Boss-Trophäen [[epicloot.material.runestone|Runensteine]]. Was genau herauskommt, zeigt die Liste unter „Zerstöre die ausgewählten Gegenstände und erhalte:“; eingesetzte Steine aus [[epicloot.shardslots|Splitter-Steckplätzen]] bekommst du zurück. Angelegte Gegenstände und solche in der Schnellleiste stehen standardmäßig nicht in der Liste. Ab Stufe 1 gibt es eine Chance auf doppelte Ausbeute, und im selben Reiter liegt auch das [[epicloot.table.identify|Identifizieren]].",
+    "aliases": [
+      "Opfern",
+      "Alles opfern"
+    ]
+  },
+  "epicloot.table.identify": {
+    "title": "Identifizieren",
+    "short": "Macht aus unidentifizierter Ausrüstung einen echten magischen Gegenstand derselben Seltenheit.",
+    "body": "Im Reiter Opfer schaltest du auf „Identifizieren“ um, wählst [[epicloot.unidentified|unidentifizierte Gegenstände]] und eine Kategorie; laut Server-Konfiguration kostet Zufällig 5 Münzen, Waffe oder Rüstung je 50 Münzen und 2 Gold-Belohnungstoken, Zubehör 150 Münzen und 3 Gold-Belohnungstoken. Dazu kommt pro Gegenstand ein Material des Bioms, 1 Stück in Magie bis 6 in Uralt, etwa Feuerstein für das Grasland oder Blutgold für den Hohen Norden. Heraus kommt ein zufälliger Gegenstand dieser Kategorie aus der Beute des Bioms; die Liste „Potenzielle identifizierte Gegenstände“ zeigt, was möglich ist. Ist der Boss des Bioms in dieser Welt noch nicht besiegt, entsteht ein Gegenstand eines niedrigeren Bioms, und die Liste trägt den Zusatz „(Progress-gated)“.",
+    "aliases": [
+      "Identifizieren",
+      "Identifizieren Kategorien",
+      "Potenzielle identifizierte Gegenstände",
+      "Progress-gated"
+    ]
+  },
+  "epicloot.table.convert": {
+    "title": "Materialien umwandeln",
+    "short": "Tauscht Verzauberungsmaterial: in höhere Seltenheit, in andere Sorten, Schrott in Nützliches und Splittersteine nach oben.",
+    "body": "Der Reiter hat vier Arten. „Materialrarität aufrüsten“ macht aus 5 Material einer Seltenheit 1 der nächsten, ab Epos gegen ein paar Münzen dazu; „Splitter umwandeln“ tauscht laut Server-Konfiguration 2 Staub und 2 Essenz gegen 1 [[epicloot.material.shard|Splitter]] oder 2 Splitter gegen 1 Staub, Essenz oder Reagenz derselben Seltenheit. „Schrott entsorgen“ macht aus Kram etwas Brauchbares, etwa aus 10 Knochenfragmenten eine Skelett-Trophäe, und „Upgrade Shardstones“ hebt einen [[epicloot.shardstone|Splitterstein]] mit Splittern auf die nächste Seltenheit. Höhere Stufen dieser Funktion senken das Verhältnis beim Aufrüsten bis auf 1:1 (Runensteine 2:1). Angezeigt werden nur Rezepte, von deren Material du schon etwas besitzt.",
+    "aliases": [
+      "Materialien umwandeln",
+      "Materialrarität aufrüsten",
+      "Splitter umwandeln",
+      "Schrott entsorgen",
+      "Upgrade Shardstones",
+      "Umwandlungskosten",
+      "Schrottkosten"
+    ]
+  },
+  "epicloot.table.enchant": {
+    "title": "Verzaubern",
+    "short": "Macht aus normaler Ausrüstung einen magischen Gegenstand in der Seltenheit, die du wählst.",
+    "body": "Du wählst einen nicht magischen Gegenstand und eine [[epicloot.rarity|Seltenheit]]; „Verzauberungswahrscheinlichkeiten“ zeigt dann, mit welcher Chance er wie viele Effekte und [[epicloot.shardslots|Splitter-Steckplätze]] bekommt, darunter stehen die möglichen Effekte mit ihren Bereichen. Laut Server-Konfiguration kostet das 1 Runenstein, 5 Staub und 5 Essenz (Waffen, Werkzeuge) bzw. 5 Reagenz (Rüstung, Schilde, Zubehör), alles in der gewählten Seltenheit. Welche Effekte er bekommt, wird ausgewürfelt; ab Legendär kann auch ein [[epicloot.unique|einzigartiger Gegenstand]] oder ein [[epicloot.sets|Set-Teil]] entstehen. Höhere Stufen dieser Funktion erhöhen die Chance auf mehr Effekte.",
+    "aliases": [
+      "Verzaubern",
+      "Verzauberungskosten",
+      "Verzauberungswahrscheinlichkeiten"
+    ]
+  },
+  "epicloot.table.augment": {
+    "title": "Verstärken",
+    "short": "Würfelt einen einzelnen Effekt eines magischen Gegenstands neu; du wählst aus Vorschlägen oder behältst ihn.",
+    "body": "Du wählst einen magischen Gegenstand und einen seiner Effekte und zahlst laut Server-Konfiguration je 1 Splitter, 1 Staub und 1 Essenz (Waffen, Werkzeuge) bzw. 1 Reagenz (Rüstung, Schilde, Zubehör) seiner Seltenheit. Danach bekommst du 2 neue Effekte zur Auswahl, an einem aufgerüsteten Tisch bis zu 6, und als erste Möglichkeit „(behalten)“ für den alten; der Effekt trägt danach das Zeichen ▼, auch wenn du ihn behältst. Du kannst auch weitere Effekte desselben Gegenstands verstärken, jeder weitere kostet zusätzlich Münzen (500, 1000, 1500 …), was höhere Stufen um bis zu 75 % verbilligen. Einen schon verstärkten Effekt erneut zu verstärken kostet nur das Material.",
+    "aliases": [
+      "Verstärkungskosten",
+      "Gegenstand wird verstärkt"
+    ]
+  },
+  "epicloot.table.disenchant": {
+    "title": "Entzaubern",
+    "short": "Entfernt alle magischen Eigenschaften; der Gegenstand wird wieder normal und lässt sich neu verzaubern.",
+    "body": "Du wählst einen magischen Gegenstand, der nicht angelegt ist, und zahlst laut Server-Konfiguration Eisen-Belohnungstoken nach Seltenheit: Magie 2, selten 3, Epos 5, Legendär 7, Mythisch 9, Uralt 11. Danach ist er ein normaler Gegenstand ohne Effekte, Seltenheit und Steckplätze; eingesetzte Steine bekommst du zurück. Höhere Stufen dieser Funktion sparen bis zu 5 Token und geben bis zu 30 % Chance, zusätzlich das Material zu bekommen, das [[epicloot.table.sacrifice|Opfern]] gebracht hätte. Unidentifizierte Gegenstände, Splittersteine und Gegenstände mit bestimmten Sondereffekten lassen sich nicht entzaubern.",
+    "aliases": [
+      "Entzaubern",
+      "Entzauberungskosten"
+    ]
+  },
+  "epicloot.table.runes": {
+    "title": "Runen",
+    "short": "Reiter für gravierte Runen: Verzauberungen herauslösen, auf andere Gegenstände ätzen und Sets übertragen.",
+    "body": "„Rune extrahieren“ macht aus einer gewählten Verzauberung eine [[epicloot.runes|gravierte Rune]] (laut Server-Konfiguration für 1 Runenstein in der Seltenheit des Gegenstands), „Rune ätzen“ ersetzt eine Verzauberung des Gegenstands durch die einer Rune (10 Staub). **Set Extract** und **Set Etch** tun dasselbe mit ganzen Sets, siehe [[epicloot.sets.rune|Set-Rune]]. Was beim Extrahieren mit dem Gegenstand passiert, regelt der [[epicloot.runes.extractmode|Extraktionsmodus]]. In der Upgrade-Tabelle heißt die Funktion Runenmanipulation; ihre Stufen senken die Kosten um bis zu 30 % und heben die Runenkraft von 90 % auf bis zu 110 %.",
+    "aliases": [
+      "Runenmanipulation",
+      "Rune extrahieren",
+      "Rune ätzen"
+    ]
+  },
+  "epicloot.material": {
+    "title": "Verzauberungsmaterial",
+    "short": "Staub, Essenz, Reagenz, Splitter und Runensteine in sechs Seltenheiten, für alle Arbeiten am Verzauberungstisch.",
+    "body": "Im Tooltip steht ganz oben etwa „Legendär Herstellungsmaterial“, und der Name beginnt mit der Seltenheit, z. B. „Epos Staub“. Es gibt [[epicloot.material.dust|Staub]], [[epicloot.material.essence|Essenz]], [[epicloot.material.reagent|Reagenz]], [[epicloot.material.shard|Splitter]] und [[epicloot.material.runestone|Runensteine]]. Du bekommst sie vor allem durch [[epicloot.table.sacrifice|Opfern]], als Beute (laut Server-Konfiguration fällt mit Gewicht 0,15 Material statt eines Gegenstands) und bei Haldor im [[epicloot.adventure.secretstash|Geheimen Versteck]]. Mit [[epicloot.table.convert|Materialien umwandeln]] tauschst du sie in andere Sorten oder höhere Seltenheiten.",
+    "aliases": [
+      "Herstellungsmaterial"
+    ]
+  },
+  "epicloot.material.dust": {
+    "title": "Staub",
+    "short": "Grundmaterial zum Verzaubern, Verstärken und Ätzen; entsteht beim Opfern magischer Gegenstände.",
+    "body": "Staub gibt es in allen sechs Seltenheiten, von „Magie Staub“ bis „Uralt Staub“. Du bekommst ihn vor allem beim [[epicloot.table.sacrifice|Opfern]] magischer und unidentifizierter Gegenstände, 1 Stück in deren Seltenheit. Laut Server-Konfiguration brauchst du 5 zum [[epicloot.table.enchant|Verzaubern]], 1 zum [[epicloot.table.augment|Verstärken]] und 10 zum Ätzen einer [[epicloot.runes|Rune]], jeweils in der passenden Seltenheit.",
+    "aliases": [
+      "Magie Staub",
+      "selten Staub",
+      "Epos Staub",
+      "Legendär Staub",
+      "Mythisch Staub",
+      "Uralt Staub"
+    ]
+  },
+  "epicloot.material.essence": {
+    "title": "Essenz",
+    "short": "Material zum Verzaubern und Verstärken von Waffen und Werkzeugen; entsteht beim Opfern magischer Waffen.",
+    "body": "Essenz gibt es in allen sechs Seltenheiten, von „Magie Essenz“ bis „Uralt Essenz“. Beim [[epicloot.table.sacrifice|Opfern]] einer magischen Waffe, Fackel oder eines Werkzeugs bekommst du 1 Essenz seiner Seltenheit. Laut Server-Konfiguration kostet das [[epicloot.table.enchant|Verzaubern]] einer Waffe 5 Essenz und das [[epicloot.table.augment|Verstärken]] 1; für Rüstung, Schilde und Zubehör brauchst du stattdessen [[epicloot.material.reagent|Reagenz]].",
+    "aliases": [
+      "Magie Essenz",
+      "selten Essenz",
+      "Epos Essenz",
+      "Legendär Essenz",
+      "Mythisch Essenz",
+      "Uralt Essenz"
+    ]
+  },
+  "epicloot.material.reagent": {
+    "title": "Reagenz",
+    "short": "Material zum Verzaubern und Verstärken von Rüstung, Schilden und Zubehör; entsteht beim Opfern magischer Rüstung.",
+    "body": "Reagenz gibt es in allen sechs Seltenheiten, von „Magie Reagenz“ bis „Uralt Reagenz“. Beim [[epicloot.table.sacrifice|Opfern]] von magischer Rüstung, Schilden, Umhängen, Zubehör oder Schmuckstücken bekommst du 1 Reagenz ihrer Seltenheit. Laut Server-Konfiguration kostet das [[epicloot.table.enchant|Verzaubern]] solcher Ausrüstung 5 Reagenz und das [[epicloot.table.augment|Verstärken]] 1; für Waffen und Werkzeuge brauchst du [[epicloot.material.essence|Essenz]].",
+    "aliases": [
+      "Magie Reagenz",
+      "selten Reagenz",
+      "Epos Reagenz",
+      "Legendär Reagenz",
+      "Mythisch Reagenz",
+      "Uralt Reagenz",
+      "Reagenz"
+    ]
+  },
+  "epicloot.material.shard": {
+    "title": "Splitter",
+    "short": "Material zum Verstärken; entsteht beim Opfern von Tier- und Monstertrophäen.",
+    "body": "Splitter wie „Epos Splitter“ sind nicht dasselbe wie [[epicloot.shardstone|Splittersteine]]: Sie sind Material, kein Stein für Steckplätze. Du bekommst sie beim [[epicloot.table.sacrifice|Opfern]] von Trophäen, und je stärker das Tier, desto höher die Seltenheit des Splitters. Laut Server-Konfiguration kostet jedes [[epicloot.table.augment|Verstärken]] 1 Splitter; außerdem brauchst du sie zum Aufwerten von Splittersteinen und für manche Tisch-Stufen.",
+    "aliases": [
+      "Magie Splitter",
+      "selten Splitter",
+      "Epos Splitter",
+      "Legendär Splitter",
+      "Mythisch Splitter",
+      "Uralt Splitter"
+    ]
+  },
+  "epicloot.material.runestone": {
+    "title": "Runenstein",
+    "short": "Seltenes Material zum Verzaubern und Extrahieren; stammt vor allem aus Boss-Trophäen.",
+    "body": "Runensteine wie „Legendär Runenstein“ bekommst du beim [[epicloot.table.sacrifice|Opfern]] von Boss-Trophäen, laut Server-Konfiguration: Eikthyr 1 Magie, Der Uralte 1 selten, Knochenwanst 1 Epos, Moder 2 Epos, Yagluth 1 Legendär, Die Königin 2 Legendär, Fader 1 Mythisch; Kall Fimbulbringers Opferblut gibt 1 Uralt. Haldor verkauft sie außerdem im [[epicloot.adventure.secretstash|Geheimen Versteck]] gegen Wald-Token, und unter „Schrott entsorgen“ ergeben z. B. 10 Drachentränen 1 Legendär Runenstein. Jedes [[epicloot.table.enchant|Verzaubern]] kostet 1 Runenstein der gewählten Seltenheit, jedes Extrahieren einer Rune 1 in der Seltenheit des Gegenstands. Ein Runenstein mit Verzauberung heißt [[epicloot.runes|gravierte Rune]].",
+    "aliases": [
+      "Magie Runenstein",
+      "selten Runenstein",
+      "Epos Runenstein",
+      "Legendär Runenstein",
+      "Mythisch Runenstein",
+      "Uralt Runenstein"
+    ]
+  },
+  "epicloot.material.tokens": {
+    "title": "Belohnungstoken",
+    "short": "Wald-Token, Eisen- und Gold-Belohnungstoken: Epic Loots Währungen für Haldor, Hildir und den Verzauberungstisch.",
+    "body": "**Wald-Token** liegen in Truhen aus [[epicloot.adventure.treasuremap|Schatzkarten]]; Haldor nimmt sie für Runensteine und für [[epicloot.adventure.gamble|Glücksspiele]]. **Eisen-Belohnungstoken** und **Gold-Belohnungstoken** bekommst du für erledigte [[epicloot.adventure.bounty|Kopfgelder]]. Laut Server-Konfiguration kosten sie unter anderem beim [[epicloot.temper|Härten]] (1 Eisen bis Epos, 1 Gold ab Legendär), beim [[epicloot.table.disenchant|Entzaubern]] (2 bis 11 Eisen), beim Identifizieren mit gewählter Kategorie (2 oder 3 Gold) und beim Freischalten mancher Tisch-Funktionen.",
+    "aliases": [
+      "Wald-Token",
+      "Eisen-Belohnungstoken",
+      "Gold-Belohnungstoken",
+      "Belohnungstoken"
+    ]
+  },
+  "epicloot.temper": {
+    "title": "Härten",
+    "short": "Hildir steigert gegen Bezahlung den Wert einer Verzauberung um eine Stufe, mit einer Erfolgschance.",
+    "body": "Bei Hildir öffnet sich neben dem Handelsfenster ein eigenes Fenster: Du wählst einen magischen Gegenstand aus dem Inventar und eine Verzauberung mit Zahlenwert und zahlst laut Server-Konfiguration 1 Eisen-Belohnungstoken (Magie bis Epos) bzw. 1 Gold-Belohnungstoken (ab Legendär). Gelingt es, steigt der Wert um eine Schrittweite, bei einem kritischen Erfolg um zwei, und der Effekt bekommt das Zeichen ▲. Die Erfolgschance beträgt 50 %, wenn der Wert genau am oberen Ende seines [[epicloot.rollrange|Wurfbereichs]] liegt, darunter mehr und darüber mit jeder Stufe mindestens 15 Prozentpunkte weniger; ein kritischer Erfolg wird seltener, je näher der Wert am Höchstwert liegt, und ist ab dort unmöglich. Misslingt es, verlierst du laut Server-Konfiguration nur die Bezahlung.",
+    "aliases": [
+      "Härten",
+      "Härtung",
+      "Kritischer Erfolg"
+    ]
+  },
+  "epicloot.favorites": {
+    "title": "Favorisierte Gegenstände",
+    "short": "Mit der Mod Item Favorite Framework geschützte Gegenstände fehlen am Verzauberungstisch in allen zerstörenden Listen.",
+    "body": "Epic Loot beachtet Favoriten nur, wenn die Mod Item Favorite Framework installiert ist und „Respect Item Favorites“ in der Epic-Loot-Konfiguration an ist (Standard). Dann fehlen favorisierte Gegenstände und alles in favorisierten Inventarplätzen in jeder Liste, die einen Gegenstand zerstört oder verbraucht: Opfern, Identifizieren, Entzaubern, Set Extract, Rune extrahieren (außer der Gegenstand bliebe dabei unverändert) und die Runen, die zum Ätzen angeboten werden. Am Tisch und bei Hildir zeigt dann ein Stern auf dem Symbol, dass ein Gegenstand favorisiert ist; mit den [[epicloot.stars|Seltenheits-Sternen]] hinter Effekten hat er nichts zu tun. Ohne diese Mod gibt es keinen solchen Schutz.",
+    "aliases": []
+  },
+  "epicloot.adventure": {
+    "title": "Schatz & Kopfgelder",
+    "short": "Epic Loots Abenteuer bei Haldor: Geheimes Versteck, Glücksspiel, Schatzkarten und Kopfgelder.",
+    "body": "Sprichst du mit dem Händler Haldor, erscheint neben seinem Handelsfenster ein Epic-Loot-Fenster mit [[epicloot.adventure.secretstash|Geheimes Versteck]], [[epicloot.adventure.gamble|Glücksspiel]], [[epicloot.adventure.treasuremap|Schatzkarten]] und [[epicloot.adventure.bounty|Bounties]] (Kopfgeldern). Die Angebote wechseln um Mitternacht in festen Abständen, laut Server-Konfiguration Versteck und Glücksspiel jeden Spieltag, Schatzkarten und Kopfgelder alle 7 Spieltage; der Hinweis „Aktualisierungsintervalle“ nennt sie. Laufende Schatzkarten und Kopfgelder siehst du im Kompendium auf der Seite „Schatz & Kopfgelder“ und als Markierung auf der Karte. Hildir bietet dagegen das [[epicloot.temper|Härten]] an.",
+    "aliases": [
+      "Schatz & Kopfgelder",
+      "Aktualisierungsintervalle"
+    ]
+  },
+  "epicloot.adventure.secretstash": {
+    "title": "Geheimes Versteck",
+    "short": "Haldors Laden für Verzauberungsmaterial, Runensteine und den Ring Andvaranaut.",
+    "body": "Laut Server-Konfiguration verkauft Haldor hier jeden Spieltag wechselnd je ein Verzauberungsmaterial jeder Seltenheit gegen Münzen, von 5 Münzen in Magie bis 1000 in Uralt. Dazu kommen Runensteine gegen 5 bis 30 [[epicloot.material.tokens|Wald-Token]] und der Ring [[epicloot.andvaranaut|Andvaranaut]] für 1998 Münzen. Material und Runensteine bietet er nur an, wenn du diese Sorte schon einmal besessen hast.",
+    "aliases": [
+      "Geheimes Versteck"
+    ]
+  },
+  "epicloot.adventure.gamble": {
+    "title": "Glücksspiel",
+    "short": "Bei Haldor zahlst du einen Aufpreis für ein zufälliges Ausrüstungsteil, das magisch sein kann.",
+    "body": "Das Glücksspiel zeigt Ausrüstung, die du nach deinem Fortschritt bekommen kannst; bezahlst du, entsteht das Stück mit zufälliger Seltenheit, deren Chancen der Tooltip unter „Chance für:“ zeigt. Laut Server-Konfiguration gibt es jeden Spieltag 4 Angebote nur gegen Münzen (10 % nicht magisch, 68 % Magie, 15 % selten, 4 % Epos, 2 % Legendär, 0,75 % Mythisch, 0,25 % Uralt) sowie 2 mit Wald-Token (mindestens selten), 2 mit Eisen-Belohnungstoken (mindestens Epos) und 1 mit Gold-Belohnungstoken (mindestens Legendär). Ein Angebot kannst du beliebig oft kaufen.",
+    "aliases": [
+      "Glücksspiel"
+    ]
+  },
+  "epicloot.adventure.treasuremap": {
+    "title": "Schatzkarte",
+    "short": "Bei Haldor gekaufte Karte zu einer Truhe in einem Biom, das du kennst; ihr Ort ist auf der Karte grob markiert.",
+    "body": "Laut Server-Konfiguration kostet eine Schatzkarte je nach Biom 100 Münzen (Grasland) bis 800 (Hoher Norden), und pro Biom gibt es alle 7 Spieltage eine. Nach dem Kauf ist auf der Karte ein Bereich markiert, in dem die Schatztruhe liegt; der Ring [[epicloot.andvaranaut|Andvaranaut]] hilft beim Suchen. Die Truhe enthält Beute des Bioms und [[epicloot.material.tokens|Wald-Token]] (5 im Grasland bis 40 im Hohen Norden), ab den Nebellanden manchmal auch eine [[epicloot.brokkrgift|Gabe Brokkrs]]. Angeboten werden nur Biome, die du schon entdeckt hast, für den Ozean gibt es keine.",
+    "aliases": [
+      "Schatzkarte",
+      "Schatzkarten"
+    ]
+  },
+  "epicloot.adventure.bounty": {
+    "title": "Kopfgeld",
+    "short": "Ein Auftrag von Haldor: ein besonderes Monster jagen und dafür Belohnungstoken und Münzen bekommen.",
+    "body": "Unter Bounties nimmst du mit „Bounty annehmen“ einen Auftrag an; das Ziel erscheint dann irgendwo im genannten Biom, stärker als gewöhnlich, und ist auf der Karte markiert. Ist es besiegt, holst du dir bei Haldor mit „Belohnung beanspruchen“ den Lohn, laut Server-Konfiguration Eisen- oder Gold-Belohnungstoken und Münzen, z. B. 2 Eisen-Belohnungstoken und 50 Münzen für einen Hirsch im Grasland. Neue Aufträge gibt es alle 7 Spieltage; „Bounty aufgeben“ bricht einen ab, und er lässt sich danach womöglich nicht erneut annehmen. Laufende Kopfgelder stehen im Kompendium unter „Aktive Kopfgelder“.",
+    "aliases": [
+      "Bounty annehmen",
+      "Bounty aufgeben",
+      "Belohnung beanspruchen",
+      "Aktive Kopfgelder",
+      "Kopfgelder",
+      "Kopfgeld"
+    ]
+  },
+  "epicloot.andvaranaut": {
+    "title": "Andvaranaut",
+    "short": "Ein Zwergenring von Haldor, der wie die Wünschelrute zu Schatzkarten-Truhen und Kopfgeld-Zielen führt.",
+    "body": "Andvaranaut kaufst du im [[epicloot.adventure.secretstash|Geheimen Versteck]], laut Server-Konfiguration für 1998 Münzen. Angelegt pingt er wie die Wünschelrute, aber nur zu Truhen aus [[epicloot.adventure.treasuremap|Schatzkarten]] und zu Zielen von [[epicloot.adventure.bounty|Kopfgeldern]]; je stärker das Signal, desto näher bist du. Laut Server-Konfiguration spürt er sie im Umkreis von 20 Metern auf.",
+    "aliases": [
+      "Andvaranaut"
+    ]
+  }
+}
